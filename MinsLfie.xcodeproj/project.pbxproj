@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480E4A201F2B702400AD0776 /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A161F2B702400AD0776 /* demo_fontclass.html */; };
+		480E4A211F2B702400AD0776 /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A171F2B702400AD0776 /* demo_symbol.html */; };
+		480E4A221F2B702400AD0776 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A181F2B702400AD0776 /* demo_unicode.html */; };
+		480E4A231F2B702400AD0776 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A191F2B702400AD0776 /* demo.css */; };
+		480E4A241F2B702400AD0776 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1A1F2B702400AD0776 /* iconfont.css */; };
+		480E4A251F2B702400AD0776 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1B1F2B702400AD0776 /* iconfont.eot */; };
+		480E4A261F2B702400AD0776 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1C1F2B702400AD0776 /* iconfont.js */; };
+		480E4A271F2B702400AD0776 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1D1F2B702400AD0776 /* iconfont.svg */; };
+		480E4A281F2B702400AD0776 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1E1F2B702400AD0776 /* iconfont.ttf */; };
+		480E4A291F2B702400AD0776 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1F1F2B702400AD0776 /* iconfont.woff */; };
 		EBB437021F2B12CF006BB009 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437011F2B12CF006BB009 /* main.m */; };
 		EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437041F2B12CF006BB009 /* AppDelegate.m */; };
 		EBB437081F2B12CF006BB009 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437071F2B12CF006BB009 /* ViewController.m */; };
@@ -29,21 +39,21 @@
 		EBB4377A1F2B25D0006BB009 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437791F2B25D0006BB009 /* UIView+Frame.m */; };
 		EBB437A61F2B2C8D006BB009 /* ProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437A51F2B2C8D006BB009 /* ProfileInfoCell.m */; };
 		EBB437D11F2B34CF006BB009 /* ProfileNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437D01F2B34CF006BB009 /* ProfileNormalCell.m */; };
-		EBB437F01F2B3F4A006BB009 /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EBB437E61F2B3F4A006BB009 /* demo_fontclass.html */; };
-		EBB437F11F2B3F4A006BB009 /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EBB437E71F2B3F4A006BB009 /* demo_symbol.html */; };
-		EBB437F21F2B3F4A006BB009 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EBB437E81F2B3F4A006BB009 /* demo_unicode.html */; };
-		EBB437F31F2B3F4A006BB009 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EBB437E91F2B3F4A006BB009 /* demo.css */; };
-		EBB437F41F2B3F4A006BB009 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EBB437EA1F2B3F4A006BB009 /* iconfont.css */; };
-		EBB437F51F2B3F4A006BB009 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EBB437EB1F2B3F4A006BB009 /* iconfont.eot */; };
-		EBB437F61F2B3F4A006BB009 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EBB437EC1F2B3F4A006BB009 /* iconfont.js */; };
-		EBB437F71F2B3F4A006BB009 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EBB437ED1F2B3F4A006BB009 /* iconfont.svg */; };
-		EBB437F81F2B3F4A006BB009 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB437EE1F2B3F4A006BB009 /* iconfont.ttf */; };
-		EBB437F91F2B3F4A006BB009 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EBB437EF1F2B3F4A006BB009 /* iconfont.woff */; };
 		EBB437FD1F2B459D006BB009 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437FC1F2B459D006BB009 /* LoginController.m */; };
 		EBB438001F2B4A6C006BB009 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437FF1F2B4A6C006BB009 /* UIImage+FEBoxBlur.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480E4A161F2B702400AD0776 /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
+		480E4A171F2B702400AD0776 /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
+		480E4A181F2B702400AD0776 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		480E4A191F2B702400AD0776 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		480E4A1A1F2B702400AD0776 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		480E4A1B1F2B702400AD0776 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		480E4A1C1F2B702400AD0776 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		480E4A1D1F2B702400AD0776 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		480E4A1E1F2B702400AD0776 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		480E4A1F1F2B702400AD0776 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EBB436FD1F2B12CF006BB009 /* MinsLfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinsLfie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB437011F2B12CF006BB009 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBB437031F2B12CF006BB009 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,16 +98,6 @@
 		EBB437A51F2B2C8D006BB009 /* ProfileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileInfoCell.m; sourceTree = "<group>"; };
 		EBB437CF1F2B34CF006BB009 /* ProfileNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileNormalCell.h; sourceTree = "<group>"; };
 		EBB437D01F2B34CF006BB009 /* ProfileNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileNormalCell.m; sourceTree = "<group>"; };
-		EBB437E61F2B3F4A006BB009 /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
-		EBB437E71F2B3F4A006BB009 /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
-		EBB437E81F2B3F4A006BB009 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
-		EBB437E91F2B3F4A006BB009 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		EBB437EA1F2B3F4A006BB009 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		EBB437EB1F2B3F4A006BB009 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
-		EBB437EC1F2B3F4A006BB009 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		EBB437ED1F2B3F4A006BB009 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
-		EBB437EE1F2B3F4A006BB009 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		EBB437EF1F2B3F4A006BB009 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EBB437FB1F2B459D006BB009 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		EBB437FC1F2B459D006BB009 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		EBB437FE1F2B4A6C006BB009 /* UIImage+FEBoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FEBoxBlur.h"; sourceTree = "<group>"; };
@@ -268,16 +268,16 @@
 		EBB437351F2B1CA8006BB009 /* iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				EBB437E61F2B3F4A006BB009 /* demo_fontclass.html */,
-				EBB437E71F2B3F4A006BB009 /* demo_symbol.html */,
-				EBB437E81F2B3F4A006BB009 /* demo_unicode.html */,
-				EBB437E91F2B3F4A006BB009 /* demo.css */,
-				EBB437EA1F2B3F4A006BB009 /* iconfont.css */,
-				EBB437EB1F2B3F4A006BB009 /* iconfont.eot */,
-				EBB437EC1F2B3F4A006BB009 /* iconfont.js */,
-				EBB437ED1F2B3F4A006BB009 /* iconfont.svg */,
-				EBB437EE1F2B3F4A006BB009 /* iconfont.ttf */,
-				EBB437EF1F2B3F4A006BB009 /* iconfont.woff */,
+				480E4A161F2B702400AD0776 /* demo_fontclass.html */,
+				480E4A171F2B702400AD0776 /* demo_symbol.html */,
+				480E4A181F2B702400AD0776 /* demo_unicode.html */,
+				480E4A191F2B702400AD0776 /* demo.css */,
+				480E4A1A1F2B702400AD0776 /* iconfont.css */,
+				480E4A1B1F2B702400AD0776 /* iconfont.eot */,
+				480E4A1C1F2B702400AD0776 /* iconfont.js */,
+				480E4A1D1F2B702400AD0776 /* iconfont.svg */,
+				480E4A1E1F2B702400AD0776 /* iconfont.ttf */,
+				480E4A1F1F2B702400AD0776 /* iconfont.woff */,
 			);
 			path = iconfont;
 			sourceTree = "<group>";
@@ -398,19 +398,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB437F11F2B3F4A006BB009 /* demo_symbol.html in Resources */,
-				EBB437F21F2B3F4A006BB009 /* demo_unicode.html in Resources */,
+				480E4A211F2B702400AD0776 /* demo_symbol.html in Resources */,
+				480E4A221F2B702400AD0776 /* demo_unicode.html in Resources */,
 				EBB437101F2B12CF006BB009 /* LaunchScreen.storyboard in Resources */,
-				EBB437F91F2B3F4A006BB009 /* iconfont.woff in Resources */,
-				EBB437F41F2B3F4A006BB009 /* iconfont.css in Resources */,
-				EBB437F51F2B3F4A006BB009 /* iconfont.eot in Resources */,
-				EBB437F71F2B3F4A006BB009 /* iconfont.svg in Resources */,
+				480E4A291F2B702400AD0776 /* iconfont.woff in Resources */,
+				480E4A241F2B702400AD0776 /* iconfont.css in Resources */,
+				480E4A251F2B702400AD0776 /* iconfont.eot in Resources */,
+				480E4A271F2B702400AD0776 /* iconfont.svg in Resources */,
 				EBB4370D1F2B12CF006BB009 /* Assets.xcassets in Resources */,
 				EBB4370B1F2B12CF006BB009 /* Main.storyboard in Resources */,
-				EBB437F81F2B3F4A006BB009 /* iconfont.ttf in Resources */,
-				EBB437F31F2B3F4A006BB009 /* demo.css in Resources */,
-				EBB437F61F2B3F4A006BB009 /* iconfont.js in Resources */,
-				EBB437F01F2B3F4A006BB009 /* demo_fontclass.html in Resources */,
+				480E4A281F2B702400AD0776 /* iconfont.ttf in Resources */,
+				480E4A231F2B702400AD0776 /* demo.css in Resources */,
+				480E4A261F2B702400AD0776 /* iconfont.js in Resources */,
+				480E4A201F2B702400AD0776 /* demo_fontclass.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

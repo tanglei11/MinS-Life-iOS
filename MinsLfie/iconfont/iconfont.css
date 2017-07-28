@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1501235084265'); /* IE9*/
-  src: url('iconfont.eot?t=1501235084265#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1501235084265') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1501235084265') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1501235084265#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1501247519940'); /* IE9*/
+  src: url('iconfont.eot?t=1501247519940#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1501247519940') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1501247519940') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1501247519940#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -40,6 +40,8 @@
 .icon-peoplefill:before { content: "\e735"; }
 
 .icon-people:before { content: "\e736"; }
+
+.icon-triangleupfill:before { content: "\e79c"; }
 
 .icon-mail:before { content: "\e7bd"; }
 
