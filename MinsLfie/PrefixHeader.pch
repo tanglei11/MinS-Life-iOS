@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  MinsLfie
+//
+//  Created by wodada on 2017/7/28.
+//  Copyright © 2017年 汤磊. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Constants.h"
+#import "ToolClass.h"
+#import "NSString+Extension.h"
+#import "UIColor+Hex.h"
+#import "UIView+Frame.h"
+#import "UIBarButtonItem+Item.h"
+#import "MainTabBarController.h"
+
+#endif /* PrefixHeader_pch */
