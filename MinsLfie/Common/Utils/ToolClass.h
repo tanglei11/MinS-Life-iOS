@@ -19,4 +19,11 @@
 
 //添加cell顶部线
 + (void)addTopLineForCell:(UITableViewCell *)cell lineX:(CGFloat)lineX lineHeight:(CGFloat)lineHeight isJustified:(BOOL)isJustified;
+
+// 创建有间距的文字
++ (NSMutableAttributedString *)createTextWithString:(NSString *)str fontSize:(CGFloat)size lineSpacing:(NSInteger)lingSpacing isFontThin:(BOOL)isFontThin;
+
+//计算有行间距文字的rect
++ (CGRect)caculateText:(NSAttributedString *)str maxSize:(CGSize)maxSize;
+
 @end

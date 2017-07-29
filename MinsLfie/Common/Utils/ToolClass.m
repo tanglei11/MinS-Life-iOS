@@ -7,6 +7,7 @@
 //
 
 #import "ToolClass.h"
+#import <CoreText/CoreText.h>
 
 @implementation ToolClass
 
@@ -54,6 +55,43 @@
     
     line.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
     [cell addSubview:line];
+}
+
+// 创建有间距的文字
++ (NSMutableAttributedString *)createTextWithString:(NSString *)str fontSize:(CGFloat)size lineSpacing:(NSInteger)lingSpacing isFontThin:(BOOL)isFontThin
+{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
+    long number = 1.f;//间距
+    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    [paragraphStyle setLineSpacing:lingSpacing];
+    //    [paragraphStyle setParagraphSpacing:-5];
+    //    [paragraphStyle setParagraphSpacingBefore:5];
+    [paragraphStyle setAlignment:NSTextAlignmentJustified];
+    [paragraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
+    if (isFontThin) {
+        [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:FONT_THIN size:size] range:NSMakeRange(0, str.length)];
+    }else{
+        [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:size] range:NSMakeRange(0, str.length)];
+    }
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, str.length)];
+    [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(0,[attributedString length])];
+    CFRelease(num);
+    return attributedString;
+}
+
+// 计算有行间距文字的rect
++ (CGRect)caculateText:(NSMutableAttributedString *)str maxSize:(CGSize)maxSize
+{
+    if (str) {
+        CGRect labelRect = [str boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin |NSStringDrawingUsesFontLeading context:nil];
+        return labelRect;
+    }
+    else {
+        return CGRectZero;
+    }
+    
 }
 
 @end

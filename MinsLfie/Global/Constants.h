@@ -32,11 +32,15 @@
 //line
 #define LINE_HEIGHT 0.5
 
+// FontName
+#define FONT_THIN                                           @"HelveticaNeue-Thin"
+#define NORMAL_FONT                                     @"Helvetica"
+
 /* color  颜色  */
 #define TABLE_BACK_COLOR                                                    @"#F5F7FB"
 #define WHITE_GREY                                                          @"#F0F0F1"
 #define MAIN_COLOR                                                          @"#4A505A"
-#define CELL_RIGHT                                                          @"#BFBFBF"
+#define PLACE_HOLDER_COLOR  @"#C0C0C0"
 
 //FONT
 #define ICONFONT @"iconfont"

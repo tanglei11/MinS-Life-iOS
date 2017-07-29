@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		480E4A201F2B702400AD0776 /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A161F2B702400AD0776 /* demo_fontclass.html */; };
-		480E4A211F2B702400AD0776 /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A171F2B702400AD0776 /* demo_symbol.html */; };
-		480E4A221F2B702400AD0776 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A181F2B702400AD0776 /* demo_unicode.html */; };
-		480E4A231F2B702400AD0776 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A191F2B702400AD0776 /* demo.css */; };
-		480E4A241F2B702400AD0776 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1A1F2B702400AD0776 /* iconfont.css */; };
-		480E4A251F2B702400AD0776 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1B1F2B702400AD0776 /* iconfont.eot */; };
-		480E4A261F2B702400AD0776 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1C1F2B702400AD0776 /* iconfont.js */; };
-		480E4A271F2B702400AD0776 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1D1F2B702400AD0776 /* iconfont.svg */; };
-		480E4A281F2B702400AD0776 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1E1F2B702400AD0776 /* iconfont.ttf */; };
-		480E4A291F2B702400AD0776 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = 480E4A1F1F2B702400AD0776 /* iconfont.woff */; };
+		48C9A00C1F2C6E6B0082795F /* CommunityBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00B1F2C6E6B0082795F /* CommunityBannerCell.m */; };
+		48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00E1F2C774B0082795F /* CommunityCell.m */; };
+		48C9A0121F2C80100082795F /* PhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A0111F2C80100082795F /* PhotosView.m */; };
+		48C9A0451F2C93470082795F /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03B1F2C93470082795F /* demo_fontclass.html */; };
+		48C9A0461F2C93470082795F /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03C1F2C93470082795F /* demo_symbol.html */; };
+		48C9A0471F2C93470082795F /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03D1F2C93470082795F /* demo_unicode.html */; };
+		48C9A0481F2C93470082795F /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03E1F2C93470082795F /* demo.css */; };
+		48C9A0491F2C93470082795F /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03F1F2C93470082795F /* iconfont.css */; };
+		48C9A04A1F2C93470082795F /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0401F2C93470082795F /* iconfont.eot */; };
+		48C9A04B1F2C93470082795F /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0411F2C93470082795F /* iconfont.js */; };
+		48C9A04C1F2C93470082795F /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0421F2C93470082795F /* iconfont.svg */; };
+		48C9A04D1F2C93470082795F /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0431F2C93470082795F /* iconfont.ttf */; };
+		48C9A04E1F2C93470082795F /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0441F2C93470082795F /* iconfont.woff */; };
 		EBB437021F2B12CF006BB009 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437011F2B12CF006BB009 /* main.m */; };
 		EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437041F2B12CF006BB009 /* AppDelegate.m */; };
 		EBB437081F2B12CF006BB009 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437071F2B12CF006BB009 /* ViewController.m */; };
@@ -44,16 +47,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		480E4A161F2B702400AD0776 /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
-		480E4A171F2B702400AD0776 /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
-		480E4A181F2B702400AD0776 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
-		480E4A191F2B702400AD0776 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		480E4A1A1F2B702400AD0776 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		480E4A1B1F2B702400AD0776 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
-		480E4A1C1F2B702400AD0776 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		480E4A1D1F2B702400AD0776 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
-		480E4A1E1F2B702400AD0776 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		480E4A1F1F2B702400AD0776 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		48C9A00A1F2C6E6B0082795F /* CommunityBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityBannerCell.h; sourceTree = "<group>"; };
+		48C9A00B1F2C6E6B0082795F /* CommunityBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityBannerCell.m; sourceTree = "<group>"; };
+		48C9A00D1F2C774B0082795F /* CommunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCell.h; sourceTree = "<group>"; };
+		48C9A00E1F2C774B0082795F /* CommunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCell.m; sourceTree = "<group>"; };
+		48C9A0101F2C80100082795F /* PhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosView.h; sourceTree = "<group>"; };
+		48C9A0111F2C80100082795F /* PhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosView.m; sourceTree = "<group>"; };
+		48C9A03B1F2C93470082795F /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
+		48C9A03C1F2C93470082795F /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
+		48C9A03D1F2C93470082795F /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		48C9A03E1F2C93470082795F /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		48C9A03F1F2C93470082795F /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		48C9A0401F2C93470082795F /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		48C9A0411F2C93470082795F /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		48C9A0421F2C93470082795F /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		48C9A0431F2C93470082795F /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		48C9A0441F2C93470082795F /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EBB436FD1F2B12CF006BB009 /* MinsLfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinsLfie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB437011F2B12CF006BB009 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBB437031F2B12CF006BB009 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +124,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48C9A0091F2C6E310082795F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48C9A00A1F2C6E6B0082795F /* CommunityBannerCell.h */,
+				48C9A00B1F2C6E6B0082795F /* CommunityBannerCell.m */,
+				48C9A00D1F2C774B0082795F /* CommunityCell.h */,
+				48C9A00E1F2C774B0082795F /* CommunityCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EBB436F41F2B12CF006BB009 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +233,8 @@
 		EBB4371D1F2B14DC006BB009 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48C9A0101F2C80100082795F /* PhotosView.h */,
+				48C9A0111F2C80100082795F /* PhotosView.m */,
 				EBB437751F2B25B8006BB009 /* IconButton.h */,
 				EBB437761F2B25B8006BB009 /* IconButton.m */,
 			);
@@ -268,16 +290,16 @@
 		EBB437351F2B1CA8006BB009 /* iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				480E4A161F2B702400AD0776 /* demo_fontclass.html */,
-				480E4A171F2B702400AD0776 /* demo_symbol.html */,
-				480E4A181F2B702400AD0776 /* demo_unicode.html */,
-				480E4A191F2B702400AD0776 /* demo.css */,
-				480E4A1A1F2B702400AD0776 /* iconfont.css */,
-				480E4A1B1F2B702400AD0776 /* iconfont.eot */,
-				480E4A1C1F2B702400AD0776 /* iconfont.js */,
-				480E4A1D1F2B702400AD0776 /* iconfont.svg */,
-				480E4A1E1F2B702400AD0776 /* iconfont.ttf */,
-				480E4A1F1F2B702400AD0776 /* iconfont.woff */,
+				48C9A03B1F2C93470082795F /* demo_fontclass.html */,
+				48C9A03C1F2C93470082795F /* demo_symbol.html */,
+				48C9A03D1F2C93470082795F /* demo_unicode.html */,
+				48C9A03E1F2C93470082795F /* demo.css */,
+				48C9A03F1F2C93470082795F /* iconfont.css */,
+				48C9A0401F2C93470082795F /* iconfont.eot */,
+				48C9A0411F2C93470082795F /* iconfont.js */,
+				48C9A0421F2C93470082795F /* iconfont.svg */,
+				48C9A0431F2C93470082795F /* iconfont.ttf */,
+				48C9A0441F2C93470082795F /* iconfont.woff */,
 			);
 			path = iconfont;
 			sourceTree = "<group>";
@@ -303,6 +325,7 @@
 		EBB437641F2B1FFF006BB009 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				48C9A0091F2C6E310082795F /* View */,
 				EBB4376C1F2B2051006BB009 /* CommunityPageController.h */,
 				EBB4376D1F2B2051006BB009 /* CommunityPageController.m */,
 			);
@@ -398,19 +421,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				480E4A211F2B702400AD0776 /* demo_symbol.html in Resources */,
-				480E4A221F2B702400AD0776 /* demo_unicode.html in Resources */,
+				48C9A0461F2C93470082795F /* demo_symbol.html in Resources */,
+				48C9A0471F2C93470082795F /* demo_unicode.html in Resources */,
 				EBB437101F2B12CF006BB009 /* LaunchScreen.storyboard in Resources */,
-				480E4A291F2B702400AD0776 /* iconfont.woff in Resources */,
-				480E4A241F2B702400AD0776 /* iconfont.css in Resources */,
-				480E4A251F2B702400AD0776 /* iconfont.eot in Resources */,
-				480E4A271F2B702400AD0776 /* iconfont.svg in Resources */,
+				48C9A04E1F2C93470082795F /* iconfont.woff in Resources */,
+				48C9A0491F2C93470082795F /* iconfont.css in Resources */,
+				48C9A04A1F2C93470082795F /* iconfont.eot in Resources */,
+				48C9A04C1F2C93470082795F /* iconfont.svg in Resources */,
 				EBB4370D1F2B12CF006BB009 /* Assets.xcassets in Resources */,
 				EBB4370B1F2B12CF006BB009 /* Main.storyboard in Resources */,
-				480E4A281F2B702400AD0776 /* iconfont.ttf in Resources */,
-				480E4A231F2B702400AD0776 /* demo.css in Resources */,
-				480E4A261F2B702400AD0776 /* iconfont.js in Resources */,
-				480E4A201F2B702400AD0776 /* demo_fontclass.html in Resources */,
+				48C9A04D1F2C93470082795F /* iconfont.ttf in Resources */,
+				48C9A0481F2C93470082795F /* demo.css in Resources */,
+				48C9A04B1F2C93470082795F /* iconfont.js in Resources */,
+				48C9A0451F2C93470082795F /* demo_fontclass.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +446,7 @@
 			files = (
 				EBB4372E1F2B1938006BB009 /* NSDate+Extension.m in Sources */,
 				EBB437741F2B2593006BB009 /* UIBarButtonItem+Item.m in Sources */,
+				48C9A0121F2C80100082795F /* PhotosView.m in Sources */,
 				EBB437211F2B158A006BB009 /* MinsLifeNavigationCtl.m in Sources */,
 				EBB4376E1F2B2051006BB009 /* CommunityPageController.m in Sources */,
 				EBB4372B1F2B18EB006BB009 /* NSString+Extension.m in Sources */,
@@ -432,6 +456,7 @@
 				EBB437341F2B1BAD006BB009 /* UIColor+Hex.m in Sources */,
 				EBB4376B1F2B203A006BB009 /* MarketPageController.m in Sources */,
 				EBB437A61F2B2C8D006BB009 /* ProfileInfoCell.m in Sources */,
+				48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */,
 				EBB437311F2B1AFB006BB009 /* BaseNavigationController.m in Sources */,
 				EBB437601F2B1DB8006BB009 /* MainTabBarController.m in Sources */,
 				EBB437711F2B2066006BB009 /* ProfilePageController.m in Sources */,
@@ -440,6 +465,7 @@
 				EBB437D11F2B34CF006BB009 /* ProfileNormalCell.m in Sources */,
 				EBB4377A1F2B25D0006BB009 /* UIView+Frame.m in Sources */,
 				EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */,
+				48C9A00C1F2C6E6B0082795F /* CommunityBannerCell.m in Sources */,
 				EBB437021F2B12CF006BB009 /* main.m in Sources */,
 				EBB438001F2B4A6C006BB009 /* UIImage+FEBoxBlur.m in Sources */,
 			);

@@ -66,7 +66,6 @@
     
     // 创建自定义的navigationBar
     UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT, Screen_Width, navigationBarHeight)];
-    
     if (style == CityGuideNavigationBarStyleDefault) {
         customNavigationBarBackgroundView.backgroundColor = [UIColor whiteColor];
         navigationBar.backgroundColor = [UIColor whiteColor];

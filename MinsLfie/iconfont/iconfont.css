@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1501247519940'); /* IE9*/
-  src: url('iconfont.eot?t=1501247519940#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1501247519940') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1501247519940') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1501247519940#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1501322148153'); /* IE9*/
+  src: url('iconfont.eot?t=1501322148153#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1501322148153') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1501322148153') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1501322148153#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -25,6 +25,8 @@
 
 .icon-time:before { content: "\e65f"; }
 
+.icon-comment:before { content: "\e667"; }
+
 .icon-like:before { content: "\e669"; }
 
 .icon-back:before { content: "\e679"; }
@@ -41,7 +43,15 @@
 
 .icon-people:before { content: "\e736"; }
 
+.icon-xinlang:before { content: "\e635"; }
+
 .icon-triangleupfill:before { content: "\e79c"; }
+
+.icon-qq:before { content: "\e624"; }
+
+.icon-post1:before { content: "\e653"; }
+
+.icon-weixin:before { content: "\e620"; }
 
 .icon-mail:before { content: "\e7bd"; }
 
@@ -52,4 +62,6 @@
 .icon-goodsnew:before { content: "\e7c0"; }
 
 .icon-FMpinshuaitiaojie:before { content: "\e633"; }
+
+.icon-zhijiaosanjiaoxing:before { content: "\e62c"; }
 
