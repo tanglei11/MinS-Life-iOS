@@ -16,5 +16,8 @@
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+Item.h"
 #import "MainTabBarController.h"
+#import "UIView+NextResponder.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "MSProgressHUD.h"
 
 #endif /* PrefixHeader_pch */

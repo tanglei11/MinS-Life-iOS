@@ -10,16 +10,32 @@
 		48C9A00C1F2C6E6B0082795F /* CommunityBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00B1F2C6E6B0082795F /* CommunityBannerCell.m */; };
 		48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00E1F2C774B0082795F /* CommunityCell.m */; };
 		48C9A0121F2C80100082795F /* PhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A0111F2C80100082795F /* PhotosView.m */; };
-		48C9A0451F2C93470082795F /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03B1F2C93470082795F /* demo_fontclass.html */; };
-		48C9A0461F2C93470082795F /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03C1F2C93470082795F /* demo_symbol.html */; };
-		48C9A0471F2C93470082795F /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03D1F2C93470082795F /* demo_unicode.html */; };
-		48C9A0481F2C93470082795F /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03E1F2C93470082795F /* demo.css */; };
-		48C9A0491F2C93470082795F /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A03F1F2C93470082795F /* iconfont.css */; };
-		48C9A04A1F2C93470082795F /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0401F2C93470082795F /* iconfont.eot */; };
-		48C9A04B1F2C93470082795F /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0411F2C93470082795F /* iconfont.js */; };
-		48C9A04C1F2C93470082795F /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0421F2C93470082795F /* iconfont.svg */; };
-		48C9A04D1F2C93470082795F /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0431F2C93470082795F /* iconfont.ttf */; };
-		48C9A04E1F2C93470082795F /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = 48C9A0441F2C93470082795F /* iconfont.woff */; };
+		68F2D72DFF88CB7EE247BCE2 /* libPods-MinsLfie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */; };
+		EB0BFB811F2F0E3900B89D08 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB801F2F0E3900B89D08 /* BaseObject.m */; };
+		EB0BFB841F2F0EC300B89D08 /* PlaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB831F2F0EC300B89D08 /* PlaceObject.m */; };
+		EB0BFB881F2F13DD00B89D08 /* MSProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB871F2F13DD00B89D08 /* MSProgressHUD.m */; };
+		EB0BFB8B1F2F167700B89D08 /* DSNAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB8A1F2F167700B89D08 /* DSNAnnotation.m */; };
+		EB0BFB8F1F2F196F00B89D08 /* POIVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB8E1F2F196F00B89D08 /* POIVIew.m */; };
+		EB0BFBC21F2F372600B89D08 /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBB81F2F372600B89D08 /* demo_fontclass.html */; };
+		EB0BFBC31F2F372600B89D08 /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBB91F2F372600B89D08 /* demo_symbol.html */; };
+		EB0BFBC41F2F372600B89D08 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBBA1F2F372600B89D08 /* demo_unicode.html */; };
+		EB0BFBC51F2F372600B89D08 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBBB1F2F372600B89D08 /* demo.css */; };
+		EB0BFBC61F2F372600B89D08 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBBC1F2F372600B89D08 /* iconfont.css */; };
+		EB0BFBC71F2F372600B89D08 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBBD1F2F372600B89D08 /* iconfont.eot */; };
+		EB0BFBC81F2F372600B89D08 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBBE1F2F372600B89D08 /* iconfont.js */; };
+		EB0BFBC91F2F372600B89D08 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBBF1F2F372600B89D08 /* iconfont.svg */; };
+		EB0BFBCA1F2F372600B89D08 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBC01F2F372600B89D08 /* iconfont.ttf */; };
+		EB0BFBCB1F2F372600B89D08 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EB0BFBC11F2F372600B89D08 /* iconfont.woff */; };
+		EB79B5561F2EC354006EA026 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5551F2EC354006EA026 /* HomeController.m */; };
+		EB79B5591F2EC375006EA026 /* NearByController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5581F2EC375006EA026 /* NearByController.m */; };
+		EB79B56D1F2EC491006EA026 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B55C1F2EC491006EA026 /* UIColor+Magic.m */; };
+		EB79B56E1F2EC491006EA026 /* UIScrollView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B55E1F2EC491006EA026 /* UIScrollView+Magic.m */; };
+		EB79B56F1F2EC491006EA026 /* UIViewController+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5601F2EC491006EA026 /* UIViewController+Magic.m */; };
+		EB79B5701F2EC491006EA026 /* VTContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5631F2EC491006EA026 /* VTContentView.m */; };
+		EB79B5711F2EC491006EA026 /* VTMagicController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5671F2EC491006EA026 /* VTMagicController.m */; };
+		EB79B5721F2EC491006EA026 /* VTMagicView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B56A1F2EC491006EA026 /* VTMagicView.m */; };
+		EB79B5731F2EC491006EA026 /* VTMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B56C1F2EC491006EA026 /* VTMenuBar.m */; };
+		EB79B5761F2EC74F006EA026 /* UIView+NextResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5751F2EC74F006EA026 /* UIView+NextResponder.m */; };
 		EBB437021F2B12CF006BB009 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437011F2B12CF006BB009 /* main.m */; };
 		EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437041F2B12CF006BB009 /* AppDelegate.m */; };
 		EBB437081F2B12CF006BB009 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437071F2B12CF006BB009 /* ViewController.m */; };
@@ -53,16 +69,52 @@
 		48C9A00E1F2C774B0082795F /* CommunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCell.m; sourceTree = "<group>"; };
 		48C9A0101F2C80100082795F /* PhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosView.h; sourceTree = "<group>"; };
 		48C9A0111F2C80100082795F /* PhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosView.m; sourceTree = "<group>"; };
-		48C9A03B1F2C93470082795F /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
-		48C9A03C1F2C93470082795F /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
-		48C9A03D1F2C93470082795F /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
-		48C9A03E1F2C93470082795F /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		48C9A03F1F2C93470082795F /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		48C9A0401F2C93470082795F /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
-		48C9A0411F2C93470082795F /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		48C9A0421F2C93470082795F /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
-		48C9A0431F2C93470082795F /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		48C9A0441F2C93470082795F /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		4FDBA1C89F8FAD7C14DC49C3 /* Pods-MinsLfie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.release.xcconfig"; sourceTree = "<group>"; };
+		51F7A87AB0BA3261A00C40F5 /* Pods-MinsLfie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.debug.xcconfig"; sourceTree = "<group>"; };
+		EB0BFB7F1F2F0E3900B89D08 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
+		EB0BFB801F2F0E3900B89D08 /* BaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
+		EB0BFB821F2F0EC300B89D08 /* PlaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObject.h; sourceTree = "<group>"; };
+		EB0BFB831F2F0EC300B89D08 /* PlaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceObject.m; sourceTree = "<group>"; };
+		EB0BFB861F2F13DD00B89D08 /* MSProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProgressHUD.h; sourceTree = "<group>"; };
+		EB0BFB871F2F13DD00B89D08 /* MSProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProgressHUD.m; sourceTree = "<group>"; };
+		EB0BFB891F2F167700B89D08 /* DSNAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSNAnnotation.h; sourceTree = "<group>"; };
+		EB0BFB8A1F2F167700B89D08 /* DSNAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSNAnnotation.m; sourceTree = "<group>"; };
+		EB0BFB8D1F2F196F00B89D08 /* POIVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIVIew.h; sourceTree = "<group>"; };
+		EB0BFB8E1F2F196F00B89D08 /* POIVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIVIew.m; sourceTree = "<group>"; };
+		EB0BFBB81F2F372600B89D08 /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
+		EB0BFBB91F2F372600B89D08 /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
+		EB0BFBBA1F2F372600B89D08 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		EB0BFBBB1F2F372600B89D08 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		EB0BFBBC1F2F372600B89D08 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		EB0BFBBD1F2F372600B89D08 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		EB0BFBBE1F2F372600B89D08 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		EB0BFBBF1F2F372600B89D08 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		EB0BFBC01F2F372600B89D08 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		EB0BFBC11F2F372600B89D08 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		EB79B5541F2EC354006EA026 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		EB79B5551F2EC354006EA026 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		EB79B5571F2EC375006EA026 /* NearByController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearByController.h; sourceTree = "<group>"; };
+		EB79B5581F2EC375006EA026 /* NearByController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearByController.m; sourceTree = "<group>"; };
+		EB79B55B1F2EC491006EA026 /* UIColor+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Magic.h"; sourceTree = "<group>"; };
+		EB79B55C1F2EC491006EA026 /* UIColor+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Magic.m"; sourceTree = "<group>"; };
+		EB79B55D1F2EC491006EA026 /* UIScrollView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Magic.h"; sourceTree = "<group>"; };
+		EB79B55E1F2EC491006EA026 /* UIScrollView+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Magic.m"; sourceTree = "<group>"; };
+		EB79B55F1F2EC491006EA026 /* UIViewController+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Magic.h"; sourceTree = "<group>"; };
+		EB79B5601F2EC491006EA026 /* UIViewController+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Magic.m"; sourceTree = "<group>"; };
+		EB79B5611F2EC491006EA026 /* VTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTCommon.h; sourceTree = "<group>"; };
+		EB79B5621F2EC491006EA026 /* VTContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTContentView.h; sourceTree = "<group>"; };
+		EB79B5631F2EC491006EA026 /* VTContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTContentView.m; sourceTree = "<group>"; };
+		EB79B5641F2EC491006EA026 /* VTEnumType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTEnumType.h; sourceTree = "<group>"; };
+		EB79B5651F2EC491006EA026 /* VTMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMagic.h; sourceTree = "<group>"; };
+		EB79B5661F2EC491006EA026 /* VTMagicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMagicController.h; sourceTree = "<group>"; };
+		EB79B5671F2EC491006EA026 /* VTMagicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTMagicController.m; sourceTree = "<group>"; };
+		EB79B5681F2EC491006EA026 /* VTMagicProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMagicProtocol.h; sourceTree = "<group>"; };
+		EB79B5691F2EC491006EA026 /* VTMagicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMagicView.h; sourceTree = "<group>"; };
+		EB79B56A1F2EC491006EA026 /* VTMagicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTMagicView.m; sourceTree = "<group>"; };
+		EB79B56B1F2EC491006EA026 /* VTMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMenuBar.h; sourceTree = "<group>"; };
+		EB79B56C1F2EC491006EA026 /* VTMenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTMenuBar.m; sourceTree = "<group>"; };
+		EB79B5741F2EC74F006EA026 /* UIView+NextResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NextResponder.h"; sourceTree = "<group>"; };
+		EB79B5751F2EC74F006EA026 /* UIView+NextResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NextResponder.m"; sourceTree = "<group>"; };
 		EBB436FD1F2B12CF006BB009 /* MinsLfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinsLfie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB437011F2B12CF006BB009 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBB437031F2B12CF006BB009 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +163,7 @@
 		EBB437FC1F2B459D006BB009 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		EBB437FE1F2B4A6C006BB009 /* UIImage+FEBoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FEBoxBlur.h"; sourceTree = "<group>"; };
 		EBB437FF1F2B4A6C006BB009 /* UIImage+FEBoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FEBoxBlur.m"; sourceTree = "<group>"; };
+		FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MinsLfie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F2D72DFF88CB7EE247BCE2 /* libPods-MinsLfie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,11 +189,99 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BBB6545A4C6723070BA28C1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDC22B79E3FA8C282B0D6D6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51F7A87AB0BA3261A00C40F5 /* Pods-MinsLfie.debug.xcconfig */,
+				4FDBA1C89F8FAD7C14DC49C3 /* Pods-MinsLfie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB0BFB7A1F2F0BBB00B89D08 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		EB0BFB7D1F2F0DED00B89D08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB0BFB7F1F2F0E3900B89D08 /* BaseObject.h */,
+				EB0BFB801F2F0E3900B89D08 /* BaseObject.m */,
+				EB0BFB7E1F2F0E0500B89D08 /* Home */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB0BFB7E1F2F0E0500B89D08 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB0BFB821F2F0EC300B89D08 /* PlaceObject.h */,
+				EB0BFB831F2F0EC300B89D08 /* PlaceObject.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EB0BFB851F2F13CD00B89D08 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				EB0BFB861F2F13DD00B89D08 /* MSProgressHUD.h */,
+				EB0BFB871F2F13DD00B89D08 /* MSProgressHUD.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		EB0BFB8C1F2F196700B89D08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB0BFB8D1F2F196F00B89D08 /* POIVIew.h */,
+				EB0BFB8E1F2F196F00B89D08 /* POIVIew.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB79B55A1F2EC491006EA026 /* VTMagic */ = {
+			isa = PBXGroup;
+			children = (
+				EB79B55B1F2EC491006EA026 /* UIColor+Magic.h */,
+				EB79B55C1F2EC491006EA026 /* UIColor+Magic.m */,
+				EB79B55D1F2EC491006EA026 /* UIScrollView+Magic.h */,
+				EB79B55E1F2EC491006EA026 /* UIScrollView+Magic.m */,
+				EB79B5601F2EC491006EA026 /* UIViewController+Magic.m */,
+				EB79B55F1F2EC491006EA026 /* UIViewController+Magic.h */,
+				EB79B5611F2EC491006EA026 /* VTCommon.h */,
+				EB79B5621F2EC491006EA026 /* VTContentView.h */,
+				EB79B5631F2EC491006EA026 /* VTContentView.m */,
+				EB79B5641F2EC491006EA026 /* VTEnumType.h */,
+				EB79B5651F2EC491006EA026 /* VTMagic.h */,
+				EB79B5661F2EC491006EA026 /* VTMagicController.h */,
+				EB79B5671F2EC491006EA026 /* VTMagicController.m */,
+				EB79B5681F2EC491006EA026 /* VTMagicProtocol.h */,
+				EB79B5691F2EC491006EA026 /* VTMagicView.h */,
+				EB79B56A1F2EC491006EA026 /* VTMagicView.m */,
+				EB79B56B1F2EC491006EA026 /* VTMenuBar.h */,
+				EB79B56C1F2EC491006EA026 /* VTMenuBar.m */,
+			);
+			path = VTMagic;
+			sourceTree = "<group>";
+		};
 		EBB436F41F2B12CF006BB009 = {
 			isa = PBXGroup;
 			children = (
 				EBB436FF1F2B12CF006BB009 /* MinsLfie */,
 				EBB436FE1F2B12CF006BB009 /* Products */,
+				BDC22B79E3FA8C282B0D6D6E /* Pods */,
+				BBB6545A4C6723070BA28C1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +306,7 @@
 				EBB4371A1F2B14AA006BB009 /* Global */,
 				EBB4371B1F2B14BC006BB009 /* Service */,
 				EBB4371C1F2B14CC006BB009 /* DAO */,
+				EB0BFB7D1F2F0DED00B89D08 /* Model */,
 				EBB4371D1F2B14DC006BB009 /* View */,
 				EBB4371E1F2B14EC006BB009 /* Controller */,
 				EBB437091F2B12CF006BB009 /* Main.storyboard */,
@@ -178,6 +321,7 @@
 		EBB437001F2B12CF006BB009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB0BFB7A1F2F0BBB00B89D08 /* Resource */,
 				EBB437351F2B1CA8006BB009 /* iconfont */,
 				EBB437011F2B12CF006BB009 /* main.m */,
 				EBB437231F2B16DF006BB009 /* PrefixHeader.pch */,
@@ -195,6 +339,7 @@
 		EBB437181F2B147B006BB009 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				EB79B55A1F2EC491006EA026 /* VTMagic */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -262,8 +407,11 @@
 		EBB437241F2B1814006BB009 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EB0BFB851F2F13CD00B89D08 /* Animation */,
 				EBB437251F2B1844006BB009 /* ToolClass.h */,
 				EBB437261F2B1844006BB009 /* ToolClass.m */,
+				EB0BFB891F2F167700B89D08 /* DSNAnnotation.h */,
+				EB0BFB8A1F2F167700B89D08 /* DSNAnnotation.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -283,6 +431,8 @@
 				EBB437331F2B1BAD006BB009 /* UIColor+Hex.m */,
 				EBB437FE1F2B4A6C006BB009 /* UIImage+FEBoxBlur.h */,
 				EBB437FF1F2B4A6C006BB009 /* UIImage+FEBoxBlur.m */,
+				EB79B5741F2EC74F006EA026 /* UIView+NextResponder.h */,
+				EB79B5751F2EC74F006EA026 /* UIView+NextResponder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -290,16 +440,16 @@
 		EBB437351F2B1CA8006BB009 /* iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				48C9A03B1F2C93470082795F /* demo_fontclass.html */,
-				48C9A03C1F2C93470082795F /* demo_symbol.html */,
-				48C9A03D1F2C93470082795F /* demo_unicode.html */,
-				48C9A03E1F2C93470082795F /* demo.css */,
-				48C9A03F1F2C93470082795F /* iconfont.css */,
-				48C9A0401F2C93470082795F /* iconfont.eot */,
-				48C9A0411F2C93470082795F /* iconfont.js */,
-				48C9A0421F2C93470082795F /* iconfont.svg */,
-				48C9A0431F2C93470082795F /* iconfont.ttf */,
-				48C9A0441F2C93470082795F /* iconfont.woff */,
+				EB0BFBB81F2F372600B89D08 /* demo_fontclass.html */,
+				EB0BFBB91F2F372600B89D08 /* demo_symbol.html */,
+				EB0BFBBA1F2F372600B89D08 /* demo_unicode.html */,
+				EB0BFBBB1F2F372600B89D08 /* demo.css */,
+				EB0BFBBC1F2F372600B89D08 /* iconfont.css */,
+				EB0BFBBD1F2F372600B89D08 /* iconfont.eot */,
+				EB0BFBBE1F2F372600B89D08 /* iconfont.js */,
+				EB0BFBBF1F2F372600B89D08 /* iconfont.svg */,
+				EB0BFBC01F2F372600B89D08 /* iconfont.ttf */,
+				EB0BFBC11F2F372600B89D08 /* iconfont.woff */,
 			);
 			path = iconfont;
 			sourceTree = "<group>";
@@ -307,8 +457,13 @@
 		EBB437611F2B1FD6006BB009 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				EB0BFB8C1F2F196700B89D08 /* View */,
 				EBB437661F2B2025006BB009 /* HomePageController.h */,
 				EBB437671F2B2025006BB009 /* HomePageController.m */,
+				EB79B5541F2EC354006EA026 /* HomeController.h */,
+				EB79B5551F2EC354006EA026 /* HomeController.m */,
+				EB79B5571F2EC375006EA026 /* NearByController.h */,
+				EB79B5581F2EC375006EA026 /* NearByController.m */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -369,9 +524,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBB437141F2B12CF006BB009 /* Build configuration list for PBXNativeTarget "MinsLfie" */;
 			buildPhases = (
+				397370E309DFFE5ED0507000 /* [CP] Check Pods Manifest.lock */,
 				EBB436F91F2B12CF006BB009 /* Sources */,
 				EBB436FA1F2B12CF006BB009 /* Frameworks */,
 				EBB436FB1F2B12CF006BB009 /* Resources */,
+				D81C3F0689BD4BDBCD39BDD4 /* [CP] Embed Pods Frameworks */,
+				9E4C4A95027A83E3E8F6C9E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -421,23 +579,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C9A0461F2C93470082795F /* demo_symbol.html in Resources */,
-				48C9A0471F2C93470082795F /* demo_unicode.html in Resources */,
+				EB0BFBC31F2F372600B89D08 /* demo_symbol.html in Resources */,
+				EB0BFBC41F2F372600B89D08 /* demo_unicode.html in Resources */,
 				EBB437101F2B12CF006BB009 /* LaunchScreen.storyboard in Resources */,
-				48C9A04E1F2C93470082795F /* iconfont.woff in Resources */,
-				48C9A0491F2C93470082795F /* iconfont.css in Resources */,
-				48C9A04A1F2C93470082795F /* iconfont.eot in Resources */,
-				48C9A04C1F2C93470082795F /* iconfont.svg in Resources */,
+				EB0BFBCB1F2F372600B89D08 /* iconfont.woff in Resources */,
+				EB0BFBC61F2F372600B89D08 /* iconfont.css in Resources */,
+				EB0BFBC71F2F372600B89D08 /* iconfont.eot in Resources */,
+				EB0BFBC91F2F372600B89D08 /* iconfont.svg in Resources */,
 				EBB4370D1F2B12CF006BB009 /* Assets.xcassets in Resources */,
 				EBB4370B1F2B12CF006BB009 /* Main.storyboard in Resources */,
-				48C9A04D1F2C93470082795F /* iconfont.ttf in Resources */,
-				48C9A0481F2C93470082795F /* demo.css in Resources */,
-				48C9A04B1F2C93470082795F /* iconfont.js in Resources */,
-				48C9A0451F2C93470082795F /* demo_fontclass.html in Resources */,
+				EB0BFBCA1F2F372600B89D08 /* iconfont.ttf in Resources */,
+				EB0BFBC51F2F372600B89D08 /* demo.css in Resources */,
+				EB0BFBC81F2F372600B89D08 /* iconfont.js in Resources */,
+				EB0BFBC21F2F372600B89D08 /* demo_fontclass.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		397370E309DFFE5ED0507000 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E4C4A95027A83E3E8F6C9E2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D81C3F0689BD4BDBCD39BDD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBB436F91F2B12CF006BB009 /* Sources */ = {
@@ -445,29 +651,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB4372E1F2B1938006BB009 /* NSDate+Extension.m in Sources */,
+				EB79B5731F2EC491006EA026 /* VTMenuBar.m in Sources */,
 				EBB437741F2B2593006BB009 /* UIBarButtonItem+Item.m in Sources */,
 				48C9A0121F2C80100082795F /* PhotosView.m in Sources */,
 				EBB437211F2B158A006BB009 /* MinsLifeNavigationCtl.m in Sources */,
 				EBB4376E1F2B2051006BB009 /* CommunityPageController.m in Sources */,
 				EBB4372B1F2B18EB006BB009 /* NSString+Extension.m in Sources */,
 				EBB437FD1F2B459D006BB009 /* LoginController.m in Sources */,
+				EB79B56E1F2EC491006EA026 /* UIScrollView+Magic.m in Sources */,
 				EBB437081F2B12CF006BB009 /* ViewController.m in Sources */,
+				EB0BFB8F1F2F196F00B89D08 /* POIVIew.m in Sources */,
 				EBB437681F2B2025006BB009 /* HomePageController.m in Sources */,
 				EBB437341F2B1BAD006BB009 /* UIColor+Hex.m in Sources */,
+				EB0BFB841F2F0EC300B89D08 /* PlaceObject.m in Sources */,
+				EB79B56F1F2EC491006EA026 /* UIViewController+Magic.m in Sources */,
 				EBB4376B1F2B203A006BB009 /* MarketPageController.m in Sources */,
 				EBB437A61F2B2C8D006BB009 /* ProfileInfoCell.m in Sources */,
+				EB0BFB881F2F13DD00B89D08 /* MSProgressHUD.m in Sources */,
+				EB79B5721F2EC491006EA026 /* VTMagicView.m in Sources */,
+				EB0BFB8B1F2F167700B89D08 /* DSNAnnotation.m in Sources */,
+				EB0BFB811F2F0E3900B89D08 /* BaseObject.m in Sources */,
 				48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */,
 				EBB437311F2B1AFB006BB009 /* BaseNavigationController.m in Sources */,
 				EBB437601F2B1DB8006BB009 /* MainTabBarController.m in Sources */,
 				EBB437711F2B2066006BB009 /* ProfilePageController.m in Sources */,
 				EBB437771F2B25B8006BB009 /* IconButton.m in Sources */,
+				EB79B5591F2EC375006EA026 /* NearByController.m in Sources */,
+				EB79B5761F2EC74F006EA026 /* UIView+NextResponder.m in Sources */,
 				EBB437271F2B1844006BB009 /* ToolClass.m in Sources */,
+				EB79B5561F2EC354006EA026 /* HomeController.m in Sources */,
+				EB79B5701F2EC491006EA026 /* VTContentView.m in Sources */,
 				EBB437D11F2B34CF006BB009 /* ProfileNormalCell.m in Sources */,
 				EBB4377A1F2B25D0006BB009 /* UIView+Frame.m in Sources */,
 				EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */,
+				EB79B5711F2EC491006EA026 /* VTMagicController.m in Sources */,
 				48C9A00C1F2C6E6B0082795F /* CommunityBannerCell.m in Sources */,
 				EBB437021F2B12CF006BB009 /* main.m in Sources */,
 				EBB438001F2B4A6C006BB009 /* UIImage+FEBoxBlur.m in Sources */,
+				EB79B56D1F2EC491006EA026 /* UIColor+Magic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +806,7 @@
 		};
 		EBB437151F2B12CF006BB009 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F7A87AB0BA3261A00C40F5 /* Pods-MinsLfie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F6TM5M955U;
@@ -600,6 +822,7 @@
 		};
 		EBB437161F2B12CF006BB009 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FDBA1C89F8FAD7C14DC49C3 /* Pods-MinsLfie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F6TM5M955U;

@@ -1,0 +1,15 @@
+PODS:
+  - AVOSCloud (4.2.0)
+  - BaiduMapKit (3.2.1)
+
+DEPENDENCIES:
+  - AVOSCloud
+  - BaiduMapKit
+
+SPEC CHECKSUMS:
+  AVOSCloud: 5446ad0320f4942cce1a036d131992cd1115db99
+  BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
+
+PODFILE CHECKSUM: e7a42ae4fd25549331153a5dca9dd384048ff216
+
+COCOAPODS: 1.2.0.beta.1

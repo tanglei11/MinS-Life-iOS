@@ -50,9 +50,9 @@
         UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(Screen_Width - 20 - 60, (headerView.height - 30) / 2 + headerView.y, 60, 30)];
         collectButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [collectButton setTitle:@"收藏" forState:UIControlStateNormal];
-        [collectButton setTitleColor:[UIColor colorFromHex:@"#FF4735"] forState:UIControlStateNormal];
+        [collectButton setTitleColor:[UIColor colorFromHex:NORMAL_BG_COLOR] forState:UIControlStateNormal];
         collectButton.layer.cornerRadius = 8;
-        collectButton.layer.borderColor = [[UIColor colorFromHex:@"#FF4735"] CGColor];
+        collectButton.layer.borderColor = [[UIColor colorFromHex:NORMAL_BG_COLOR] CGColor];
         collectButton.layer.borderWidth = 1;
         [self.contentView addSubview:collectButton];
         //图片集

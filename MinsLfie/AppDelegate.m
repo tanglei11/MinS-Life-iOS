@@ -8,10 +8,12 @@
 
 #import "AppDelegate.h"
 #import "MainTabBarController.h"
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
 @interface AppDelegate ()
 
 @property (nonatomic,strong) MainTabBarController *tabBarController;
+@property (nonatomic,strong) BMKMapManager *mapManager;
 
 @end
 
@@ -19,6 +21,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //AVOSCloud
+    [AVOSCloud setApplicationId:@"UzuGecDoYP6NoxvEUTYL3umY-gzGzoHsz" clientKey:@"FHrQ9CfUgqSXbXKN5NQKIgMU"];
+    [AVOSCloud setAllLogsEnabled:NO];
+    //百度地图
+    _mapManager = [[BMKMapManager alloc] init];
+    BOOL ret = [_mapManager start:BAIDU_MAP_KEY generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 

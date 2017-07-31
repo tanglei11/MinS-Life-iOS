@@ -29,6 +29,18 @@
 #define STATUS_AND_NAVIGATION_BAR_HEIGHT        (STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT)
 #define STATIC_STATUS_AND_NAVIGATION_BAR_HEIGHT (STATUS_BAR_HEIGHT + STATIC_NAVIGATION_BAR_HEIGHT)
 
+//百度地图
+#define BAIDU_MAP_KEY           @"yWoNDQohry8mVZWg4mrFutewKj1aWHdg"
+
+// NormalCell
+#define LISTCELL_PICTURE_WIDTH                                                (171.0f)
+#define LISTCELL_PICTURE_HEIGHT                                               (115.0f)
+#define LISTCELL_HEIGHT                                                             (137.0f)
+
+// 屏幕适配  长宽比例
+#define WIDTH_SCALE Screen_Width / 375
+#define HEIGHT_SCALE Screen_Height / 667
+
 //line
 #define LINE_HEIGHT 0.5
 
@@ -40,12 +52,18 @@
 #define TABLE_BACK_COLOR                                                    @"#F5F7FB"
 #define WHITE_GREY                                                          @"#F0F0F1"
 #define MAIN_COLOR                                                          @"#4A505A"
-#define PLACE_HOLDER_COLOR  @"#C0C0C0"
+#define PLACE_HOLDER_COLOR                                                  @"#C0C0C0"
+#define NORMAL_BG_COLOR                                                     @"#F6654E"
 
 //FONT
 #define ICONFONT @"iconfont"
 
 //常用图标
+// 从我的位置导航
+#define ICON_GUIDE_TO_HERE  [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe773;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:@"#FFFFFF"]];
+
+#define BLANK_PICTURE_SIZE_44 [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe648;"]  inFont:ICONFONT size:44 color:[UIColor colorFromHex:@"#D2D2D2"]];
+
 #define BLACK_RETURN [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe679;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:MAIN_COLOR]];
 // 返回按钮
 #define WHITE_RETURN [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe679;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:MAIN_COLOR]]

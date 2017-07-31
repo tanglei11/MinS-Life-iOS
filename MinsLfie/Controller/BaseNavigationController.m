@@ -163,4 +163,35 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark -设置ImageView
+- (void)setupImageViewByAVFileWithThumbnailWidth:(int)thumbnailWidth thumbnailHeight:(int)thumbnailHeight url:(NSString *)url imageView:(UIImageView *)imageView placeholder:(UIImage *)placeholder
+{
+    //    if (IS_DEVICE_5_5_INCH) {
+    //        thumbnailWidth *= 3;
+    //        thumbnailHeight *= 3;
+    //    }
+    //    else {
+    //        thumbnailWidth *= 2;
+    //        thumbnailHeight *= 2;
+    //    }
+    thumbnailWidth *= 3;
+    thumbnailHeight *= 3;
+    AVFile *avFile = [AVFile fileWithURL:url];
+    [avFile getThumbnail:YES width:thumbnailWidth height:thumbnailHeight withBlock:^(UIImage *image, NSError *error) {
+        if (error) {
+            imageView.contentMode = UIViewContentModeCenter;
+            imageView.image = placeholder;
+            imageView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+        }
+        else {
+            imageView.contentMode = UIViewContentModeScaleAspectFill;
+            imageView.image = image;
+        }
+    }];
+    if (url== nil || [url isEqualToString:@""]) {
+        imageView.image = placeholder;
+        imageView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+    }
+}
+
 @end
