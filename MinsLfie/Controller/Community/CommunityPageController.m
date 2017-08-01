@@ -10,6 +10,9 @@
 #import "CommunityBannerCell.h"
 #import "CommunityCell.h"
 
+//控制器
+#import "CommunityWriteController.h"
+
 @interface CommunityPageController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,assign) CGFloat communityBannerCellHeight;
@@ -49,7 +52,9 @@
 
 - (void)post
 {
-    
+    CommunityWriteController *communityWriteController = [[CommunityWriteController alloc] init];
+    communityWriteController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController presentViewController:communityWriteController animated:YES completion:nil];
 }
 
 #pragma mark - tableView dataSource

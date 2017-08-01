@@ -105,31 +105,15 @@
 - (void)getPlaceData
 {
     [MSProgressHUD showHUDAddedToWindow:self.view.window];
-    [AVCloud callFunctionInBackground:@"getPlaces" withParameters:nil block:^(id  _Nullable object, NSError * _Nullable error) {
+    NSString *category = self.menuArray[self.tag];
+    NSDictionary *params = @{@"category":category};
+    [AVCloud callFunctionInBackground:@"getPlaces" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
         [MSProgressHUD hideHUDForWindow:self.view.window animated:YES];
         NSMutableArray *placeArray = [NSMutableArray array];
         for (NSDictionary *dict in object) {
             PlaceObject *placeObject = [[PlaceObject alloc] init];
             [placeObject setValuesForKeysWithDictionary:dict];
-            //判断
-            NSString *category = self.menuArray[self.tag];
-            if ([category isEqualToString:@"校园建筑"]) {
-                if ([placeObject.placeType isEqualToString:@"office"] || [placeObject.placeType isEqualToString:@"playground"] || [placeObject.placeType isEqualToString:@"house"] || [placeObject.placeType isEqualToString:@"bridge"] || [placeObject.placeType isEqualToString:@"doorway"]) {
-                    [placeArray addObject:placeObject];
-                }
-            }else if ([category isEqualToString:@"美食"]){
-                if ([placeObject.placeType isEqualToString:@"food"]) {
-                    [placeArray addObject:placeObject];
-                }
-            }else if ([category isEqualToString:@"购物"]){
-                if ([placeObject.placeType isEqualToString:@"shop"]) {
-                    [placeArray addObject:placeObject];
-                }
-            }else{
-                if ([placeObject.placeType isEqualToString:@"organization"]) {
-                    [placeArray addObject:placeObject];
-                }
-            }
+            [placeArray addObject:placeObject];
         }
         [self BMKmapMoveAndAddAnnotationWithAttitudeArray:placeArray];
     }];
