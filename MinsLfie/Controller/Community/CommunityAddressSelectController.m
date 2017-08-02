@@ -10,11 +10,8 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <MapKit/MapKit.h>
 #import "BTSearchBar.h"
-#import "NearByAddressCell.h"
 #import "WGS84TOGCJ02.h"
 #import "MJRefresh.h"
-
-#define PAGE_SIZE   20
 
 @interface CommunityAddressSelectController () <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,AMapSearchDelegate,AMapLocationManagerDelegate>
 
@@ -27,6 +24,7 @@
 @property (nonatomic,assign) int page;
 @property (nonatomic,copy) NSString *keyword;
 @property (nonatomic,assign) BOOL isFirstEnter;
+@property (nonatomic,assign) NSInteger getPOIDataWay; //0 刷新; 1上拉加载
 
 @end
 
@@ -70,7 +68,7 @@
     self.search.delegate = self;
     AMapPOIAroundSearchRequest *request = [[AMapPOIAroundSearchRequest alloc] init];
     
-    request.location            = [AMapGeoPoint locationWithLatitude:self.Coordinate2D.latitude longitude:self.Coordinate2D.longitude];
+    request.location = [AMapGeoPoint locationWithLatitude:self.Coordinate2D.latitude longitude:self.Coordinate2D.longitude];
     /* 按照距离排序. */
     request.sortrule = 1;
     request.requireExtension = YES;
@@ -125,6 +123,7 @@
 - (void)newData
 {
     self.page = 1;
+    self.getPOIDataWay = 0;
     [self.POIArray removeAllObjects];
     [self getPOIData];
 }
@@ -132,6 +131,7 @@
 - (void)moreData
 {
     self.page ++;
+    self.getPOIDataWay = 1;
     [self getPOIData];
 }
 
@@ -142,7 +142,12 @@
 
 - (void)hideAddress
 {
-    
+    if (self.selectPoi) {
+        if ([self.delegate respondsToSelector:@selector(communityAddressSelectController:)]) {
+            [self.delegate communityAddressSelectController:self];
+        }
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
@@ -151,11 +156,17 @@
     {
         return;
     }
-    
+    if (self.selectPoi && self.getPOIDataWay == 0) {
+        [self.POIArray addObject:self.selectPoi];
+    }
     //解析response获取POI信息，具体解析见 Demo
     NSLog(@"-=-=-=-=-=%@",response.pois);
     for (AMapPOI *poiInfo in response.pois) {
-        [self.POIArray addObject:poiInfo];
+        if ([poiInfo.uid isEqualToString:self.selectPoi.uid]) {
+            //不添加
+        }else{
+            [self.POIArray addObject:poiInfo];
+        }
     }
     [self.tableView reloadData];
     [self.tableView.mj_header endRefreshing];
@@ -173,6 +184,7 @@
 {
     self.keyword = searchText;
     self.page = 1;
+    self.getPOIDataWay = 0;
     [self.POIArray removeAllObjects];
     [self getPOIData];
 }
@@ -192,6 +204,7 @@
     if ([searchBar.text isEqualToString:@""]) {
         self.keyword = @"";
         self.page = 1;
+        self.getPOIDataWay = 0;
         [self.POIArray removeAllObjects];
         [self getPOIData];
     }
@@ -222,6 +235,13 @@
     if (cell == nil) {
         cell = [[NearByAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
+    if (self.selectPoi) {
+        if (indexPath.section == 0) {
+            cell.isSelect = YES;
+        }else{
+            cell.isSelect = NO;
+        }
+    }
     cell.poiInfo = self.POIArray[indexPath.section];
     [ToolClass addUnderLineForCell:cell cellHeight:55 lineX:15 lineHeight:LINE_HEIGHT isJustified:NO];
     return cell;
@@ -231,10 +251,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    if ([self.delegate respondsToSelector:@selector(nearByAddressController:didPassPoiInfo:)]) {
-//        [self.delegate nearByAddressController:self didPassPoiInfo:self.POIArray[indexPath.section]];
-//    }
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.delegate respondsToSelector:@selector(communityAddressSelectController:disPassPoiInfo:)]) {
+        [self.delegate communityAddressSelectController:self disPassPoiInfo:self.POIArray[indexPath.section]];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

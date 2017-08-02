@@ -13,8 +13,11 @@
 #import "MarketPageController.h"
 #import "CommunityPageController.h"
 #import "ProfilePageController.h"
+#import "MSTabBar.h"
+#import "BHBPopView.h"
+#import "CommunityWriteController.h"
 
-@interface MainTabBarController () <UITabBarControllerDelegate>
+@interface MainTabBarController () <UITabBarControllerDelegate,MSTabBarDelegate>
 
 @end
 
@@ -23,12 +26,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    MSTabBar *tabBar = [[MSTabBar alloc] init];
+    tabBar.mstabBarDelegate = self;
+    
+    [self setValue:tabBar forKeyPath:@"tabBar"];
+    
     [self setUpAllChildVc];
     
     self.tabBar.backgroundColor = [UIColor whiteColor];
     
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
+    
     
 }
 
@@ -90,6 +99,31 @@
     Vc.tabBarItem.enabled = YES;
     
     [self addChildViewController:nav];
+}
+
+#pragma mark - MSTabBarDelegate
+- (void)MSTabBar:(MSTabBar *)MSTabBarDidClick
+{
+    BHBItem * item0 = [[BHBItem alloc]initWithTitle:@"发跳蚤" Icon:@"&#xe631;" iconColor:MAIN_COLOR];
+    BHBItem * item1 = [[BHBItem alloc]initWithTitle:@"发动态" Icon:@"&#xe605;" iconColor:NORMAL_BG_COLOR];
+    
+    //添加popview
+    [BHBPopView showToView:self.view.window withItems:@[item0,item1]andSelectBlock:^(BHBItem *item) {
+        if ([item isKindOfClass:[BHBGroup class]]) {
+            NSLog(@"选中%@分组",item.title);
+        }else{
+            NSLog(@"选中%@项",item.title);
+            CommunityWriteControllerType type;
+            if ([item.title isEqualToString:@"发跳蚤"]) {
+                type = CommunityWriteControllerTypeMarket;
+            }else{
+                type = CommunityWriteControllerTypeDynamic;
+            }
+            CommunityWriteController *communityWriteController = [[CommunityWriteController alloc] init];
+            communityWriteController.type = type;
+            [self presentViewController:communityWriteController animated:YES completion:nil];
+        }
+    }];
 }
 
 @end

@@ -13,5 +13,6 @@
 @interface NearByAddressCell : UITableViewCell
 
 @property (nonatomic,strong) AMapPOI *poiInfo;
+@property (nonatomic,assign) BOOL isSelect;
 
 @end

@@ -12,6 +12,7 @@
 
 @property (nonatomic,weak) UILabel *nameLabel;
 @property (nonatomic,weak) UILabel *addressLabel;
+@property (nonatomic,weak) UIImageView *checkView;
 
 @end
 
@@ -31,6 +32,12 @@
         addressLabel.textColor = [UIColor colorFromHex:@"#828282"];
         [self.contentView addSubview:addressLabel];
         self.addressLabel = addressLabel;
+        //勾
+        UIImageView *checkView = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_Width - 12 - 22, 19, 22, 22)];
+        checkView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe645;"] inFont:ICONFONT size:22 color:[UIColor colorFromHex:NORMAL_BG_COLOR]];
+        checkView.hidden = YES;
+        [self.contentView addSubview:checkView];
+        self.checkView = checkView;
     }
     return self;
 }
@@ -44,6 +51,16 @@
     //address
     self.addressLabel.text = poiInfo.address;
     self.addressLabel.frame = CGRectMake(self.nameLabel.x, CGRectGetMaxY(self.nameLabel.frame) + 10, self.nameLabel.width, 12);
+}
+
+- (void)setIsSelect:(BOOL)isSelect
+{
+    _isSelect = isSelect;
+    if (isSelect) {
+        self.checkView.hidden = NO;
+    }else{
+        self.checkView.hidden = YES;
+    }
 }
 
 - (void)awakeFromNib {

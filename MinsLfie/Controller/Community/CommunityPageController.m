@@ -36,7 +36,6 @@
 {
     [self setupCustomNavigationBarDefault];
     self.customNavigationItem.title = @"动态";
-    self.customNavigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(post) imageName:@"&#xe653;" imageColor:[UIColor colorFromHex:MAIN_COLOR]];
 }
 
 - (void)initTableView
@@ -48,13 +47,6 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:tableView];
-}
-
-- (void)post
-{
-    CommunityWriteController *communityWriteController = [[CommunityWriteController alloc] init];
-    communityWriteController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController presentViewController:communityWriteController animated:YES completion:nil];
 }
 
 #pragma mark - tableView dataSource

@@ -8,6 +8,13 @@
 
 #import "BaseNavigationController.h"
 
+typedef enum : NSUInteger {
+    CommunityWriteControllerTypeMarket,
+    CommunityWriteControllerTypeDynamic
+} CommunityWriteControllerType;
+
 @interface CommunityWriteController : BaseNavigationController
+
+@property (nonatomic,assign) CommunityWriteControllerType type;
 
 @end

@@ -7,7 +7,19 @@
 //
 
 #import "BaseNavigationController.h"
+#import "NearByAddressCell.h"
+@class CommunityAddressSelectController;
+
+@protocol CommunityAddressSelectControllerDelegate <NSObject>
+
+- (void)communityAddressSelectController:(CommunityAddressSelectController *)communityAddressSelectController disPassPoiInfo:(AMapPOI *)poiInfo;
+- (void)communityAddressSelectController:(CommunityAddressSelectController *)communityAddressSelectControllerDidPassEmpty;
+
+@end
 
 @interface CommunityAddressSelectController : BaseNavigationController
+
+@property (nonatomic,weak) id<CommunityAddressSelectControllerDelegate>delegate;
+@property (nonatomic,strong) AMapPOI *selectPoi;
 
 @end

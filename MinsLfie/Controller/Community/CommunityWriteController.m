@@ -11,6 +11,8 @@
 #import "TZImagePickerController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 //控制器
 #import "CommunityAddressSelectController.h"
@@ -21,7 +23,7 @@
 #define deleImageWH 17 // 删除按钮的宽高
 #define MaxImageCount 9
 
-@interface CommunityWriteController () <UITableViewDataSource,UITableViewDelegate,ACEExpandableTableViewDelegate,TZImagePickerControllerDelegate>
+@interface CommunityWriteController () <UITableViewDataSource,UITableViewDelegate,ACEExpandableTableViewDelegate,TZImagePickerControllerDelegate,CommunityAddressSelectControllerDelegate>
 
 @property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,assign) CGFloat textViewCellHeight;
@@ -30,8 +32,12 @@
 @property (nonatomic,strong) NSMutableArray *selectedAssets;
 @property (nonatomic,assign) BOOL isSelectOriginalPhoto;
 @property (nonatomic,weak) UIView *bottomView;
-@property (nonatomic,weak) UIButton *addressButton;
+@property (nonatomic,weak) UIView *addressView;
+@property (nonatomic,weak) UIImageView *addressImgae;
+@property (nonatomic,weak) UILabel *addressLable;
 @property (nonatomic,weak) UILabel *textNumLabel;
+@property (nonatomic,weak) UIView *cancelView;
+@property (nonatomic,strong) AMapPOI *poiInfo;
 
 @end
 
@@ -57,7 +63,11 @@
 - (void)initNav
 {
     [self setupCustomNavigationBarDefault];
-    self.customNavigationItem.title = @"发动态";
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        self.customNavigationItem.title = @"发跳蚤";
+    }else{
+        self.customNavigationItem.title = @"发动态";
+    }
     self.customNavigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(closeClick) imageName:@"&#xe625;" imageColor:[UIColor colorFromHex:MAIN_COLOR]];
     self.customNavigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(post) imageName:@"&#xe671;" imageColor:[UIColor colorFromHex:@"#B4B4B4"]];
 }
@@ -80,19 +90,56 @@
     [self.view addSubview:bottomView];
     self.bottomView = bottomView;
     
-    UIButton *addressButton = [[UIButton alloc] initWithFrame:CGRectMake(8, (bottomView.height - 26) / 2, 104, 26)];
-    [addressButton setImage:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe607;"] inFont:ICONFONT size:18 color:[UIColor colorFromHex:@"#A5A5A5"]] forState:UIControlStateNormal];
-    [addressButton setTitle:@"你在哪里?" forState:UIControlStateNormal];
-    [addressButton setTitleColor:[UIColor colorFromHex:@"#A5A5A5"] forState:UIControlStateNormal];
-    addressButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    addressButton.layer.cornerRadius = 13;
-    addressButton.backgroundColor = [UIColor colorFromHex:@"#F8F8F8"];
-    [addressButton addTarget:self action:@selector(addressSelect) forControlEvents:UIControlEventTouchUpInside];
-    [bottomView addSubview:addressButton];
-    self.addressButton = addressButton;
+    UIView *addressView = [[UIView alloc] initWithFrame:CGRectMake(8, (bottomView.height - 26) / 2, 104, 26)];
+    addressView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *addressTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addressSelect)];
+    [addressView addGestureRecognizer:addressTap];
+    addressView.backgroundColor = [UIColor colorFromHex:@"#F8F8F8"];
+    addressView.layer.borderColor = [[UIColor colorFromHex:@"#E9E9E9"] CGColor];
+    addressView.layer.borderWidth = LINE_HEIGHT;
+    addressView.layer.cornerRadius = 13;
+    [bottomView addSubview:addressView];
+    self.addressView = addressView;
     
-    UILabel *textNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(Screen_Width * 0.5, (bottomView.height - 14) / 2, Screen_Width * 0.5 - 8, 14)];
-    textNumLabel.text = @"114/114 字数";
+    UIImageView *addressImgae = [[UIImageView alloc] initWithFrame:CGRectMake(5, (addressView.height - 18) / 2, 18, 18)];
+    addressImgae.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe607;"] inFont:ICONFONT size:18 color:[UIColor colorFromHex:@"#A5A5A5"]];
+    [addressView addSubview:addressImgae];
+    self.addressImgae = addressImgae;
+    
+    UILabel *addressLable = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(addressImgae.frame) + 5, (addressView.height - 14) / 2, addressView.width - CGRectGetMaxX(addressImgae.frame) - 5 - 10, 14)];
+    addressLable.font = [UIFont systemFontOfSize:14];
+    addressLable.text = @"你在哪里?";
+    addressLable.textColor = [UIColor colorFromHex:@"#A5A5A5"];
+    [addressView addSubview:addressLable];
+    self.addressLable = addressLable;
+    //取消地址
+    UIView *cancelView = [[UIView alloc] initWithFrame:CGRectMake(addressView.width - 26, 0, 26, 26)];
+    cancelView.userInteractionEnabled = YES;
+    cancelView.hidden = YES;
+    UITapGestureRecognizer *cancelTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelAddress)];
+    [cancelView addGestureRecognizer:cancelTap];
+    cancelView.backgroundColor = [UIColor colorFromHex:@"#F8F8F8"];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:cancelView.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(13, 13)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = cancelView.bounds;
+    maskLayer.path = maskPath.CGPath;
+    cancelView.layer.mask = maskLayer;
+    [addressView addSubview:cancelView];
+    self.cancelView = cancelView;
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, LINE_HEIGHT, cancelView.height)];
+    lineView.backgroundColor = [UIColor colorFromHex:@"#E9E9E9"];
+    [cancelView addSubview:lineView];
+    
+    UIImageView *cancelImage = [[UIImageView alloc] initWithFrame:CGRectMake((cancelView.width - 16) / 2, (cancelView.height - 16) / 2, 16, 16)];
+    cancelImage.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe646;"] inFont:ICONFONT size:16 color:[UIColor colorFromHex:NORMAL_BG_COLOR]];
+    [cancelView addSubview:cancelImage];
+    
+    
+    NSString *text = @"114/114 字数";
+    CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:14]];
+    UILabel *textNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(Screen_Width - 8 - textSize.width - 10, (bottomView.height - 14) / 2, textSize.width + 10, 14)];
+    textNumLabel.text = text;
     textNumLabel.font = [UIFont systemFontOfSize:14];
     textNumLabel.textColor = [UIColor colorFromHex:@"#A5A5A5"];
     textNumLabel.textAlignment = NSTextAlignmentRight;
@@ -154,6 +201,8 @@
 - (void)addressSelect
 {
     CommunityAddressSelectController *communityAddressSelectController = [[CommunityAddressSelectController alloc] init];
+    communityAddressSelectController.selectPoi = self.poiInfo;
+    communityAddressSelectController.delegate = self;
     [self presentViewController:communityAddressSelectController animated:YES completion:nil];
 }
 
@@ -283,7 +332,12 @@
         cell.textView.tintColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
         cell.textView.textContainerInset = UIEdgeInsetsMake(10, 15, 0, 15);
         cell.textView.font = [UIFont systemFontOfSize:16];
-        cell.textView.placeholder = @"分享校园新鲜事...";
+        if (self.type == CommunityWriteControllerTypeMarket) {
+            cell.textView.placeholder = @"商品描述（选填）";
+        }else{
+            cell.textView.placeholder = @"分享校园新鲜事...";
+        }
+        
         return cell;
     }else{
         static NSString *ID = @"photos_cell";
@@ -385,6 +439,46 @@
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
+}
+
+- (void)cancelAddress
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.addressView.width = 104;
+        self.addressLable.width = self.addressView.width - CGRectGetMaxX(self.addressImgae.frame) - 5 - 10;
+        self.addressImgae.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe607;"] inFont:ICONFONT size:18 color:[UIColor colorFromHex:@"#A5A5A5"]];
+        self.addressLable.text = @"你在哪里?";
+        self.addressLable.textColor = [UIColor colorFromHex:@"#A5A5A5"];
+        self.cancelView.x = self.addressView.width - self.cancelView.width;
+        self.cancelView.hidden = YES;
+    }];
+}
+
+#pragma mark - CommunityAddressSelectController Delegate
+- (void)communityAddressSelectController:(CommunityAddressSelectController *)communityAddressSelectController disPassPoiInfo:(AMapPOI *)poiInfo
+{
+    NSLog(@"-=-=-==%@",poiInfo);
+    self.poiInfo = poiInfo;
+    CGSize addressSize = [poiInfo.name sizeWithFont:[UIFont systemFontOfSize:14]];
+    CGFloat addressViewW = addressSize.width + 18 + 20 + 26;
+    CGFloat addressLabelW = addressSize.width;
+    if (addressViewW > (Screen_Width - self.textNumLabel.width - 2 * 8 - 10)) {
+        addressViewW = Screen_Width - self.textNumLabel.width - 2 * 8 - 10;
+        addressLabelW = addressViewW - 18 - 20 - 26;
+    }
+    self.addressView.width = addressViewW;
+    self.addressLable.width = addressLabelW;
+    self.addressImgae.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe607;"] inFont:ICONFONT size:18 color:[UIColor colorFromHex:NORMAL_BG_COLOR]];
+    self.addressLable.text = poiInfo.name;
+    self.addressLable.textColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+    self.cancelView.hidden = NO;
+    self.cancelView.x = self.addressView.width - self.cancelView.width;
+}
+
+- (void)communityAddressSelectController:(CommunityAddressSelectController *)communityAddressSelectControllerDidPassEmpty
+{
+    self.poiInfo = nil;
+    [self cancelAddress];
 }
 
 - (void)didReceiveMemoryWarning {
