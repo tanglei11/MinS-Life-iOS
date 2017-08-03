@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 typedef NS_ENUM(NSInteger, CityGuideNavigationBarStyle)
 {
     CityGuideNavigationBarStyle3DTouch,
@@ -41,5 +42,8 @@ typedef NS_ENUM(NSInteger, CityGuideNavigationBarStyle)
 
 - (void)setBottomShadow;
 - (void)setupImageViewByAVFileWithThumbnailWidth:(int)thumbnailWidth thumbnailHeight:(int)thumbnailHeight url:(NSString *)url imageView:(UIImageView *)imageView placeholder:(UIImage *)placeholder;
+
+- (void)showLoginGuideView;
+- (void)backToLoginPage;
 
 @end

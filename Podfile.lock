@@ -6,12 +6,16 @@ PODS:
     - AMapFoundation (~> 1.2)
   - AVOSCloud (4.2.0)
   - BaiduMapKit (3.2.1)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
 
 DEPENDENCIES:
   - AMapLocation
   - AMapSearch
   - AVOSCloud
   - BaiduMapKit
+  - SDWebImage (~> 3.7.5)
 
 SPEC CHECKSUMS:
   AMapFoundation: 458974f46a39df8407fd818ab83d2630d494c726
@@ -19,7 +23,8 @@ SPEC CHECKSUMS:
   AMapSearch: cf7fd100d533995822d92c22586abfaf7cdf6eef
   AVOSCloud: 5446ad0320f4942cce1a036d131992cd1115db99
   BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-PODFILE CHECKSUM: 2b80208b31ea8807624e4c99d80fbd5bc569e6c5
+PODFILE CHECKSUM: 805ca5585ff54db0d3cde5372194e0f6a088fab9
 
 COCOAPODS: 1.2.0.beta.1

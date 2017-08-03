@@ -16,6 +16,7 @@
 #import "MSTabBar.h"
 #import "BHBPopView.h"
 #import "CommunityWriteController.h"
+#import "LoginController.h"
 
 @interface MainTabBarController () <UITabBarControllerDelegate,MSTabBarDelegate>
 
@@ -104,26 +105,42 @@
 #pragma mark - MSTabBarDelegate
 - (void)MSTabBar:(MSTabBar *)MSTabBarDidClick
 {
-    BHBItem * item0 = [[BHBItem alloc]initWithTitle:@"发跳蚤" Icon:@"&#xe631;" iconColor:MAIN_COLOR];
-    BHBItem * item1 = [[BHBItem alloc]initWithTitle:@"发动态" Icon:@"&#xe605;" iconColor:NORMAL_BG_COLOR];
-    
-    //添加popview
-    [BHBPopView showToView:self.view.window withItems:@[item0,item1]andSelectBlock:^(BHBItem *item) {
-        if ([item isKindOfClass:[BHBGroup class]]) {
-            NSLog(@"选中%@分组",item.title);
-        }else{
-            NSLog(@"选中%@项",item.title);
-            CommunityWriteControllerType type;
-            if ([item.title isEqualToString:@"发跳蚤"]) {
-                type = CommunityWriteControllerTypeMarket;
+    if ([AVUser currentUser] != nil) {
+        BHBItem * item0 = [[BHBItem alloc]initWithTitle:@"发跳蚤" Icon:@"&#xe631;" iconColor:MAIN_COLOR];
+        BHBItem * item1 = [[BHBItem alloc]initWithTitle:@"发动态" Icon:@"&#xe605;" iconColor:NORMAL_BG_COLOR];
+        
+        //添加popview
+        [BHBPopView showToView:self.view.window withItems:@[item0,item1]andSelectBlock:^(BHBItem *item) {
+            if ([item isKindOfClass:[BHBGroup class]]) {
+                NSLog(@"选中%@分组",item.title);
             }else{
-                type = CommunityWriteControllerTypeDynamic;
+                NSLog(@"选中%@项",item.title);
+                CommunityWriteControllerType type;
+                if ([item.title isEqualToString:@"发跳蚤"]) {
+                    type = CommunityWriteControllerTypeMarket;
+                }else{
+                    type = CommunityWriteControllerTypeDynamic;
+                }
+                CommunityWriteController *communityWriteController = [[CommunityWriteController alloc] init];
+                communityWriteController.type = type;
+                [self presentViewController:communityWriteController animated:YES completion:nil];
             }
-            CommunityWriteController *communityWriteController = [[CommunityWriteController alloc] init];
-            communityWriteController.type = type;
-            [self presentViewController:communityWriteController animated:YES completion:nil];
-        }
-    }];
+        }];
+    }else{
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            UIAlertController *loginAlertController = [UIAlertController alertControllerWithTitle:@"你还未登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            UIAlertAction *loginAction = [UIAlertAction actionWithTitle:@"现在登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                LoginController *loginController = [[LoginController alloc] init];
+                self.view.window.rootViewController = loginController;
+            }];
+            [loginAlertController addAction:cancelAction];
+            [loginAlertController addAction:loginAction];
+            [self presentViewController:loginAlertController animated:YES completion:nil];
+        });
+    }
 }
 
 @end

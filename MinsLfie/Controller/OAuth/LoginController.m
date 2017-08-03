@@ -19,12 +19,17 @@
 @property (nonatomic,weak) UIImageView *flagView;
 @property (nonatomic,weak) UIButton *submitButton;
 @property (nonatomic,weak) UIButton *forgetButton;
+@property (nonatomic,weak) UIButton *codeButton;
+@property (nonatomic,weak) UITextField *phoneField;
+@property (nonatomic,weak) UITextField *codeFiled;
 @property (nonatomic,weak) UITextField *passField;
 @property (nonatomic,weak) UIView *phoneView;
 @property (nonatomic,weak) UIView *passView;
 @property (nonatomic,weak) UIView *codeView;
 @property (nonatomic,weak) UIView *lineSView;
 @property (nonatomic,weak) UIView *containerView;
+@property (nonatomic,assign) NSInteger sendTimes;
+@property (nonatomic,assign) BOOL isStart;
 
 @end
 
@@ -109,7 +114,10 @@
     phoneField.font = [UIFont systemFontOfSize:15];
     phoneField.clearButtonMode = UITextFieldViewModeWhileEditing;
     phoneField.keyboardType = UIKeyboardTypePhonePad;
+    [phoneField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [phoneField addTarget:self action:@selector(textFieldDidEndEditing:) forControlEvents:UIControlEventEditingDidEnd];
     [phoneView addSubview:phoneField];
+    self.phoneField = phoneField;
     
     UIView *lineFView = [[UIView alloc] initWithFrame:CGRectMake(20, phoneView.height - 1, phoneView.width - 2, 1)];
     lineFView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
@@ -121,11 +129,12 @@
     [scrollView addSubview:codeView];
     self.codeView = codeView;
     
-    UIButton *codeButton = [[UIButton alloc] initWithFrame:CGRectMake(codeView.width - 20 - 78, (codeView.height - 15) / 2, 78, 15)];
+    UIButton *codeButton = [[UIButton alloc] initWithFrame:CGRectMake(codeView.width - 20 - 78, (codeView.height - 15) / 2, 80, 15)];
+    [self getButtonStatus:codeButton isHighLight:NO title:@"获取验证码"];
     codeButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    [codeButton setTitle:@"发送验证码" forState:UIControlStateNormal];
-    [codeButton setTitleColor:[UIColor colorFromHex:@"#FF4735"] forState:UIControlStateNormal];
+    [codeButton addTarget:self action:@selector(getCodeClick) forControlEvents:UIControlEventTouchUpInside];
     [codeView addSubview:codeButton];
+    self.codeButton = codeButton;
     
     UITextField *codeFiled = [[UITextField alloc] initWithFrame:CGRectMake(20, (codeView.height - 30) / 2, codeButton.x - 2 * 20, 30)];
     codeFiled.placeholder = @"验证码";
@@ -133,6 +142,7 @@
     codeFiled.keyboardType = UIKeyboardTypeNumberPad;
     codeFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     [codeView addSubview:codeFiled];
+    self.codeFiled = codeFiled;
     
     UIView *lineTView = [[UIView alloc] initWithFrame:CGRectMake(20, codeView.height - 1, codeView.width - 2 * 20, 1)];
     lineTView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
@@ -173,6 +183,7 @@
     submitButton.titleLabel.font = [UIFont systemFontOfSize:16];
     submitButton.backgroundColor = [UIColor blackColor];
     submitButton.layer.cornerRadius = 25;
+    [submitButton addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:submitButton];
     self.submitButton = submitButton;
     
@@ -203,6 +214,148 @@
         thirdButton.layer.borderWidth = 1;
         [bottomView addSubview:thirdButton];
     }
+}
+
+- (void)getButtonStatus:(UIButton *)button isHighLight:(BOOL)isHighLight title:(NSString *)title
+{
+    if (isHighLight) {
+        button.userInteractionEnabled = YES;
+        [button setTitleColor:[UIColor colorFromHex:NORMAL_BG_COLOR] forState:UIControlStateNormal];
+        [button setTitle:title forState:UIControlStateNormal];
+    }else{
+        button.userInteractionEnabled = NO;
+        [button setTitleColor:[UIColor colorFromHex:@"#C7C7CD"] forState:UIControlStateNormal];
+        [button setTitle:title forState:UIControlStateNormal];
+    }
+}
+
+- (void)submitClick
+{
+    if (self.cuttentIndex == 1) {
+        //注册
+        [MBProgressHUD showMessage:@"" toView:self.view];
+        [AVUser signUpOrLoginWithMobilePhoneNumberInBackground:self.phoneField.text smsCode:self.codeFiled.text block:^(AVUser *user, NSError *error) {
+            NSLog(@"%@",user);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if (error != nil) {
+                NSLog(@"%@",error);
+                [MBProgressHUD showError:error.userInfo[@"error"] toView:self.view];
+            }else{
+                //保存信息
+                [user setUsername:self.phoneField.text];
+                [user setPassword:self.passField.text];
+                [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (error != nil) {
+                        NSLog(@"%@",error);
+                    }else{
+                        [AVUser logInWithMobilePhoneNumberInBackground:self.phoneField.text password:self.passField.text block:^(AVUser *user, NSError *error) {
+                            [MBProgressHUD hideHUDForView:self.view animated:YES];
+                            if (user != nil) {
+                                MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
+                                self.view.window.rootViewController = mainTabBarController;
+                            }else{
+                                NSLog(@"%@",error);
+                                [MBProgressHUD showError:error.userInfo[@"NSLocalizedDescription"] toView:self.view];
+                            }
+                        }];
+                    }
+                }];
+                
+            }
+        }];
+    }else{
+        //登录
+        [MBProgressHUD showMessage:@"登录中..." toView:self.view];
+        [AVUser logInWithMobilePhoneNumberInBackground:self.phoneField.text password:self.passField.text block:^(AVUser *user, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if (user != nil) {
+                MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
+                self.view.window.rootViewController = mainTabBarController;
+            }else{
+                NSLog(@"%@",error);
+                if ([error.userInfo[@"code"] intValue] == 211) {
+                    [MBProgressHUD showError:@"用户不存在" toView:self.view];
+                }else if ([error.userInfo[@"code"] intValue] == 210){
+                    [MBProgressHUD showError:@"用户名与密码不匹配" toView:self.view];
+                }else if ([error.userInfo[@"code"] intValue] == 1){
+                    [MBProgressHUD showError:@"登录失败次数超过限制，请稍候再试" toView:self.view];
+                }else{
+                    [MBProgressHUD showError:@"服务器繁忙" toView:self.view];
+                }
+            }
+        }];
+    }
+}
+
+#pragma mark - 获取验证码
+- (void)getCodeClick
+{
+    NSLog(@"%@",self.phoneField.text);
+    //请求手机验证码
+    [AVOSCloud requestSmsCodeWithPhoneNumber:self.phoneField.text callback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+           [self senCodeAnimation];
+        }else{
+            NSLog(@"%@",error);
+            [MBProgressHUD showError:error.userInfo[@"NSLocalizedDescription"] toView:self.view];
+        }
+    }];
+}
+
+- (void)senCodeAnimation
+{
+    self.sendTimes += 1;
+    __block int timeout = 60;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(timer, ^{
+        if (timeout <= 0) {
+            self.isStart = NO;
+            dispatch_source_cancel(timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self textFieldDidChange:self.phoneField];
+            });
+        }else{
+            self.isStart = YES;
+            NSString *strTime = [NSString stringWithFormat:@"发送中(%d)",timeout];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self getButtonStatus:self.codeButton isHighLight:NO title:strTime];
+            });
+            timeout --;
+        }
+    });
+    dispatch_resume(timer);
+}
+
+- (void)textFieldDidChange:(id)sender
+{
+    UITextField *phoneField = (UITextField *)sender;
+    if ([self isTelphoneNum:phoneField.text]) {
+        if (self.sendTimes > 0) {
+            [self getButtonStatus:self.codeButton isHighLight:YES title:@"重新发送"];
+        }else{
+            [self getButtonStatus:self.codeButton isHighLight:YES title:@"获取验证码"];
+        }
+    }else{
+        if (!self.isStart) {
+            [self getButtonStatus:self.codeButton isHighLight:NO title:@"获取验证码"];
+        }
+    }
+}
+
+- (void)textFieldDidEndEditing:(id)sender
+{
+    UITextField *field = (UITextField *)sender;
+    self.phoneField.text = field.text;
+}
+
+-(BOOL)isTelphoneNum:(NSString *)text{
+    
+    NSString *telRegex = @"^1[3578]\\d{9}$";
+    NSPredicate *prediate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", telRegex];
+    return [prediate evaluateWithObject:text];
 }
 
 - (void)changeClick:(UIButton *)button
