@@ -23,7 +23,7 @@
 #define deleImageWH 17 // 删除按钮的宽高
 #define MaxImageCount 9
 
-@interface CommunityWriteController () <UITableViewDataSource,UITableViewDelegate,ACEExpandableTableViewDelegate,TZImagePickerControllerDelegate,CommunityAddressSelectControllerDelegate>
+@interface CommunityWriteController () <UITableViewDataSource,UITableViewDelegate,ACEExpandableTableViewDelegate,TZImagePickerControllerDelegate,CommunityAddressSelectControllerDelegate,UITextFieldDelegate>
 
 @property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,assign) CGFloat textViewCellHeight;
@@ -38,6 +38,10 @@
 @property (nonatomic,weak) UILabel *textNumLabel;
 @property (nonatomic,weak) UIView *cancelView;
 @property (nonatomic,strong) AMapPOI *poiInfo;
+@property (nonatomic,weak) UITextField *titleField;
+@property (nonatomic,weak) UITextField *priceFiled;
+@property (nonatomic,assign) CGFloat priceCellY;
+@property (nonatomic,assign) BOOL isKeyboardScroll;
 
 @end
 
@@ -74,7 +78,7 @@
 
 - (void)initTableView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, Screen_Width, Screen_Height - 64) style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, Screen_Width, Screen_Height - 64 - 34) style:UITableViewStyleGrouped];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
     tableView.delegate = self;
@@ -188,7 +192,7 @@
     }else{
         headViewHeight = 100 + (10 + pictureHW)*([_selectedPhotos count]/3);
     }
-    photosView.frame = CGRectMake(0, 0, Screen_Width, headViewHeight);
+    photosView.frame = CGRectMake(0, 20, Screen_Width, headViewHeight);
     
     return photosView;
 }
@@ -264,9 +268,7 @@
         _selectedAssets = [NSMutableArray arrayWithArray:assets];
         _isSelectOriginalPhoto = isSelectOriginalPhoto;
         
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-        
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self reloadCommomCellforAblum];
         
         [self changeRightBarItemStatus];
     }];
@@ -284,9 +286,7 @@
         [imageView removeFromSuperview];
     }
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self reloadCommomCellforAblum];
     
     [self changeRightBarItemStatus];
 }
@@ -298,11 +298,19 @@
     _selectedAssets = [NSMutableArray arrayWithArray:assets];
     _isSelectOriginalPhoto = isSelectOriginalPhoto;
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self reloadCommomCellforAblum];
     
     [self changeRightBarItemStatus];
+}
+
+- (void)reloadCommomCellforAblum
+{
+    NSInteger section = 0;
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        section = 1;
+    }
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:section];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)changeRightBarItemStatus
@@ -317,20 +325,145 @@
 #pragma mark - tableView dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        return 3;
+    }else{
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        if (section == 0) {
+            return 1;
+        }else if (section == 1){
+            return 2;
+        }else{
+            return 1;
+        }
+    }else{
+        return 2;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        ACEExpandableTextCell *cell = [tableView expandableTextCellWithId:@"cellId"];
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        if (indexPath.section == 0) {
+            static NSString *ID = @"title_cell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+                UITextField *titleField = [[UITextField alloc] initWithFrame:CGRectMake(15, 10, Screen_Width - 2 * 15, 30)];
+                NSString *holderText = @"商品标题";
+                NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc] initWithString:holderText];
+                [placeholder addAttribute:NSForegroundColorAttributeName
+                                    value:[UIColor colorFromHex:@"#939393"]
+                                    range:NSMakeRange(0, holderText.length)];
+                [placeholder addAttribute:NSFontAttributeName
+                                    value:[UIFont boldSystemFontOfSize:18]
+                                    range:NSMakeRange(0, holderText.length)];
+                titleField.attributedPlaceholder = placeholder;
+                titleField.font = [UIFont systemFontOfSize:18];
+                titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                titleField.tintColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+                [cell.contentView addSubview:titleField];
+                self.titleField = titleField;
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [ToolClass addUnderLineForCell:cell cellHeight:50 lineX:15 lineHeight:LINE_HEIGHT isJustified:YES];
+            return cell;
+        }else if (indexPath.section == 1){
+            return [self commonCellWithTableView:tableView ForRowAtIndexPath:indexPath];
+        }else{
+            static NSString *ID = @"price_cell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+                //布局
+                NSString *price = @"价格(元)";
+                CGSize priceSize = [price sizeWithFont:[UIFont systemFontOfSize:16]];
+                UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 17, priceSize.width, 16)];
+                priceLabel.font = [UIFont systemFontOfSize:16];
+                priceLabel.textColor = [UIColor colorFromHex:@"#636363"];
+                priceLabel.text = price;
+                [cell.contentView addSubview:priceLabel];
+                
+                UITextField *priceFiled = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(priceLabel.frame) + 50, 10, Screen_Width - CGRectGetMaxX(priceLabel.frame) - 50 - 15, 30)];
+                priceFiled.delegate = self;
+                priceFiled.placeholder = @"0.00";
+                priceFiled.font = [UIFont systemFontOfSize:16];
+                priceFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
+                priceFiled.keyboardType = UIKeyboardTypeNumberPad;
+                [cell.contentView addSubview:priceFiled];
+                self.priceFiled = priceFiled;
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [ToolClass addTopLineForCell:cell lineX:15 lineHeight:LINE_HEIGHT isJustified:YES];
+            return cell;
+        }
+    }else{
+        return [self commonCellWithTableView:tableView ForRowAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark - tableView delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        if (section == 2) {
+            return 10.0f;
+        }else{
+            return 0.0000000000000001f;
+        }
+    }else{
+       return 0.0000000000000001f;
+    }
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.0000000000000001f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        if (indexPath.section == 0) {
+            return 50.0f;
+        }else if (indexPath.section == 1){
+            return [self commonHeightForRowAtIndexPath:indexPath];
+        }else{
+            return 50.0f;
+        }
+    }else{
+        return [self commonHeightForRowAtIndexPath:indexPath];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView updatedHeight:(CGFloat)height atIndexPath:(NSIndexPath *)indexPath
+{
+    if (height <= 75.0) {
+        self.textViewCellHeight = 75.0;
+    }else{
+        self.textViewCellHeight = height;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView updatedText:(NSString *)text atIndexPath:(NSIndexPath *)indexPath
+{
+    self.textViewStr = text;
+}
+
+#pragma mark - 公共模块
+- (UITableViewCell *)commonCellWithTableView:(UITableView *)tableView ForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        ACEExpandableTextCell *cell = [tableView expandableTextCellWithId:@"desc_cell"];
         cell.textView.tintColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
-        cell.textView.textContainerInset = UIEdgeInsetsMake(10, 15, 0, 15);
+        cell.textView.textContainerInset = UIEdgeInsetsMake(10, 12, 0, 6);
         cell.textView.font = [UIFont systemFontOfSize:16];
         if (self.type == CommunityWriteControllerTypeMarket) {
             cell.textView.placeholder = @"商品描述（选填）";
@@ -354,46 +487,17 @@
     }
 }
 
-#pragma mark - tableView delegate
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (CGFloat)commonHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (section == 0) {
-        return 0.0000000000000001f;
-    }else{
-        return 20.0f;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.0000000000000001f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0) {
+    if (indexPath.row == 0) {
         return self.textViewCellHeight;
     }else{
         if ([_selectedPhotos count] < MaxImageCount) {
-            return (10 + pictureHW)*([_selectedPhotos count]/3 + 1);
+            return (10 + pictureHW)*([_selectedPhotos count]/3 + 1) + 20;
         }else{
-            return (10 + pictureHW)*([_selectedPhotos count]/3);
+            return (10 + pictureHW)*([_selectedPhotos count]/3) + 20;
         }
     }
-}
-
-- (void)tableView:(UITableView *)tableView updatedHeight:(CGFloat)height atIndexPath:(NSIndexPath *)indexPath
-{
-    if (height <= 75.0) {
-        self.textViewCellHeight = 75.0;
-    }else{
-        self.textViewCellHeight = height;
-    }
-}
-
-- (void)tableView:(UITableView *)tableView updatedText:(NSString *)text atIndexPath:(NSIndexPath *)indexPath
-{
-    self.textViewStr = text;
 }
 
 #pragma mark - textView delegate
@@ -426,8 +530,18 @@
 #pragma mark 键盘出现
 -(void)keyboardWillShow:(NSNotification *)note
 {
-    CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect keyBoardRect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     self.bottomView.frame = CGRectMake(0, Screen_Height - 34 - keyBoardRect.size.height, Screen_Width, 34);
+    NSLog(@"%f---------%f",self.priceCellY,keyBoardRect.origin.y);
+    if (self.priceCellY - keyBoardRect.origin.y > 0) {
+        if (self.textViewCellHeight > 75.0f) {
+            [self.tableView setContentOffset:CGPointMake(0, self.priceCellY - keyBoardRect.origin.y + 50 + 10 + (self.textViewCellHeight - 75.0f)) animated:YES];
+        }else{
+            [self.tableView setContentOffset:CGPointMake(0, self.priceCellY - keyBoardRect.origin.y + 50 + 10) animated:YES];
+        }
+    }else{
+        [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
 }
 #pragma mark 键盘消失
 -(void)keyboardWillHide:(NSNotification *)note
@@ -435,11 +549,41 @@
     self.bottomView.frame = CGRectMake(0, Screen_Height - 34, Screen_Width, 34);
 }
 
+#pragma mark - textField delegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    CGRect parentRect = [cell convertRect:textField.frame toView:self.view];
+    self.priceCellY = parentRect.origin.y;
+    self.isKeyboardScroll = YES;
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    self.priceCellY = 0;
+    return YES;
+}
+
 #pragma mark - scroll delegate
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self.view endEditing:YES];
+    if (self.isKeyboardScroll) {
+//        self.isKeyboardScroll = NO;
+    }else{
+       [self.view endEditing:YES];
+    }
 }
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.isKeyboardScroll = NO;
+}
+
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    self.isKeyboardScroll = NO;
+//}
 
 - (void)cancelAddress
 {
