@@ -13,12 +13,14 @@
 
 @property (nonatomic,weak) UIImageView *headerView;
 @property (nonatomic,weak) UILabel *nickLabel;
+@property (nonatomic,weak) UILabel *timeLabel;
 @property (nonatomic,weak) PhotosView *photosView;
 @property (nonatomic,weak) UILabel *contentLabel;
+@property (nonatomic,weak) UIView *addressView;
+@property (nonatomic,weak) UIImageView *addressImage;
+@property (nonatomic,weak) UILabel *addressLabel;
 @property (nonatomic,weak) UILabel *commentLabel;
 @property (nonatomic,weak) UILabel *likeLabel;
-@property (nonatomic,weak) UIImageView *likeView;
-@property (nonatomic,weak) UIImageView *commentView;
 
 @end
 
@@ -46,6 +48,7 @@
         timeLabel.textColor = [UIColor colorFromHex:@"#C0C0C0"];
         timeLabel.text = @"03-30 10:49";
         [self.contentView addSubview:timeLabel];
+        self.timeLabel = timeLabel;
         //收藏
         UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(Screen_Width - 20 - 60, (headerView.height - 30) / 2 + headerView.y, 60, 30)];
         collectButton.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -56,10 +59,11 @@
         collectButton.layer.borderWidth = 1;
         [self.contentView addSubview:collectButton];
         //图片集
-        NSArray *photos = @[@"photo_1",@"photo_2",@"photo_3"];
-        CGSize photosSize = [PhotosView SizeWithCount:(int)photos.count];
-        PhotosView *photosView = [[PhotosView alloc] initWithFrame:CGRectMake(22, CGRectGetMaxY(headerView.frame) + 18, photosSize.width, photosSize.height)];
-        photosView.photos = photos;
+//        NSArray *photos = @[@"photo_1",@"photo_2",@"photo_3"];
+//        CGSize photosSize = [PhotosView SizeWithCount:(int)photos.count];
+        PhotosView *photosView = [[PhotosView alloc] init];
+//        WithFrame:CGRectMake(22, CGRectGetMaxY(headerView.frame) + 18, photosSize.width, photosSize.height)];
+//        photosView.photos = photos;
         [self.contentView addSubview:photosView];
         self.photosView = photosView;
         //内容
@@ -71,48 +75,86 @@
         UILabel *likeLabel = [[UILabel alloc] init];
         likeLabel.font = [UIFont systemFontOfSize:14];
         likeLabel.textColor = [UIColor colorFromHex:@"#939393"];
-        likeLabel.text = @"8108 赞";
+        likeLabel.text = @"0 赞";
         [self.contentView addSubview:likeLabel];
         self.likeLabel = likeLabel;
         //评论
         UILabel *commentLabel = [[UILabel alloc] init];
         commentLabel.font = [UIFont systemFontOfSize:14];
         commentLabel.textColor = [UIColor colorFromHex:@"#939393"];
-        commentLabel.text = @"265 评论";
+        commentLabel.text = @"0 评论";
         [self.contentView addSubview:commentLabel];
         self.commentLabel = commentLabel;
+        //地址
+        UIView *addressView = [[UIView alloc] init];
+        addressView.hidden = YES;
+        addressView.layer.borderColor = [[UIColor colorFromHex:@"#E9E9E9"] CGColor];
+        addressView.layer.borderWidth = LINE_HEIGHT;
+        [self.contentView addSubview:addressView];
+        self.addressView = addressView;
         
-        //赞图标
-        UIImageView *likeView = [[UIImageView alloc] init];
-        likeView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe644;"] inFont:ICONFONT size:22 color:[UIColor colorFromHex:@"#939393"]];
-        [self.contentView addSubview:likeView];
-        self.likeView = likeView;
-        //评论图标
-        UIImageView *commentView = [[UIImageView alloc] init];
-        commentView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe667;"] inFont:ICONFONT size:22 color:[UIColor colorFromHex:@"#939393"]];
-        [self.contentView addSubview:commentView];
-        self.commentView = commentView;
+        UIImageView *addressImage = [[UIImageView alloc] init];
+        addressImage.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe607;"] inFont:ICONFONT size:18 color:[UIColor colorFromHex:NORMAL_BG_COLOR]];
+        [addressView addSubview:addressImage];
+        self.addressImage = addressImage;
+        
+        UILabel *addressLabel = [[UILabel alloc] init];
+        addressLabel.textColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+        addressLabel.font = [UIFont systemFontOfSize:14];
+        [addressView addSubview:addressLabel];
+        self.addressLabel = addressLabel;
     }
     return self;
 }
 
-- (void)setContent:(NSString *)content
+- (void)setDynamicsObject:(DynamicsObject *)dynamicsObject
 {
-    _content = content;
-    self.contentLabel.attributedText = [ToolClass createTextWithString:content fontSize:14 lineSpacing:6 isFontThin:YES];
+    _dynamicsObject = dynamicsObject;
+    if ([dynamicsObject.dynamicsUser.profileUrl isEqualToString:@""]) {
+        self.headerView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]];
+    }else{
+        [ToolClass setupImageViewByAVFileWithThumbnailWidth:40 thumbnailHeight:40 url:dynamicsObject.dynamicsUser.profileUrl imageView:self.headerView placeholder:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]]];
+    }
+    self.nickLabel.text = [dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? dynamicsObject.dynamicsUser.username : dynamicsObject.dynamicsUser.nickname;
+    self.timeLabel.text = [NSString stringWithAccurateTimeChangeToBlurryTime:dynamicsObject.createdAt dateFormat:nil];
+    NSMutableArray *imgs = [[dynamicsObject.imgs componentsSeparatedByString:@","] mutableCopy];
+    NSArray * photos = [NSArray array];
+    if (photos.count > 3) {
+        photos = [imgs subarrayWithRange:NSMakeRange(0, 3)];
+    }else{
+        photos = [imgs copy];
+    }
+    self.photosView.photos = photos;
+    CGSize photosSize = [PhotosView SizeWithCount:(int)photos.count];
+    self.photosView.frame = CGRectMake(22, CGRectGetMaxY(self.headerView.frame) + 18, photosSize.width, photosSize.height);
+    
+    self.contentLabel.attributedText = [ToolClass createTextWithString:dynamicsObject.content fontSize:14 lineSpacing:6 isFontThin:YES];
     CGRect rect = [ToolClass caculateText:self.contentLabel.attributedText maxSize:CGSizeMake(Screen_Width - 2 * 22, MAXFLOAT)];
     self.contentLabel.frame = CGRectMake(22, CGRectGetMaxY(self.photosView.frame) + 15, Screen_Width - 2 * 22, rect.size.height);
     
-    CGSize likeSize = [self.likeLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
-    self.likeLabel.frame = CGRectMake(22, CGRectGetMaxY(self.contentLabel.frame) + 22, likeSize.width, 14);
-    
     CGSize commentSize = [self.commentLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
-    self.commentLabel.frame = CGRectMake(CGRectGetMaxX(self.likeLabel.frame) + 12, self.likeLabel.y, commentSize.width, 14);
+    self.commentLabel.frame = CGRectMake(Screen_Width - 22 - commentSize.width, CGRectGetMaxY(self.contentLabel.frame) + 22, commentSize.width, 14);
     
-    self.commentView.frame = CGRectMake(Screen_Width - 22 - 22, (self.likeLabel.height - 22) / 2 + self.likeLabel.y, 22, 22);
+    CGSize likeSize = [self.likeLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
+    self.likeLabel.frame = CGRectMake(self.commentLabel.x - 12 - likeSize.width, self.commentLabel.y, likeSize.width, 14);
     
-    self.likeView.frame = CGRectMake(self.commentView.x - 28 - 22, self.commentView.y, 22, 22);
-    
+    if ([dynamicsObject.addressName isEqualToString:@""]) {
+        self.addressView.hidden = YES;
+    }else{
+        self.addressView.hidden = NO;
+        self.addressLabel.text = dynamicsObject.addressName;
+        CGSize addressSize = [dynamicsObject.addressName sizeWithFont:[UIFont systemFontOfSize:14]];
+        CGFloat addressViewW = addressSize.width + 18 + 20;
+        CGFloat addressLabelW = addressSize.width;
+        if (addressViewW > (self.likeLabel.x - 20 - 22)) {
+            addressViewW = self.likeLabel.x - 20 - 22;
+            addressLabelW = addressViewW - 18 - 20;
+        }
+        self.addressView.frame = CGRectMake(22, self.likeLabel.y - (26 - 14) / 2, addressViewW, 26);
+        self.addressView.layer.cornerRadius = 13;
+        self.addressImage.frame = CGRectMake(5, (self.addressView.height - 18) / 2, 18, 18);
+        self.addressLabel.frame = CGRectMake(CGRectGetMaxX(self.addressImage.frame) + 5, (self.addressView.height - 14) / 2, addressLabelW, 14);
+    }
     self.cellHeight = CGRectGetMaxY(self.likeLabel.frame) + 30;
 }
 

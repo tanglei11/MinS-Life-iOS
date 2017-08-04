@@ -39,7 +39,13 @@
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToDynamic) name:@"goToDynamic" object:nil];
+}
+
+- (void)goToDynamic
+{
+    [self setSelectedIndex:2];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
 }
 
 - (void)setUpAllChildVc

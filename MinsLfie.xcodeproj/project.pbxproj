@@ -30,6 +30,16 @@
 		EB46087F1F31C89600855420 /* UIImageView+BHBSetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4608711F31C89600855420 /* UIImageView+BHBSetImage.m */; };
 		EB4608801F31C89600855420 /* UIView+BHBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4608731F31C89600855420 /* UIView+BHBAnimation.m */; };
 		EB4608971F31C9A300855420 /* MSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4608961F31C9A300855420 /* MSTabBar.m */; };
+		EB4F81141F34551700AB63AB /* DynamicsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81131F34551700AB63AB /* DynamicsObject.m */; };
+		EB4F81171F34552F00AB63AB /* DynamicsUserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81161F34552F00AB63AB /* DynamicsUserObject.m */; };
+		EB4F81281F34683000AB63AB /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F811C1F34683000AB63AB /* UCZProgressView.m */; };
+		EB4F81291F34683000AB63AB /* KYPhotoGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F811E1F34683000AB63AB /* KYPhotoGallery.m */; };
+		EB4F812A1F34683000AB63AB /* PhotoGalleryImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81211F34683000AB63AB /* PhotoGalleryImageView.m */; };
+		EB4F812B1F34683000AB63AB /* PhotoGalleryScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81231F34683000AB63AB /* PhotoGalleryScrollView.m */; };
+		EB4F812C1F34683000AB63AB /* PhotoZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81251F34683000AB63AB /* PhotoZoomScrollView.m */; };
+		EB4F812D1F34683000AB63AB /* SaveImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81271F34683000AB63AB /* SaveImageAlertView.m */; };
+		EB4F81301F3468E800AB63AB /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F812F1F3468E800AB63AB /* AlertView.m */; };
+		EB4F81331F34690100AB63AB /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81321F34690100AB63AB /* AlertCell.m */; };
 		EB79B5561F2EC354006EA026 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5551F2EC354006EA026 /* HomeController.m */; };
 		EB79B5591F2EC375006EA026 /* NearByController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5581F2EC375006EA026 /* NearByController.m */; };
 		EB79B56D1F2EC491006EA026 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B55C1F2EC491006EA026 /* UIColor+Magic.m */; };
@@ -176,6 +186,27 @@
 		EB4608731F31C89600855420 /* UIView+BHBAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHBAnimation.m"; sourceTree = "<group>"; };
 		EB4608951F31C9A300855420 /* MSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabBar.h; sourceTree = "<group>"; };
 		EB4608961F31C9A300855420 /* MSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTabBar.m; sourceTree = "<group>"; };
+		EB4F81121F34551700AB63AB /* DynamicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicsObject.h; sourceTree = "<group>"; };
+		EB4F81131F34551700AB63AB /* DynamicsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicsObject.m; sourceTree = "<group>"; };
+		EB4F81151F34552F00AB63AB /* DynamicsUserObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicsUserObject.h; sourceTree = "<group>"; };
+		EB4F81161F34552F00AB63AB /* DynamicsUserObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicsUserObject.m; sourceTree = "<group>"; };
+		EB4F811A1F34683000AB63AB /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		EB4F811B1F34683000AB63AB /* UCZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCZProgressView.h; sourceTree = "<group>"; };
+		EB4F811C1F34683000AB63AB /* UCZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCZProgressView.m; sourceTree = "<group>"; };
+		EB4F811D1F34683000AB63AB /* KYPhotoGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPhotoGallery.h; sourceTree = "<group>"; };
+		EB4F811E1F34683000AB63AB /* KYPhotoGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPhotoGallery.m; sourceTree = "<group>"; };
+		EB4F81201F34683000AB63AB /* PhotoGalleryImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGalleryImageView.h; sourceTree = "<group>"; };
+		EB4F81211F34683000AB63AB /* PhotoGalleryImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGalleryImageView.m; sourceTree = "<group>"; };
+		EB4F81221F34683000AB63AB /* PhotoGalleryScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGalleryScrollView.h; sourceTree = "<group>"; };
+		EB4F81231F34683000AB63AB /* PhotoGalleryScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGalleryScrollView.m; sourceTree = "<group>"; };
+		EB4F81241F34683000AB63AB /* PhotoZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoZoomScrollView.h; sourceTree = "<group>"; };
+		EB4F81251F34683000AB63AB /* PhotoZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoZoomScrollView.m; sourceTree = "<group>"; };
+		EB4F81261F34683000AB63AB /* SaveImageAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImageAlertView.h; sourceTree = "<group>"; };
+		EB4F81271F34683000AB63AB /* SaveImageAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveImageAlertView.m; sourceTree = "<group>"; };
+		EB4F812E1F3468E800AB63AB /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		EB4F812F1F3468E800AB63AB /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		EB4F81311F34690100AB63AB /* AlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCell.h; sourceTree = "<group>"; };
+		EB4F81321F34690100AB63AB /* AlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCell.m; sourceTree = "<group>"; };
 		EB79B5541F2EC354006EA026 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		EB79B5551F2EC354006EA026 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		EB79B5571F2EC375006EA026 /* NearByController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearByController.h; sourceTree = "<group>"; };
@@ -421,6 +452,7 @@
 				EB0BFB7F1F2F0E3900B89D08 /* BaseObject.h */,
 				EB0BFB801F2F0E3900B89D08 /* BaseObject.m */,
 				EB0BFB7E1F2F0E0500B89D08 /* Home */,
+				EB4F81111F3454B800AB63AB /* Community */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,6 +522,53 @@
 				EB46086B1F31C89600855420 /* music.bundle */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		EB4F81111F3454B800AB63AB /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				EB4F81121F34551700AB63AB /* DynamicsObject.h */,
+				EB4F81131F34551700AB63AB /* DynamicsObject.m */,
+				EB4F81151F34552F00AB63AB /* DynamicsUserObject.h */,
+				EB4F81161F34552F00AB63AB /* DynamicsUserObject.m */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		EB4F81181F34683000AB63AB /* KYElegantPhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				EB4F81191F34683000AB63AB /* Helpers */,
+				EB4F811D1F34683000AB63AB /* KYPhotoGallery.h */,
+				EB4F811E1F34683000AB63AB /* KYPhotoGallery.m */,
+				EB4F811F1F34683000AB63AB /* PhotoGalleryScrollView */,
+				EB4F81261F34683000AB63AB /* SaveImageAlertView.h */,
+				EB4F81271F34683000AB63AB /* SaveImageAlertView.m */,
+			);
+			path = KYElegantPhotoGallery;
+			sourceTree = "<group>";
+		};
+		EB4F81191F34683000AB63AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EB4F811A1F34683000AB63AB /* Macro.h */,
+				EB4F811B1F34683000AB63AB /* UCZProgressView.h */,
+				EB4F811C1F34683000AB63AB /* UCZProgressView.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EB4F811F1F34683000AB63AB /* PhotoGalleryScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EB4F81201F34683000AB63AB /* PhotoGalleryImageView.h */,
+				EB4F81211F34683000AB63AB /* PhotoGalleryImageView.m */,
+				EB4F81221F34683000AB63AB /* PhotoGalleryScrollView.h */,
+				EB4F81231F34683000AB63AB /* PhotoGalleryScrollView.m */,
+				EB4F81241F34683000AB63AB /* PhotoZoomScrollView.h */,
+				EB4F81251F34683000AB63AB /* PhotoZoomScrollView.m */,
+			);
+			path = PhotoGalleryScrollView;
 			sourceTree = "<group>";
 		};
 		EB79B55A1F2EC491006EA026 /* VTMagic */ = {
@@ -628,6 +707,7 @@
 				EBC07E9B1F302F320037A69A /* ACEExpandableTextCell */,
 				EBC07E9E1F302F320037A69A /* SZTextView */,
 				EB79B55A1F2EC491006EA026 /* VTMagic */,
+				EB4F81181F34683000AB63AB /* KYElegantPhotoGallery */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -666,6 +746,10 @@
 		EBB4371D1F2B14DC006BB009 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB4F81311F34690100AB63AB /* AlertCell.h */,
+				EB4F81321F34690100AB63AB /* AlertCell.m */,
+				EB4F812E1F3468E800AB63AB /* AlertView.h */,
+				EB4F812F1F3468E800AB63AB /* AlertView.m */,
 				EBC07F001F3075E80037A69A /* BTSearchBar.h */,
 				EBC07F011F3075E80037A69A /* BTSearchBar.m */,
 				48C9A0101F2C80100082795F /* PhotosView.h */,
@@ -1136,15 +1220,19 @@
 				EBC07F5A1F3091B60037A69A /* MJRefreshAutoNormalFooter.m in Sources */,
 				EBB437FD1F2B459D006BB009 /* LoginController.m in Sources */,
 				EB79B56E1F2EC491006EA026 /* UIScrollView+Magic.m in Sources */,
+				EB4F81171F34552F00AB63AB /* DynamicsUserObject.m in Sources */,
 				EB46087A1F31C89600855420 /* BHBPopView.m in Sources */,
 				EBB437081F2B12CF006BB009 /* ViewController.m in Sources */,
 				EBC07F051F30763B0037A69A /* UIImage+Color.m in Sources */,
 				EBC07EE71F305B1D0037A69A /* TZVideoPlayerController.m in Sources */,
 				EBC07EFF1F3073B60037A69A /* CommunityAddressSelectController.m in Sources */,
 				EB84653D1F331BCC00AC2B54 /* ProfileInfoNormalCell.m in Sources */,
+				EB4F81141F34551700AB63AB /* DynamicsObject.m in Sources */,
 				EBC07F5E1F3091B60037A69A /* MJRefreshBackStateFooter.m in Sources */,
+				EB4F81331F34690100AB63AB /* AlertCell.m in Sources */,
 				EB46087D1F31C89600855420 /* UIButton+BHBSetImage.m in Sources */,
 				EBC07F571F3091B60037A69A /* MJRefreshFooter.m in Sources */,
+				EB4F812A1F34683000AB63AB /* PhotoGalleryImageView.m in Sources */,
 				EB4608741F31C89600855420 /* BHBBottomBar.m in Sources */,
 				EBC07F081F3076500037A69A /* UIView+Subviews.m in Sources */,
 				EBC07EE01F305B1D0037A69A /* TZAssetModel.m in Sources */,
@@ -1154,6 +1242,7 @@
 				EBB437341F2B1BAD006BB009 /* UIColor+Hex.m in Sources */,
 				EB84653A1F331B9400AC2B54 /* ProfileNormalCell.m in Sources */,
 				EB0BFB841F2F0EC300B89D08 /* PlaceObject.m in Sources */,
+				EB4F81301F3468E800AB63AB /* AlertView.m in Sources */,
 				EB8465311F3313FA00AC2B54 /* ProfileInfoController.m in Sources */,
 				EBC07EA11F302F320037A69A /* ACEExpandableTextCell.m in Sources */,
 				EBC07F681F3091B60037A69A /* UIView+MJExtension.m in Sources */,
@@ -1167,6 +1256,7 @@
 				EBB437A61F2B2C8D006BB009 /* ProfileInfoCell.m in Sources */,
 				EBC07F0B1F3076780037A69A /* NearByAddressCell.m in Sources */,
 				EB0BFB881F2F13DD00B89D08 /* MSProgressHUD.m in Sources */,
+				EB4F812B1F34683000AB63AB /* PhotoGalleryScrollView.m in Sources */,
 				EBC07F551F3091B60037A69A /* MJRefreshBackFooter.m in Sources */,
 				EBC07F561F3091B60037A69A /* MJRefreshComponent.m in Sources */,
 				EB4608781F31C89600855420 /* BHBItem.m in Sources */,
@@ -1182,6 +1272,7 @@
 				EBC07F581F3091B60037A69A /* MJRefreshHeader.m in Sources */,
 				EBC07F671F3091B60037A69A /* UIScrollView+MJRefresh.m in Sources */,
 				EBC07F611F3091B60037A69A /* MJRefreshNormalHeader.m in Sources */,
+				EB4F812C1F34683000AB63AB /* PhotoZoomScrollView.m in Sources */,
 				EBB437601F2B1DB8006BB009 /* MainTabBarController.m in Sources */,
 				EBC07F621F3091B60037A69A /* MJRefreshStateHeader.m in Sources */,
 				EBB437711F2B2066006BB009 /* ProfilePageController.m in Sources */,
@@ -1205,13 +1296,16 @@
 				EB79B5701F2EC491006EA026 /* VTContentView.m in Sources */,
 				EB4608761F31C89600855420 /* BHBCustomBtn.m in Sources */,
 				EBB4377A1F2B25D0006BB009 /* UIView+Frame.m in Sources */,
+				EB4F81281F34683000AB63AB /* UCZProgressView.m in Sources */,
 				EBC07F221F308F100037A69A /* WGS84TOGCJ02.m in Sources */,
 				EB8465471F332F9400AC2B54 /* takePhoto.m in Sources */,
 				EB4608771F31C89600855420 /* BHBGroup.m in Sources */,
 				EBC07F5D1F3091B60037A69A /* MJRefreshBackNormalFooter.m in Sources */,
+				EB4F81291F34683000AB63AB /* KYPhotoGallery.m in Sources */,
 				EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */,
 				EB79B5711F2EC491006EA026 /* VTMagicController.m in Sources */,
 				48C9A00C1F2C6E6B0082795F /* CommunityBannerCell.m in Sources */,
+				EB4F812D1F34683000AB63AB /* SaveImageAlertView.m in Sources */,
 				EB8465341F33172000AC2B54 /* ProfileHeaderCell.m in Sources */,
 				EBB437021F2B12CF006BB009 /* main.m in Sources */,
 				EBC07EE41F305B1D0037A69A /* TZPhotoPickerController.m in Sources */,

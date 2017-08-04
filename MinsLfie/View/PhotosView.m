@@ -7,6 +7,8 @@
 //
 
 #import "PhotosView.h"
+#import "KYPhotoGallery.h"
+
 #define PhotoW  105
 #define PhotoH  140
 #define PhotoMargin (Screen_Width - 3 * PhotoW - 2 * 22) / 2
@@ -17,6 +19,7 @@
 @interface PhotosView ()
 
 @property (nonatomic,strong) NSMutableArray *photoViewArray;
+@property (nonatomic,strong) KYPhotoGallery *photoGallery;
 
 @end
 
@@ -58,12 +61,30 @@
     for (int i = 0; i < self.subviews.count; i++) {
         UIImageView *photoView = self.subviews[i];
         photoView.tag = i + 1;
-//        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];
-//        singleTap.numberOfTapsRequired = 1;
-//        [photoView addGestureRecognizer:singleTap];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];
+        singleTap.numberOfTapsRequired = 1;
+        [photoView addGestureRecognizer:singleTap];
         if (i < photos.count) {
             photoView.hidden = NO;
-            photoView.image = [UIImage imageNamed:photos[i]];
+            int thumbnailWidth = PhotoW;
+            int thumbnailHeight = PhotoH;
+            
+            
+            thumbnailWidth *= 3;
+            thumbnailHeight *= 3;
+            AVFile *avFile = [AVFile fileWithURL:(NSString *)photos[i]];
+            [avFile getThumbnail:YES width:thumbnailWidth height:thumbnailHeight withBlock:^(UIImage *image, NSError *error) {
+                if (error) {
+                    photoView.contentMode = UIViewContentModeCenter;
+                    photoView.image = BLANK_PICTURE_SIZE_44;
+                    photoView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+                }
+                else {
+                    //normalCell.imagView.contentMode = UIViewContentModeScaleAspectFill;
+                    photoView.contentMode = UIViewContentModeScaleAspectFill;
+                    photoView.image = image;
+                }
+            }];
         }else{
             photoView.hidden = YES;
         }
@@ -96,30 +117,21 @@
     CGFloat photosH = PhotoH * rows + PhotoMargin * (rows - 1);
     return CGSizeMake(photosW, photosH);
 }
-//- (void)tapClick:(UITapGestureRecognizer *)recognizer
-//{
-//    [AppConfig setLeanCloudAnalyticsWithEvent:@"指南" label:@"图片浏览"];
-//    UIImageView *imageView = (UIImageView *)recognizer.view;
-//    
-//    NSMutableArray *arrayModels = [NSMutableArray array];
-//    for (int i = 0; i < self.photos.count; i++) {
-//        [arrayModels addObject:(NSString *)self.photos[i]];
-//    }
-//    
-//    _photoGallery = [[KYPhotoGallery alloc]initWithTappedImageView:imageView andImageUrls:arrayModels andInitialIndex:imageView.tag];
-//    _photoGallery.imageViewArray = self.photoViewArray;
-//    [_photoGallery finishAsynDownload:^{
-//        [[self viewController] presentViewController:_photoGallery animated:NO completion:nil];
-//    }];
-//    
-////    //启动图片浏览器
-////    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photosWithURL animatedFromView:recognizer.view];
-////    [browser setInitialPageIndex:imageView.tag];
-////    browser.usePopAnimation = YES;
-////    browser.delegate = self;
-////    // Show
-////    [[self viewController] presentViewController:browser animated:NO completion:nil];
-//    
-//}
+- (void)tapClick:(UITapGestureRecognizer *)recognizer
+{
+    UIImageView *imageView = (UIImageView *)recognizer.view;
+    
+    NSMutableArray *arrayModels = [NSMutableArray array];
+    for (int i = 0; i < self.photos.count; i++) {
+        [arrayModels addObject:(NSString *)self.photos[i]];
+    }
+    
+    _photoGallery = [[KYPhotoGallery alloc]initWithTappedImageView:imageView andImageUrls:arrayModels andInitialIndex:imageView.tag];
+    _photoGallery.imageViewArray = self.photoViewArray;
+    [_photoGallery finishAsynDownload:^{
+        [[self viewController] presentViewController:_photoGallery animated:NO completion:nil];
+    }];
+    
+}
 
 @end

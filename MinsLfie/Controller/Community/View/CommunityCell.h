@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DynamicsObject.h"
 
 @interface CommunityCell : UITableViewCell
 
-@property (nonatomic,strong) NSString *content;
+@property (nonatomic,strong) DynamicsObject *dynamicsObject;
 @property (nonatomic,assign) CGFloat cellHeight;
 
 @end

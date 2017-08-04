@@ -212,7 +212,62 @@
 
 - (void)post
 {
+    if (self.selectedPhotos.count == 0) return;
+    //获取图片名字
+    NSMutableArray *nameArray = [NSMutableArray array];
+    for (PHAsset *asset in _selectedAssets) {
+        [nameArray addObject:[asset valueForKey:@"filename"]];
+    }
     
+    __block NSMutableString *imgList = [NSMutableString string];
+    __block NSMutableArray *imgArray = [NSMutableArray array];
+    for (int i = 0; i < self.selectedPhotos.count; i++) {
+        UIImage *image = _selectedPhotos[i];
+        CGSize newSize = [image newSizeOfImage:image.size];
+        image = [image resizedImage:newSize interpolationQuality:kCGInterpolationHigh];
+        
+        NSError *error;
+        NSData *fileData = UIImageJPEGRepresentation(image, 0.5);
+        AVFile *file = [AVFile fileWithName:nameArray[i] data:fileData];
+        if (i == _selectedPhotos.count - 1) {
+            [MBProgressHUD showMessage:@"发送中..." toView:self.view];
+        }
+        [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [imgArray addObject:@{@"index":[NSString stringWithFormat:@"%d",i],@"url":file.url}];
+            NSLog(@"xxxxxxx----------%@",imgArray);
+            if (_selectedPhotos.count == imgArray.count) {
+                NSSortDescriptor *description = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
+                [imgArray sortUsingDescriptors:@[description]];
+                for (int i = 0; i < imgArray.count; i++) {
+                    NSDictionary *dict = imgArray[i];
+                    imgList = (NSMutableString *)[imgList stringByAppendingString:[NSString stringWithFormat:@"%@,",dict[@"url"]]];
+                }
+                imgList = (NSMutableString *)[imgList substringToIndex:[imgList length]-1];
+                if (self.type == CommunityWriteControllerTypeMarket) {
+                    
+                }else{
+                    [self getDynamicParamsAndSendPostWithImgList:imgList];
+                }
+            }
+        }];
+    }
+    
+}
+
+- (void)getDynamicParamsAndSendPostWithImgList:(NSString *)imgList
+{
+    NSDictionary *params = @{@"content":self.textViewStr,@"imgs":imgList,@"addressName":self.poiInfo ? self.poiInfo.name : @"",@"address":self.poiInfo ? self.poiInfo.address : @"",@"latitude":self.poiInfo ? [NSString stringWithFormat:@"%f",self.poiInfo.location.latitude] : @"",@"longitude":self.poiInfo ? [NSString stringWithFormat:@"%f",self.poiInfo.location.longitude] : @"",@"userId":[AVUser currentUser].objectId};
+    [AVCloud callFunctionInBackground:@"saveDynamic" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (error != nil) {
+            NSLog(@"%@",error);
+            [MBProgressHUD showError:@"发布失败" toView:self.view];
+        }else{
+            [MBProgressHUD showSuccess:@"发布成功" toView:self.view];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"goToDynamic" object:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
 }
 
 #pragma mark - addPicture
