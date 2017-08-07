@@ -56,7 +56,7 @@
 {
     int skip = self.page * 20;
     NSDictionary *parameters = @{ @"limit" : @20,
-                                  @"skip" : [NSNumber numberWithInt:skip],@"currectUserId":[AVUser currentUser].objectId};
+                                  @"skip" : [NSNumber numberWithInt:skip],@"currectUserId":[AVUser currentUser].objectId ? [AVUser currentUser].objectId : @""};
     [MSProgressHUD showHUDAddedToWindow:self.view.window];
     [AVCloud callFunctionInBackground:@"getDynamics" withParameters:parameters block:^(id  _Nullable object, NSError * _Nullable error) {
         [MSProgressHUD hideHUDForWindow:self.view.window animated:YES];

@@ -114,12 +114,14 @@
 
 - (void)collectClick
 {
-    if ([_dynamicsObject.isCollect intValue] == 1) {
-        self.collectButton.selected = NO;
-        self.collectButton.backgroundColor = [UIColor whiteColor];
-    }else{
-        self.collectButton.selected = YES;
-        self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+    if ([AVUser currentUser] != nil) {
+        if ([_dynamicsObject.isCollect intValue] == 1) {
+            self.collectButton.selected = NO;
+            self.collectButton.backgroundColor = [UIColor whiteColor];
+        }else{
+            self.collectButton.selected = YES;
+            self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+        }
     }
     self.communityCollectBlock(_dynamicsObject);
 }
