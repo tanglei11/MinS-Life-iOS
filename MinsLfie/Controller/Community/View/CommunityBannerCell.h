@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^BannerCloseBlock)();
 @interface CommunityBannerCell : UITableViewCell
 
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,assign) CGFloat cellHeight;
+@property (nonatomic,copy) BannerCloseBlock bannerCloseBlock;
 
 @end

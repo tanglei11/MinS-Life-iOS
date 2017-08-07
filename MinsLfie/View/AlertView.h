@@ -12,13 +12,20 @@
 
 #define AlertViewHeight 197
 
-typedef void (^AlertViewSaveBlock)();
+typedef void (^AlertviewSendFriendBlock)();
+typedef void (^AlertviewSendFriendQuanBlock)();
+typedef void (^AlertviewSavePictureBlock)();
 @interface AlertView : UIView
-@property (nonatomic,strong)AlertViewSaveBlock AlertViewSaveBlock;
+@property (nonatomic,strong)AlertviewSendFriendBlock  alertviewSendFriendBlock;
+@property (nonatomic,strong)AlertviewSendFriendQuanBlock  alertviewSendFriendQuanBlock;
+@property (nonatomic,strong)AlertviewSavePictureBlock  alertviewSavePictureBlock;
+@property (nonatomic,weak) UITableView *chooseTableView;
 
 -(id)initWithFrame:(CGRect)frame andAboveView:(UIView *)bgView;
 -(void)addAlertView;
--(void)setAlertViewBlock:(AlertViewSaveBlock)block;
+-(void)setAlertviewSendFriendBlock:(AlertviewSendFriendBlock)friendBlock;
+-(void)setAlertviewSendFriendQuanBlock:(AlertviewSendFriendQuanBlock)friendQuanBlock;
+-(void)setAlertviewSavePictureBlock:(AlertviewSavePictureBlock)savePictureBlock;
 -(void)disappear;
 
 @end

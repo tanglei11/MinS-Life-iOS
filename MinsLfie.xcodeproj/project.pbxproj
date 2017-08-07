@@ -11,6 +11,9 @@
 		48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00E1F2C774B0082795F /* CommunityCell.m */; };
 		48C9A0121F2C80100082795F /* PhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A0111F2C80100082795F /* PhotosView.m */; };
 		68F2D72DFF88CB7EE247BCE2 /* libPods-MinsLfie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */; };
+		EB06A3FB1F37FBD7000BB108 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3F81F37FBD7000BB108 /* AlertCell.m */; };
+		EB06A3FC1F37FBD7000BB108 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3FA1F37FBD7000BB108 /* AlertView.m */; };
+		EB06A3FF1F37FC26000BB108 /* SaveImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3FE1F37FC26000BB108 /* SaveImageAlertView.m */; };
 		EB0BFB811F2F0E3900B89D08 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB801F2F0E3900B89D08 /* BaseObject.m */; };
 		EB0BFB841F2F0EC300B89D08 /* PlaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB831F2F0EC300B89D08 /* PlaceObject.m */; };
 		EB0BFB881F2F13DD00B89D08 /* MSProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0BFB871F2F13DD00B89D08 /* MSProgressHUD.m */; };
@@ -37,9 +40,6 @@
 		EB4F812A1F34683000AB63AB /* PhotoGalleryImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81211F34683000AB63AB /* PhotoGalleryImageView.m */; };
 		EB4F812B1F34683000AB63AB /* PhotoGalleryScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81231F34683000AB63AB /* PhotoGalleryScrollView.m */; };
 		EB4F812C1F34683000AB63AB /* PhotoZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81251F34683000AB63AB /* PhotoZoomScrollView.m */; };
-		EB4F812D1F34683000AB63AB /* SaveImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81271F34683000AB63AB /* SaveImageAlertView.m */; };
-		EB4F81301F3468E800AB63AB /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F812F1F3468E800AB63AB /* AlertView.m */; };
-		EB4F81331F34690100AB63AB /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4F81321F34690100AB63AB /* AlertCell.m */; };
 		EB79B5561F2EC354006EA026 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5551F2EC354006EA026 /* HomeController.m */; };
 		EB79B5591F2EC375006EA026 /* NearByController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B5581F2EC375006EA026 /* NearByController.m */; };
 		EB79B56D1F2EC491006EA026 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = EB79B55C1F2EC491006EA026 /* UIColor+Magic.m */; };
@@ -149,6 +149,12 @@
 		48C9A0111F2C80100082795F /* PhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosView.m; sourceTree = "<group>"; };
 		4FDBA1C89F8FAD7C14DC49C3 /* Pods-MinsLfie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.release.xcconfig"; sourceTree = "<group>"; };
 		51F7A87AB0BA3261A00C40F5 /* Pods-MinsLfie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.debug.xcconfig"; sourceTree = "<group>"; };
+		EB06A3F71F37FBD7000BB108 /* AlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCell.h; sourceTree = "<group>"; };
+		EB06A3F81F37FBD7000BB108 /* AlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCell.m; sourceTree = "<group>"; };
+		EB06A3F91F37FBD7000BB108 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		EB06A3FA1F37FBD7000BB108 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		EB06A3FD1F37FC26000BB108 /* SaveImageAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImageAlertView.h; sourceTree = "<group>"; };
+		EB06A3FE1F37FC26000BB108 /* SaveImageAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveImageAlertView.m; sourceTree = "<group>"; };
 		EB0BFB7F1F2F0E3900B89D08 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		EB0BFB801F2F0E3900B89D08 /* BaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
 		EB0BFB821F2F0EC300B89D08 /* PlaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObject.h; sourceTree = "<group>"; };
@@ -201,12 +207,6 @@
 		EB4F81231F34683000AB63AB /* PhotoGalleryScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGalleryScrollView.m; sourceTree = "<group>"; };
 		EB4F81241F34683000AB63AB /* PhotoZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoZoomScrollView.h; sourceTree = "<group>"; };
 		EB4F81251F34683000AB63AB /* PhotoZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoZoomScrollView.m; sourceTree = "<group>"; };
-		EB4F81261F34683000AB63AB /* SaveImageAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImageAlertView.h; sourceTree = "<group>"; };
-		EB4F81271F34683000AB63AB /* SaveImageAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveImageAlertView.m; sourceTree = "<group>"; };
-		EB4F812E1F3468E800AB63AB /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
-		EB4F812F1F3468E800AB63AB /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
-		EB4F81311F34690100AB63AB /* AlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCell.h; sourceTree = "<group>"; };
-		EB4F81321F34690100AB63AB /* AlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCell.m; sourceTree = "<group>"; };
 		EB79B5541F2EC354006EA026 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		EB79B5551F2EC354006EA026 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		EB79B5571F2EC375006EA026 /* NearByController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearByController.h; sourceTree = "<group>"; };
@@ -542,8 +542,8 @@
 				EB4F811D1F34683000AB63AB /* KYPhotoGallery.h */,
 				EB4F811E1F34683000AB63AB /* KYPhotoGallery.m */,
 				EB4F811F1F34683000AB63AB /* PhotoGalleryScrollView */,
-				EB4F81261F34683000AB63AB /* SaveImageAlertView.h */,
-				EB4F81271F34683000AB63AB /* SaveImageAlertView.m */,
+				EB06A3FD1F37FC26000BB108 /* SaveImageAlertView.h */,
+				EB06A3FE1F37FC26000BB108 /* SaveImageAlertView.m */,
 			);
 			path = KYElegantPhotoGallery;
 			sourceTree = "<group>";
@@ -746,10 +746,10 @@
 		EBB4371D1F2B14DC006BB009 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EB4F81311F34690100AB63AB /* AlertCell.h */,
-				EB4F81321F34690100AB63AB /* AlertCell.m */,
-				EB4F812E1F3468E800AB63AB /* AlertView.h */,
-				EB4F812F1F3468E800AB63AB /* AlertView.m */,
+				EB06A3F71F37FBD7000BB108 /* AlertCell.h */,
+				EB06A3F81F37FBD7000BB108 /* AlertCell.m */,
+				EB06A3F91F37FBD7000BB108 /* AlertView.h */,
+				EB06A3FA1F37FBD7000BB108 /* AlertView.m */,
 				EBC07F001F3075E80037A69A /* BTSearchBar.h */,
 				EBC07F011F3075E80037A69A /* BTSearchBar.m */,
 				48C9A0101F2C80100082795F /* PhotosView.h */,
@@ -1203,6 +1203,7 @@
 				EBC07F591F3091B60037A69A /* MJRefreshAutoGifFooter.m in Sources */,
 				EBC07E721F3024440037A69A /* CommunityWriteController.m in Sources */,
 				EBC07F5F1F3091B60037A69A /* MJRefreshGifHeader.m in Sources */,
+				EB06A3FF1F37FC26000BB108 /* SaveImageAlertView.m in Sources */,
 				EB4608971F31C9A300855420 /* MSTabBar.m in Sources */,
 				EB79B5731F2EC491006EA026 /* VTMenuBar.m in Sources */,
 				EBB437741F2B2593006BB009 /* UIBarButtonItem+Item.m in Sources */,
@@ -1229,7 +1230,6 @@
 				EB84653D1F331BCC00AC2B54 /* ProfileInfoNormalCell.m in Sources */,
 				EB4F81141F34551700AB63AB /* DynamicsObject.m in Sources */,
 				EBC07F5E1F3091B60037A69A /* MJRefreshBackStateFooter.m in Sources */,
-				EB4F81331F34690100AB63AB /* AlertCell.m in Sources */,
 				EB46087D1F31C89600855420 /* UIButton+BHBSetImage.m in Sources */,
 				EBC07F571F3091B60037A69A /* MJRefreshFooter.m in Sources */,
 				EB4F812A1F34683000AB63AB /* PhotoGalleryImageView.m in Sources */,
@@ -1242,7 +1242,7 @@
 				EBB437341F2B1BAD006BB009 /* UIColor+Hex.m in Sources */,
 				EB84653A1F331B9400AC2B54 /* ProfileNormalCell.m in Sources */,
 				EB0BFB841F2F0EC300B89D08 /* PlaceObject.m in Sources */,
-				EB4F81301F3468E800AB63AB /* AlertView.m in Sources */,
+				EB06A3FB1F37FBD7000BB108 /* AlertCell.m in Sources */,
 				EB8465311F3313FA00AC2B54 /* ProfileInfoController.m in Sources */,
 				EBC07EA11F302F320037A69A /* ACEExpandableTextCell.m in Sources */,
 				EBC07F681F3091B60037A69A /* UIView+MJExtension.m in Sources */,
@@ -1257,6 +1257,7 @@
 				EBC07F0B1F3076780037A69A /* NearByAddressCell.m in Sources */,
 				EB0BFB881F2F13DD00B89D08 /* MSProgressHUD.m in Sources */,
 				EB4F812B1F34683000AB63AB /* PhotoGalleryScrollView.m in Sources */,
+				EB06A3FC1F37FBD7000BB108 /* AlertView.m in Sources */,
 				EBC07F551F3091B60037A69A /* MJRefreshBackFooter.m in Sources */,
 				EBC07F561F3091B60037A69A /* MJRefreshComponent.m in Sources */,
 				EB4608781F31C89600855420 /* BHBItem.m in Sources */,
@@ -1305,7 +1306,6 @@
 				EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */,
 				EB79B5711F2EC491006EA026 /* VTMagicController.m in Sources */,
 				48C9A00C1F2C6E6B0082795F /* CommunityBannerCell.m in Sources */,
-				EB4F812D1F34683000AB63AB /* SaveImageAlertView.m in Sources */,
 				EB8465341F33172000AC2B54 /* ProfileHeaderCell.m in Sources */,
 				EBB437021F2B12CF006BB009 /* main.m in Sources */,
 				EBC07EE41F305B1D0037A69A /* TZPhotoPickerController.m in Sources */,

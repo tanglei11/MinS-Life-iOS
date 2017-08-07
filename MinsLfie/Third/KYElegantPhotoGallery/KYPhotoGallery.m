@@ -183,7 +183,7 @@
         
         SaveImageAlertView *alertView = [[SaveImageAlertView alloc]initWithFrame:CGRectMake(0, Screen_Height, Screen_Width, 49 * 2) andAboveView:self.view];
         
-        [alertView setAlertViewBlock:^{
+        [alertView setAlertviewSaveImageBlock:^{
             [self saveImage];
         }];
         

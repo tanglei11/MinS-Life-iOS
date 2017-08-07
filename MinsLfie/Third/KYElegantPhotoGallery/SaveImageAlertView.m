@@ -37,7 +37,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        self.AlertViewSaveBlock();
+        self.alertviewSaveImageBlock();
     }else{
         [self disappear];
     }

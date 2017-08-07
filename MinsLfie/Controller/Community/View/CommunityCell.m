@@ -14,6 +14,7 @@
 @property (nonatomic,weak) UIImageView *headerView;
 @property (nonatomic,weak) UILabel *nickLabel;
 @property (nonatomic,weak) UILabel *timeLabel;
+@property (nonatomic,weak) UIButton *collectButton;
 @property (nonatomic,weak) PhotosView *photosView;
 @property (nonatomic,weak) UILabel *contentLabel;
 @property (nonatomic,weak) UIView *addressView;
@@ -53,11 +54,15 @@
         UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(Screen_Width - 20 - 60, (headerView.height - 30) / 2 + headerView.y, 60, 30)];
         collectButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [collectButton setTitle:@"收藏" forState:UIControlStateNormal];
+        [collectButton setTitle:@"已收藏" forState:UIControlStateSelected];
         [collectButton setTitleColor:[UIColor colorFromHex:NORMAL_BG_COLOR] forState:UIControlStateNormal];
-        collectButton.layer.cornerRadius = 8;
+        [collectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        collectButton.layer.cornerRadius = 6;
         collectButton.layer.borderColor = [[UIColor colorFromHex:NORMAL_BG_COLOR] CGColor];
         collectButton.layer.borderWidth = 1;
+        [collectButton addTarget:self action:@selector(collectClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:collectButton];
+        self.collectButton = collectButton;
         //图片集
 //        NSArray *photos = @[@"photo_1",@"photo_2",@"photo_3"];
 //        CGSize photosSize = [PhotosView SizeWithCount:(int)photos.count];
@@ -107,6 +112,18 @@
     return self;
 }
 
+- (void)collectClick
+{
+    if ([_dynamicsObject.isCollect intValue] == 1) {
+        self.collectButton.selected = NO;
+        self.collectButton.backgroundColor = [UIColor whiteColor];
+    }else{
+        self.collectButton.selected = YES;
+        self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+    }
+    self.communityCollectBlock(_dynamicsObject);
+}
+
 - (void)setDynamicsObject:(DynamicsObject *)dynamicsObject
 {
     _dynamicsObject = dynamicsObject;
@@ -117,6 +134,15 @@
     }
     self.nickLabel.text = [dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? dynamicsObject.dynamicsUser.username : dynamicsObject.dynamicsUser.nickname;
     self.timeLabel.text = [NSString stringWithAccurateTimeChangeToBlurryTime:dynamicsObject.createdAt dateFormat:nil];
+    
+    if ([dynamicsObject.isCollect intValue] == 1) {
+        self.collectButton.selected = YES;
+        self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+    }else{
+        self.collectButton.selected = NO;
+        self.collectButton.backgroundColor = [UIColor whiteColor];
+    }
+    
     NSMutableArray *imgs = [[dynamicsObject.imgs componentsSeparatedByString:@","] mutableCopy];
     NSArray * photos = [NSArray array];
     if (photos.count > 3) {

@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DynamicsObject.h"
 
+typedef void(^CommunityCollectBlock)(DynamicsObject *dynamicsObject);
 @interface CommunityCell : UITableViewCell
 
 @property (nonatomic,strong) DynamicsObject *dynamicsObject;
 @property (nonatomic,assign) CGFloat cellHeight;
+@property (nonatomic,copy) CommunityCollectBlock communityCollectBlock;
 
 @end

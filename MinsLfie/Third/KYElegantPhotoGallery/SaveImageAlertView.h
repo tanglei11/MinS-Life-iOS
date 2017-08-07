@@ -8,6 +8,12 @@
 
 #import "AlertView.h"
 
+typedef void (^AlertviewSaveImageBlock)();
+
 @interface SaveImageAlertView : AlertView
+
+@property (nonatomic,strong)AlertviewSaveImageBlock  alertviewSaveImageBlock;
+
+-(void)setAlertviewSaveImageBlock:(AlertviewSaveImageBlock)saveImageBlock;
 
 @end

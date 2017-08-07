@@ -26,6 +26,9 @@
         
         //关闭
         UIImageView *closeView = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_Width - 44, 0, 44, 44)];
+        closeView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *closeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeClick)];
+        [closeView addGestureRecognizer:closeTap];
         closeView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe62c;"] inFont:ICONFONT size:44 color:[UIColor colorFromHex:NORMAL_BG_COLOR]];
         [self.contentView addSubview:closeView];
         
@@ -34,6 +37,11 @@
         [closeView addSubview:caView];
     }
     return self;
+}
+
+- (void)closeClick
+{
+    self.bannerCloseBlock();
 }
 
 - (void)setContent:(NSString *)content

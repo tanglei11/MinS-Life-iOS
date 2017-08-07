@@ -56,7 +56,7 @@
 {
     int skip = self.page * 20;
     NSDictionary *parameters = @{ @"limit" : @20,
-                                  @"skip" : [NSNumber numberWithInt:skip]};
+                                  @"skip" : [NSNumber numberWithInt:skip],@"currectUserId":[AVUser currentUser].objectId};
     [MSProgressHUD showHUDAddedToWindow:self.view.window];
     [AVCloud callFunctionInBackground:@"getDynamics" withParameters:parameters block:^(id  _Nullable object, NSError * _Nullable error) {
         [MSProgressHUD hideHUDForWindow:self.view.window animated:YES];
@@ -153,6 +153,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *community_banner_id = @"community_banner_cell";
+//    static NSString *community_id = @"community_cell";
     NSString *community_id = [NSString stringWithFormat:@"community_cell_%ld",indexPath.section - 1];
     CommunityBannerCell *communityBannerCell = [tableView dequeueReusableCellWithIdentifier:community_banner_id];
     if (communityBannerCell == nil) {
@@ -163,15 +164,50 @@
     if (communityCell == nil) {
         communityCell = [[CommunityCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:community_id];
     }
+//    else{
+//        [communityCell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//        communityCell = [[CommunityCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:community_id];
+//    }
     
     if (indexPath.section == 0) {
         communityBannerCell.selectionStyle = UITableViewCellSelectionStyleNone;
         communityBannerCell.content = @"听说校园每时每刻都发生一些新鲜事哦！你看见有趣的事了吗？你看见帅气学长了吗？你看见漂亮学妹了吗？快来分享你的校园生活趣事，大家一起来围观！";
+        communityBannerCell.bannerCloseBlock = ^{
+            
+        };
         self.communityBannerCellHeight = communityBannerCell.cellHeight;
         return communityBannerCell;
     }else{
-        communityCell.dynamicsObject = self.dynamicsArray[indexPath.section - 1];
+        DynamicsObject *dynamicsObject = self.dynamicsArray[indexPath.section - 1];
+        communityCell.dynamicsObject = dynamicsObject;
         communityCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        communityCell.communityCollectBlock = ^(DynamicsObject *dynamicsObject) {
+            if ([AVUser currentUser] != nil) {
+                if ([dynamicsObject.isCollect intValue] == 1) {
+                    dynamicsObject.isCollect = @"0";
+                    NSDictionary *params = @{@"dynamicId":dynamicsObject.objectId};
+                    [AVCloud callFunctionInBackground:@"deleteCollect" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                        if (error != nil) {
+                            [MBProgressHUD showError:@"取消收藏失败"];
+                        }else{
+                            
+                        }
+                    }];
+                }else{
+                    dynamicsObject.isCollect = @"1";
+                    NSDictionary *params = @{@"dynamicId":dynamicsObject.objectId,@"collectUserId":[AVUser currentUser].objectId,@"collectType":@"dynamic"};
+                    [AVCloud callFunctionInBackground:@"saveCollect" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                        if (error != nil) {
+                            [MBProgressHUD showError:@"收藏失败"];
+                        }else{
+                            
+                        }
+                    }];
+                }
+            }else{
+                [self showLoginGuideView];
+            }
+        };
         self.communityCellHeight = communityCell.cellHeight;
         return communityCell;
     }

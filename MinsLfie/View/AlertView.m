@@ -18,7 +18,7 @@
 @interface AlertView()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,weak)UIView *tapView;
-@property (nonatomic,weak) UITableView *chooseTableView;
+
 
 @end
 @implementation AlertView
@@ -44,7 +44,28 @@
 
 -(void)addAlertView
 {
-        
+//    //头
+//    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 50)];
+//    headerView.backgroundColor = [UIColor whiteColor];
+//    [self addSubview:headerView];
+//    
+//    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pho_bg_drawer"]];
+//    imageView.frame = CGRectMake(0, 0, self.frame.size.width, 49);
+//    [headerView addSubview:imageView];
+//    
+//    UIView *firstLineView = [[UIView alloc]init];
+//    firstLineView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+//    firstLineView.frame = CGRectMake(24, 49, Screen_Width - 2 * 24, 0.5);
+//    [headerView addSubview:firstLineView];
+//    [self addSubview:headerView];
+    //tableView
+    UITableView *chooseTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    chooseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    chooseTableView.delegate = self;
+    chooseTableView.dataSource = self;
+    chooseTableView.scrollEnabled = NO;
+    [self addSubview:chooseTableView];
+    self.chooseTableView = chooseTableView;
 }
 
 -(void)disappear
@@ -61,15 +82,11 @@
 
 #pragma mark - tableview delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 2;
-    }else{
-        return 1;
-    }
+    return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,41 +99,33 @@
     AlertCell *cell = [AlertCell cellWithTableView:tableView];
     
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            cell.imagePickerName.text = @"保存草稿";
-            [ToolClass addUnderLineForCell:cell cellHeight:49 lineX:24 lineHeight:LINE_HEIGHT isJustified:YES];
-        }
-        else
-        {
-            cell.imagePickerName.text = @"不保存";
-            cell.imagePickerName.textColor = [UIColor colorFromHex:MAIN_COLOR];
-            [ToolClass addUnderLineForCell:cell cellHeight:49 lineX:24 lineHeight:LINE_HEIGHT isJustified:YES];
-        }
-        
+        cell.imagePickerName.text = @"发送给朋友";
+        [ToolClass addUnderLineForCell:cell cellHeight:49 lineX:0 lineHeight:LINE_HEIGHT isJustified:YES];
+    }else if (indexPath.section == 1){
+        cell.imagePickerName.text = @"发送朋友圈";
+        [ToolClass addUnderLineForCell:cell cellHeight:49 lineX:0 lineHeight:LINE_HEIGHT isJustified:YES];
+    }else if (indexPath.section == 2){
+        cell.imagePickerName.text = @"保存图片";
+        [ToolClass addUnderLineForCell:cell cellHeight:49 lineX:0 lineHeight:6 isJustified:YES];
     }else{
         cell.imagePickerName.text = @"取消";
     }
     return cell;
 }
 
--(void)setAlertViewBlock:(AlertViewSaveBlock)block
-{
-    self.AlertViewSaveBlock = block;
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            self.AlertViewSaveBlock();
-        }
-        else
-        {
-            [[self viewController] dismissViewControllerAnimated:YES completion:nil];
-        }
+        self.alertviewSendFriendBlock();
+    }else if (indexPath.section == 1){
+        self.alertviewSendFriendQuanBlock();
+    }else if (indexPath.section == 2){
+        self.alertviewSavePictureBlock();
     }else{
-        [self disappear];
+       
     }
+    [self disappear];
 }
 
 @end

@@ -21,5 +21,6 @@
 @property (nonatomic,copy) NSString *objectId;
 @property (nonatomic,strong) DynamicsUserObject *dynamicsUser;
 @property (nonatomic,copy) NSString *userId;
+@property (nonatomic,copy) NSString *isCollect;
 
 @end

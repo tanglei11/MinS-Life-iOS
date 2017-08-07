@@ -58,6 +58,9 @@
 //FONT
 #define ICONFONT @"iconfont"
 
+//UserDefault
+#define DYNAMIC_FLAG_IS_READ_USER_DEFAULT                                   @"dynamicIsRead"
+
 //常用图标
 // 从我的位置导航
 #define ICON_GUIDE_TO_HERE  [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe773;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:@"#FFFFFF"]];
