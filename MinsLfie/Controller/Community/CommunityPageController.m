@@ -13,6 +13,7 @@
 
 //控制器
 #import "CommunityWriteController.h"
+#import "CommunityDetailController.h"
 
 @interface CommunityPageController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -23,6 +24,7 @@
 @property (nonatomic,strong) NSMutableArray *dynamicsArray;
 @property (nonatomic,assign) BOOL isFirstEnter;
 @property (nonatomic,assign) BOOL isNeedScroll;
+@property (nonatomic,assign) BOOL isPush;
 
 @end
 
@@ -89,9 +91,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.isFirstEnter) {
+    if (self.isFirstEnter || self.isPush) {
         [self newData];
         self.isFirstEnter = NO;
+        self.isPush = NO;
     }
 }
 
@@ -214,6 +217,19 @@
 }
 
 #pragma mark - tableView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        
+    }else{
+        self.isPush = YES;
+        CommunityDetailController *communityDetailController = [[CommunityDetailController alloc] init];
+        communityDetailController.dynamicsObject = self.dynamicsArray[indexPath.section - 1];
+        communityDetailController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:communityDetailController animated:YES];
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {

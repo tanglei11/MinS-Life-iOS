@@ -204,7 +204,7 @@
         }];
         UIAlertAction *loginAction = [UIAlertAction actionWithTitle:@"现在登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             LoginController *loginController = [[LoginController alloc] init];
-            self.view.window.rootViewController = loginController;
+            [self presentViewController:loginController animated:YES completion:nil];
         }];
         [loginAlertController addAction:cancelAction];
         [loginAlertController addAction:loginAction];
@@ -215,7 +215,7 @@
 - (void)backToLoginPage
 {
     LoginController *loginController = [[LoginController alloc] init];
-    self.view.window.rootViewController = loginController;
+    [self presentViewController:loginController animated:YES completion:nil];
 }
 
 @end

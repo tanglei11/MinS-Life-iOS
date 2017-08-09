@@ -54,16 +54,6 @@
 		EB8465141F32DB5500AC2B54 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB84650F1F32DB5500AC2B54 /* MBProgressHUD.bundle */; };
 		EB8465151F32DB5500AC2B54 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = EB8465101F32DB5500AC2B54 /* README.mdown */; };
 		EB8465161F32DB5500AC2B54 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8465121F32DB5500AC2B54 /* MBProgressHUD.m */; };
-		EB8465211F32FA6B00AC2B54 /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EB8465171F32FA6B00AC2B54 /* demo_fontclass.html */; };
-		EB8465221F32FA6B00AC2B54 /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EB8465181F32FA6B00AC2B54 /* demo_symbol.html */; };
-		EB8465231F32FA6B00AC2B54 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EB8465191F32FA6B00AC2B54 /* demo_unicode.html */; };
-		EB8465241F32FA6B00AC2B54 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EB84651A1F32FA6B00AC2B54 /* demo.css */; };
-		EB8465251F32FA6B00AC2B54 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EB84651B1F32FA6B00AC2B54 /* iconfont.css */; };
-		EB8465261F32FA6B00AC2B54 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EB84651C1F32FA6B00AC2B54 /* iconfont.eot */; };
-		EB8465271F32FA6B00AC2B54 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EB84651D1F32FA6B00AC2B54 /* iconfont.js */; };
-		EB8465281F32FA6B00AC2B54 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EB84651E1F32FA6B00AC2B54 /* iconfont.svg */; };
-		EB8465291F32FA6B00AC2B54 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB84651F1F32FA6B00AC2B54 /* iconfont.ttf */; };
-		EB84652A1F32FA6B00AC2B54 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EB8465201F32FA6B00AC2B54 /* iconfont.woff */; };
 		EB84652E1F32FFBA00AC2B54 /* SetPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84652D1F32FFBA00AC2B54 /* SetPageController.m */; };
 		EB8465311F3313FA00AC2B54 /* ProfileInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8465301F3313FA00AC2B54 /* ProfileInfoController.m */; };
 		EB8465341F33172000AC2B54 /* ProfileHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8465331F33172000AC2B54 /* ProfileHeaderCell.m */; };
@@ -75,6 +65,20 @@
 		EB84654A1F33364200AC2B54 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8465491F33364200AC2B54 /* DatePickerView.m */; };
 		EB84654D1F33398800AC2B54 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84654C1F33398800AC2B54 /* UIImage+Utils.m */; };
 		EB8465501F3339EC00AC2B54 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84654F1F3339EC00AC2B54 /* UIImage+Resize.m */; };
+		EBA3D86A1F394C33001EA23F /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8691F394C33001EA23F /* CommunityDetailController.m */; };
+		EBA3D8751F394E31001EA23F /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86B1F394E31001EA23F /* demo_fontclass.html */; };
+		EBA3D8761F394E31001EA23F /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86C1F394E31001EA23F /* demo_symbol.html */; };
+		EBA3D8771F394E31001EA23F /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86D1F394E31001EA23F /* demo_unicode.html */; };
+		EBA3D8781F394E31001EA23F /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86E1F394E31001EA23F /* demo.css */; };
+		EBA3D8791F394E31001EA23F /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86F1F394E31001EA23F /* iconfont.css */; };
+		EBA3D87A1F394E31001EA23F /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8701F394E31001EA23F /* iconfont.eot */; };
+		EBA3D87B1F394E31001EA23F /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8711F394E31001EA23F /* iconfont.js */; };
+		EBA3D87C1F394E31001EA23F /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8721F394E31001EA23F /* iconfont.svg */; };
+		EBA3D87D1F394E31001EA23F /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8731F394E31001EA23F /* iconfont.ttf */; };
+		EBA3D87E1F394E31001EA23F /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8741F394E31001EA23F /* iconfont.woff */; };
+		EBA3D8811F395121001EA23F /* CommunityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8801F395121001EA23F /* CommunityDetailCell.m */; };
+		EBA3D8871F39A283001EA23F /* DynamicCommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8861F39A283001EA23F /* DynamicCommentObject.m */; };
+		EBA3D88A1F39A479001EA23F /* CommunityCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8891F39A479001EA23F /* CommunityCommentCell.m */; };
 		EBB437021F2B12CF006BB009 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437011F2B12CF006BB009 /* main.m */; };
 		EBB437051F2B12CF006BB009 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437041F2B12CF006BB009 /* AppDelegate.m */; };
 		EBB437081F2B12CF006BB009 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB437071F2B12CF006BB009 /* ViewController.m */; };
@@ -237,16 +241,6 @@
 		EB8465101F32DB5500AC2B54 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		EB8465111F32DB5500AC2B54 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		EB8465121F32DB5500AC2B54 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		EB8465171F32FA6B00AC2B54 /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
-		EB8465181F32FA6B00AC2B54 /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
-		EB8465191F32FA6B00AC2B54 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
-		EB84651A1F32FA6B00AC2B54 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		EB84651B1F32FA6B00AC2B54 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		EB84651C1F32FA6B00AC2B54 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
-		EB84651D1F32FA6B00AC2B54 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		EB84651E1F32FA6B00AC2B54 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
-		EB84651F1F32FA6B00AC2B54 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		EB8465201F32FA6B00AC2B54 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EB84652C1F32FFBA00AC2B54 /* SetPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPageController.h; sourceTree = "<group>"; };
 		EB84652D1F32FFBA00AC2B54 /* SetPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPageController.m; sourceTree = "<group>"; };
 		EB84652F1F3313FA00AC2B54 /* ProfileInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileInfoController.h; sourceTree = "<group>"; };
@@ -269,6 +263,24 @@
 		EB84654C1F33398800AC2B54 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		EB84654E1F3339EC00AC2B54 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		EB84654F1F3339EC00AC2B54 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		EBA3D8681F394C33001EA23F /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
+		EBA3D8691F394C33001EA23F /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
+		EBA3D86B1F394E31001EA23F /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
+		EBA3D86C1F394E31001EA23F /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
+		EBA3D86D1F394E31001EA23F /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		EBA3D86E1F394E31001EA23F /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		EBA3D86F1F394E31001EA23F /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		EBA3D8701F394E31001EA23F /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		EBA3D8711F394E31001EA23F /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		EBA3D8721F394E31001EA23F /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		EBA3D8731F394E31001EA23F /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		EBA3D8741F394E31001EA23F /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		EBA3D87F1F395121001EA23F /* CommunityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailCell.h; sourceTree = "<group>"; };
+		EBA3D8801F395121001EA23F /* CommunityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailCell.m; sourceTree = "<group>"; };
+		EBA3D8851F39A283001EA23F /* DynamicCommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCommentObject.h; sourceTree = "<group>"; };
+		EBA3D8861F39A283001EA23F /* DynamicCommentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCommentObject.m; sourceTree = "<group>"; };
+		EBA3D8881F39A479001EA23F /* CommunityCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCommentCell.h; sourceTree = "<group>"; };
+		EBA3D8891F39A479001EA23F /* CommunityCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCommentCell.m; sourceTree = "<group>"; };
 		EBB436FD1F2B12CF006BB009 /* MinsLfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinsLfie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB437011F2B12CF006BB009 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBB437031F2B12CF006BB009 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -416,8 +428,12 @@
 				48C9A00B1F2C6E6B0082795F /* CommunityBannerCell.m */,
 				48C9A00D1F2C774B0082795F /* CommunityCell.h */,
 				48C9A00E1F2C774B0082795F /* CommunityCell.m */,
+				EBA3D87F1F395121001EA23F /* CommunityDetailCell.h */,
+				EBA3D8801F395121001EA23F /* CommunityDetailCell.m */,
 				EBC07F091F3076780037A69A /* NearByAddressCell.h */,
 				EBC07F0A1F3076780037A69A /* NearByAddressCell.m */,
+				EBA3D8881F39A479001EA23F /* CommunityCommentCell.h */,
+				EBA3D8891F39A479001EA23F /* CommunityCommentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -531,6 +547,8 @@
 				EB4F81131F34551700AB63AB /* DynamicsObject.m */,
 				EB4F81151F34552F00AB63AB /* DynamicsUserObject.h */,
 				EB4F81161F34552F00AB63AB /* DynamicsUserObject.m */,
+				EBA3D8851F39A283001EA23F /* DynamicCommentObject.h */,
+				EBA3D8861F39A283001EA23F /* DynamicCommentObject.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -827,16 +845,16 @@
 		EBB437351F2B1CA8006BB009 /* iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				EB8465171F32FA6B00AC2B54 /* demo_fontclass.html */,
-				EB8465181F32FA6B00AC2B54 /* demo_symbol.html */,
-				EB8465191F32FA6B00AC2B54 /* demo_unicode.html */,
-				EB84651A1F32FA6B00AC2B54 /* demo.css */,
-				EB84651B1F32FA6B00AC2B54 /* iconfont.css */,
-				EB84651C1F32FA6B00AC2B54 /* iconfont.eot */,
-				EB84651D1F32FA6B00AC2B54 /* iconfont.js */,
-				EB84651E1F32FA6B00AC2B54 /* iconfont.svg */,
-				EB84651F1F32FA6B00AC2B54 /* iconfont.ttf */,
-				EB8465201F32FA6B00AC2B54 /* iconfont.woff */,
+				EBA3D86B1F394E31001EA23F /* demo_fontclass.html */,
+				EBA3D86C1F394E31001EA23F /* demo_symbol.html */,
+				EBA3D86D1F394E31001EA23F /* demo_unicode.html */,
+				EBA3D86E1F394E31001EA23F /* demo.css */,
+				EBA3D86F1F394E31001EA23F /* iconfont.css */,
+				EBA3D8701F394E31001EA23F /* iconfont.eot */,
+				EBA3D8711F394E31001EA23F /* iconfont.js */,
+				EBA3D8721F394E31001EA23F /* iconfont.svg */,
+				EBA3D8731F394E31001EA23F /* iconfont.ttf */,
+				EBA3D8741F394E31001EA23F /* iconfont.woff */,
 			);
 			path = iconfont;
 			sourceTree = "<group>";
@@ -870,6 +888,8 @@
 				48C9A0091F2C6E310082795F /* View */,
 				EBB4376C1F2B2051006BB009 /* CommunityPageController.h */,
 				EBB4376D1F2B2051006BB009 /* CommunityPageController.m */,
+				EBA3D8681F394C33001EA23F /* CommunityDetailController.h */,
+				EBA3D8691F394C33001EA23F /* CommunityDetailController.m */,
 				EBC07E701F3024440037A69A /* CommunityWriteController.h */,
 				EBC07E711F3024440037A69A /* CommunityWriteController.m */,
 				EBC07EFD1F3073B60037A69A /* CommunityAddressSelectController.h */,
@@ -1123,21 +1143,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB8465261F32FA6B00AC2B54 /* iconfont.eot in Resources */,
-				EB8465231F32FA6B00AC2B54 /* demo_unicode.html in Resources */,
-				EB8465211F32FA6B00AC2B54 /* demo_fontclass.html in Resources */,
-				EB8465291F32FA6B00AC2B54 /* iconfont.ttf in Resources */,
-				EB8465271F32FA6B00AC2B54 /* iconfont.js in Resources */,
-				EB84652A1F32FA6B00AC2B54 /* iconfont.woff in Resources */,
+				EBA3D87A1F394E31001EA23F /* iconfont.eot in Resources */,
+				EBA3D8771F394E31001EA23F /* demo_unicode.html in Resources */,
+				EBA3D8751F394E31001EA23F /* demo_fontclass.html in Resources */,
+				EBA3D87D1F394E31001EA23F /* iconfont.ttf in Resources */,
+				EBA3D87B1F394E31001EA23F /* iconfont.js in Resources */,
+				EBA3D87E1F394E31001EA23F /* iconfont.woff in Resources */,
 				EBB437101F2B12CF006BB009 /* LaunchScreen.storyboard in Resources */,
 				EBB4370D1F2B12CF006BB009 /* Assets.xcassets in Resources */,
 				EBB4370B1F2B12CF006BB009 /* Main.storyboard in Resources */,
 				EBC07F631F3091B60037A69A /* MJRefresh.bundle in Resources */,
-				EB8465221F32FA6B00AC2B54 /* demo_symbol.html in Resources */,
+				EBA3D8761F394E31001EA23F /* demo_symbol.html in Resources */,
 				EB8465141F32DB5500AC2B54 /* MBProgressHUD.bundle in Resources */,
-				EB8465281F32FA6B00AC2B54 /* iconfont.svg in Resources */,
-				EB8465251F32FA6B00AC2B54 /* iconfont.css in Resources */,
-				EB8465241F32FA6B00AC2B54 /* demo.css in Resources */,
+				EBA3D87C1F394E31001EA23F /* iconfont.svg in Resources */,
+				EBA3D8791F394E31001EA23F /* iconfont.css in Resources */,
+				EBA3D8781F394E31001EA23F /* demo.css in Resources */,
 				EB46087C1F31C89600855420 /* music.bundle in Resources */,
 				EBC07EE21F305B1D0037A69A /* TZImagePickerController.bundle in Resources */,
 				EB46087B1F31C89600855420 /* images.bundle in Resources */,
@@ -1203,6 +1223,7 @@
 				EBC07F591F3091B60037A69A /* MJRefreshAutoGifFooter.m in Sources */,
 				EBC07E721F3024440037A69A /* CommunityWriteController.m in Sources */,
 				EBC07F5F1F3091B60037A69A /* MJRefreshGifHeader.m in Sources */,
+				EBA3D8811F395121001EA23F /* CommunityDetailCell.m in Sources */,
 				EB06A3FF1F37FC26000BB108 /* SaveImageAlertView.m in Sources */,
 				EB4608971F31C9A300855420 /* MSTabBar.m in Sources */,
 				EB79B5731F2EC491006EA026 /* VTMenuBar.m in Sources */,
@@ -1211,6 +1232,7 @@
 				48C9A0121F2C80100082795F /* PhotosView.m in Sources */,
 				EBB437211F2B158A006BB009 /* MinsLifeNavigationCtl.m in Sources */,
 				EB84654A1F33364200AC2B54 /* DatePickerView.m in Sources */,
+				EBA3D88A1F39A479001EA23F /* CommunityCommentCell.m in Sources */,
 				EB84654D1F33398800AC2B54 /* UIImage+Utils.m in Sources */,
 				EB84652E1F32FFBA00AC2B54 /* SetPageController.m in Sources */,
 				EBB4376E1F2B2051006BB009 /* CommunityPageController.m in Sources */,
@@ -1242,6 +1264,7 @@
 				EBB437341F2B1BAD006BB009 /* UIColor+Hex.m in Sources */,
 				EB84653A1F331B9400AC2B54 /* ProfileNormalCell.m in Sources */,
 				EB0BFB841F2F0EC300B89D08 /* PlaceObject.m in Sources */,
+				EBA3D86A1F394C33001EA23F /* CommunityDetailController.m in Sources */,
 				EB06A3FB1F37FBD7000BB108 /* AlertCell.m in Sources */,
 				EB8465311F3313FA00AC2B54 /* ProfileInfoController.m in Sources */,
 				EBC07EA11F302F320037A69A /* ACEExpandableTextCell.m in Sources */,
@@ -1264,6 +1287,7 @@
 				EB79B5721F2EC491006EA026 /* VTMagicView.m in Sources */,
 				EBC07F541F3091B60037A69A /* MJRefreshAutoFooter.m in Sources */,
 				EBC07F021F3075E80037A69A /* BTSearchBar.m in Sources */,
+				EBA3D8871F39A283001EA23F /* DynamicCommentObject.m in Sources */,
 				EB0BFB8B1F2F167700B89D08 /* DSNAnnotation.m in Sources */,
 				EBC07F651F3091B60037A69A /* NSBundle+MJRefresh.m in Sources */,
 				EB0BFB811F2F0E3900B89D08 /* BaseObject.m in Sources */,

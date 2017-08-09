@@ -251,8 +251,9 @@
                         [AVUser logInWithMobilePhoneNumberInBackground:self.phoneField.text password:self.passField.text block:^(AVUser *user, NSError *error) {
                             [MBProgressHUD hideHUDForView:self.view animated:YES];
                             if (user != nil) {
-                                MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
-                                self.view.window.rootViewController = mainTabBarController;
+//                                MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
+//                                self.view.window.rootViewController = mainTabBarController;
+                                [self dismissViewControllerAnimated:YES completion:nil];
                             }else{
                                 NSLog(@"%@",error);
                                 [MBProgressHUD showError:error.userInfo[@"NSLocalizedDescription"] toView:self.view];
@@ -269,8 +270,9 @@
         [AVUser logInWithMobilePhoneNumberInBackground:self.phoneField.text password:self.passField.text block:^(AVUser *user, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (user != nil) {
-                MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
-                self.view.window.rootViewController = mainTabBarController;
+//                MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
+//                self.view.window.rootViewController = mainTabBarController;
+                [self dismissViewControllerAnimated:YES completion:nil];
             }else{
                 NSLog(@"%@",error);
                 if ([error.userInfo[@"code"] intValue] == 211) {

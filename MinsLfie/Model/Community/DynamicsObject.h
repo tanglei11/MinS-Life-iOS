@@ -22,5 +22,7 @@
 @property (nonatomic,strong) DynamicsUserObject *dynamicsUser;
 @property (nonatomic,copy) NSString *userId;
 @property (nonatomic,copy) NSString *isCollect;
+@property (nonatomic,copy) NSNumber *likeCount;
+@property (nonatomic,copy) NSNumber *commentCount;
 
 @end

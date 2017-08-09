@@ -147,7 +147,7 @@
     
     NSMutableArray *imgs = [[dynamicsObject.imgs componentsSeparatedByString:@","] mutableCopy];
     NSArray * photos = [NSArray array];
-    if (photos.count > 3) {
+    if (imgs.count > 3) {
         photos = [imgs subarrayWithRange:NSMakeRange(0, 3)];
     }else{
         photos = [imgs copy];
@@ -160,9 +160,11 @@
     CGRect rect = [ToolClass caculateText:self.contentLabel.attributedText maxSize:CGSizeMake(Screen_Width - 2 * 22, MAXFLOAT)];
     self.contentLabel.frame = CGRectMake(22, CGRectGetMaxY(self.photosView.frame) + 15, Screen_Width - 2 * 22, rect.size.height);
     
+    self.commentLabel.text = [NSString stringWithFormat:@"%d 评论",[dynamicsObject.commentCount intValue]];
     CGSize commentSize = [self.commentLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
     self.commentLabel.frame = CGRectMake(Screen_Width - 22 - commentSize.width, CGRectGetMaxY(self.contentLabel.frame) + 22, commentSize.width, 14);
     
+    self.likeLabel.text = [NSString stringWithFormat:@"%d 赞",[dynamicsObject.likeCount intValue]];
     CGSize likeSize = [self.likeLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
     self.likeLabel.frame = CGRectMake(self.commentLabel.x - 12 - likeSize.width, self.commentLabel.y, likeSize.width, 14);
     

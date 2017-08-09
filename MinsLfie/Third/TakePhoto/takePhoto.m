@@ -32,30 +32,32 @@
     tP.sPictureBlock = block;
     tP.isEdit = isEdit;
     
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: nil                                                                             message: nil                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIImagePickerController* imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.delegate = tP;
-    imagePickerController.allowsEditing = isEdit;
-    
-    //添加Button
-    
-    [alertController addAction: [UIAlertAction actionWithTitle: @"相册" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        //处理点击从相册选取
-        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [viewController presentViewController:imagePickerController animated:YES completion:NULL];
-    }]];
-    
-    [alertController addAction: [UIAlertAction actionWithTitle: @"相机" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        //处理点击拍照
-        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        [viewController presentViewController:imagePickerController animated:YES completion:NULL];
-    }]];
-    
-    [alertController addAction: [UIAlertAction actionWithTitle: @"取消" style: UIAlertActionStyleCancel handler:nil]];
-    
-    [viewController presentViewController: alertController animated: YES completion: nil];
-
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle: nil                                                                             message: nil                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIImagePickerController* imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = tP;
+        imagePickerController.allowsEditing = isEdit;
+        
+        //添加Button
+        
+        [alertController addAction: [UIAlertAction actionWithTitle: @"相册" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            //处理点击从相册选取
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [viewController presentViewController:imagePickerController animated:YES completion:NULL];
+        }]];
+        
+        [alertController addAction: [UIAlertAction actionWithTitle: @"相机" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //处理点击拍照
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [viewController presentViewController:imagePickerController animated:YES completion:NULL];
+        }]];
+        
+        [alertController addAction: [UIAlertAction actionWithTitle: @"取消" style: UIAlertActionStyleCancel handler:nil]];
+        
+        [viewController presentViewController: alertController animated: YES completion: nil];
+        
+    });
 }
 
 #pragma mark - image picker delegte

@@ -157,7 +157,7 @@
             NSString *profileUrl = (NSString *)[user objectForKey:@"profileUrl"];
             headerCell.headerUrl = file.url ? file.url : (profileUrl ? profileUrl : @"");
         }
-        headerCell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        headerCell.selectionStyle = UITableViewCellSelectionStyleNone;
         [ToolClass addUnderLineForCell:headerCell cellHeight:55 lineX:20 lineHeight:LINE_HEIGHT isJustified:NO];
         return headerCell;
     }else if (indexPath.row == 1){
@@ -207,6 +207,7 @@
 #pragma mark - tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         [takePhoto chooseViewController:self isEdit:NO sharePicture:^(UIImage *image) {
             self.isHeaderImageSelectStatus = YES;
