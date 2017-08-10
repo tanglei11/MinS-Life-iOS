@@ -24,6 +24,7 @@
 @property (nonatomic,weak) UIActionSheet *replySheet;
 @property (nonatomic,assign) BOOL isReply;
 @property (nonatomic,strong) DynamicCommentObject *currentSelectCommentObject;
+@property (nonatomic,weak) UIButton *likeButton;
 
 @end
 
@@ -112,7 +113,14 @@
     [self.view addSubview:bottomView];
     self.bottomView = bottomView;
     
-    UIView *textFieldView = [[UIView alloc] initWithFrame:CGRectMake(6, 7, Screen_Width - 2 * 6, 35)];
+    UIButton *likeButton = [[UIButton alloc] initWithFrame:CGRectMake(bottomView.width - 15 - 22, (bottomView.height - 22) / 2, 22, 22)];
+    [likeButton setImage:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe669;"] inFont:ICONFONT size:22 color:[UIColor colorFromHex:MAIN_COLOR]] forState:UIControlStateNormal];
+    [likeButton setImage:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe66a;"] inFont:ICONFONT size:22 color:[UIColor colorFromHex:NORMAL_BG_COLOR]] forState:UIControlStateSelected];
+    [likeButton addTarget:self action:@selector(likeClick) forControlEvents:UIControlEventTouchUpInside];
+    [bottomView addSubview:likeButton];
+    self.likeButton = likeButton;
+    
+    UIView *textFieldView = [[UIView alloc] initWithFrame:CGRectMake(6, 7, likeButton.x - 18, 35)];
     textFieldView.backgroundColor = [UIColor colorFromHex:@"#F1F1F1"];
     textFieldView.layer.cornerRadius = 6;
     [bottomView addSubview:textFieldView];
@@ -125,6 +133,12 @@
     commentTextField.placeholder = @"喜欢就夸！或者有什么想说的？";
     [textFieldView addSubview:commentTextField];
     self.commentTextField = commentTextField;
+    
+}
+
+- (void)likeClick
+{
+    
 }
 
 - (void)deleteDynamic
@@ -187,9 +201,9 @@
         __block NSDictionary *dict;
         
         if (self.isReply) {
-            params = @{@"relationId":self.dynamicsObject.objectId,@"commentUserId":user.objectId,@"commentUserName":name,@"commentUserProfileUrl":file.url ? file.url : (profileUrl ? profileUrl : @""),@"beCommentUserId":self.currentSelectCommentObject.commentUserId,@"beCommentUserName":self.currentSelectCommentObject.commentUserName,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic"};
+            params = @{@"relationId":self.dynamicsObject.objectId,@"commentUserId":user.objectId,@"beCommentUserId":self.currentSelectCommentObject.dynamicsUser.objectId,@"beCommentUserName":self.currentSelectCommentObject.dynamicsUser.nickname ? self.currentSelectCommentObject.dynamicsUser.nickname : self.currentSelectCommentObject.dynamicsUser.username,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic"};
         }else{
-            params = @{@"relationId":self.dynamicsObject.objectId,@"commentUserId":user.objectId,@"commentUserName":name,@"commentUserProfileUrl":file.url ? file.url : (profileUrl ? profileUrl : @""),@"beCommentUserId":self.dynamicsObject.dynamicsUser.objectId,@"beCommentUserName":[self.dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? self.dynamicsObject.dynamicsUser.username : self.dynamicsObject.dynamicsUser.nickname,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic"};
+            params = @{@"relationId":self.dynamicsObject.objectId,@"commentUserId":user.objectId,@"beCommentUserId":self.dynamicsObject.dynamicsUser.objectId,@"beCommentUserName":[self.dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? self.dynamicsObject.dynamicsUser.username : self.dynamicsObject.dynamicsUser.nickname,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic"};
         }
         
         [MBProgressHUD showMessage:@"发送中..."];
@@ -200,9 +214,9 @@
             }else{
                 NSLog(@"-=-=-=%@",object);
                 if (self.isReply) {
-                    dict = @{@"relationId":self.dynamicsObject.objectId,@"objectId":object[@"commentId"],@"commentUserId":user.objectId,@"commentUserName":name,@"commentUserProfileUrl":file.url ? file.url : (profileUrl ? profileUrl : @""),@"beCommentUserId":self.currentSelectCommentObject.commentUserId,@"beCommentUserName":self.currentSelectCommentObject.commentUserName,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic",@"createdAt":createDateStr};
+                    dict = @{@"relationId":self.dynamicsObject.objectId,@"objectId":object[@"commentId"],@"commentUserId":user.objectId,@"user":@{@"objectId":user.objectId,@"profileUrl":file.url ? file.url : (profileUrl ? profileUrl : @""),@"nickname":[user objectForKey:@"nickname"],@"username":user.username},@"beCommentUserId":self.currentSelectCommentObject.dynamicsUser.objectId,@"beCommentUserName":self.currentSelectCommentObject.dynamicsUser.nickname ? self.currentSelectCommentObject.dynamicsUser.nickname : self.currentSelectCommentObject.dynamicsUser.username,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic",@"createdAt":createDateStr};
                 }else{
-                    dict = @{@"relationId":self.dynamicsObject.objectId,@"objectId":object[@"commentId"],@"commentUserId":user.objectId,@"commentUserName":name,@"commentUserProfileUrl":file.url ? file.url : (profileUrl ? profileUrl : @""),@"beCommentUserId":self.dynamicsObject.dynamicsUser.objectId,@"beCommentUserName":[self.dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? self.dynamicsObject.dynamicsUser.username : self.dynamicsObject.dynamicsUser.nickname,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic",@"createdAt":createDateStr};
+                    dict = @{@"relationId":self.dynamicsObject.objectId,@"objectId":object[@"commentId"],@"commentUserId":user.objectId,@"user":@{@"objectId":user.objectId,@"profileUrl":file.url ? file.url : (profileUrl ? profileUrl : @""),@"nickname":[user objectForKey:@"nickname"],@"username":user.username},@"beCommentUserName":[self.dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? self.dynamicsObject.dynamicsUser.username : self.dynamicsObject.dynamicsUser.nickname,@"beCommentUserId":self.dynamicsObject.dynamicsUser.objectId,@"commentContent":[self.commentTextField.text isEqualToString:@""] ? @"" : self.commentTextField.text,@"commentType":@"dynamic",@"createdAt":createDateStr};
                 }
                 //刷新UI
                 DynamicCommentObject *dynamicCommentObject = [[DynamicCommentObject alloc] init];
@@ -281,7 +295,7 @@
             DynamicCommentObject *dynamicCommentObject = self.commentArray[indexPath.row];
             
             UIAlertAction *replyAction = [UIAlertAction actionWithTitle:@"回复" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                self.commentTextField.placeholder = [NSString stringWithFormat:@"回复%@",dynamicCommentObject.commentUserName];
+                self.commentTextField.placeholder = [NSString stringWithFormat:@"回复%@",dynamicCommentObject.dynamicsUser.nickname ? dynamicCommentObject.dynamicsUser.nickname : dynamicCommentObject.dynamicsUser.username];
                 [self.commentTextField becomeFirstResponder];
                 self.isReply = YES;
                 self.currentSelectCommentObject = dynamicCommentObject;

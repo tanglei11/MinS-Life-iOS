@@ -63,10 +63,10 @@
 {
     _dynamicCommentObject = dynamicCommentObject;
     //头像
-    if ([dynamicCommentObject.commentUserProfileUrl isEqualToString:@""]) {
+    if ([dynamicCommentObject.dynamicsUser.profileUrl isEqualToString:@""]) {
         self.headerView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]];
     }else{
-        [ToolClass setupImageViewByAVFileWithThumbnailWidth:40 thumbnailHeight:40 url:dynamicCommentObject.commentUserProfileUrl imageView:self.headerView placeholder:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]]];
+        [ToolClass setupImageViewByAVFileWithThumbnailWidth:40 thumbnailHeight:40 url:dynamicCommentObject.dynamicsUser.profileUrl imageView:self.headerView placeholder:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]]];
     }
     //时间
     NSString *time = [NSString stringWithAccurateTimeChangeToBlurryTime:dynamicCommentObject.createdAt dateFormat:nil];
@@ -74,7 +74,7 @@
     self.timeLabel.text = time;
     self.timeLabel.frame = CGRectMake(Screen_Width - 20 - timeSize.width, self.headerView.y + 6, timeSize.width, 12);
     //昵称
-    self.nickLabel.text = dynamicCommentObject.commentUserName;
+    self.nickLabel.text = dynamicCommentObject.dynamicsUser.nickname ? dynamicCommentObject.dynamicsUser.nickname : dynamicCommentObject.dynamicsUser.username;
     self.nickLabel.frame = CGRectMake(CGRectGetMaxX(self.headerView.frame) + 10, self.timeLabel.y, self.timeLabel.x - CGRectGetMaxX(self.headerView.frame) - 10 - 20, 14);
     //评论
     NSString *content;

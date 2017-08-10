@@ -7,6 +7,7 @@
 //
 
 #import "BaseObject.h"
+#import "DynamicsUserObject.h"
 
 @interface DynamicCommentObject : BaseObject
 
@@ -16,10 +17,9 @@
 @property (nonatomic,copy) NSString *commentStatus;
 @property (nonatomic,copy) NSString *commentType;
 @property (nonatomic,copy) NSString *commentUserId;
-@property (nonatomic,copy) NSString *commentUserName;
-@property (nonatomic,copy) NSString *commentUserProfileUrl;
 @property (nonatomic,copy) NSString *createdAt;
 @property (nonatomic,copy) NSString *objectId;
+@property (nonatomic,strong) DynamicsUserObject *dynamicsUser;
 @property (nonatomic,copy) NSString *relationId;
 @property (nonatomic,copy) NSString *updatedAt;
 

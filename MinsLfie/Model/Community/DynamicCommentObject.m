@@ -10,4 +10,13 @@
 
 @implementation DynamicCommentObject
 
+-(void)setValue:(id)value forKey:(NSString *)key
+{
+    if ([key isEqualToString:@"user"]) {
+        self.dynamicsUser = [[DynamicsUserObject alloc] init];
+        [self.dynamicsUser setValuesForKeysWithDictionary:(NSDictionary *)value];
+    }
+    [super setValue:value forKey:key];
+}
+
 @end

@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1502156428245'); /* IE9*/
-  src: url('iconfont.eot?t=1502156428245#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1502156428245') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1502156428245') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1502156428245#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1502336148417'); /* IE9*/
+  src: url('iconfont.eot?t=1502336148417#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1502336148417') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1502336148417') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1502336148417#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -30,6 +30,8 @@
 .icon-time:before { content: "\e65f"; }
 
 .icon-comment:before { content: "\e667"; }
+
+.icon-likefill:before { content: "\e66a"; }
 
 .icon-like:before { content: "\e669"; }
 

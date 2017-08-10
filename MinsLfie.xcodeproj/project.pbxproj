@@ -11,6 +11,16 @@
 		48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00E1F2C774B0082795F /* CommunityCell.m */; };
 		48C9A0121F2C80100082795F /* PhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A0111F2C80100082795F /* PhotosView.m */; };
 		68F2D72DFF88CB7EE247BCE2 /* libPods-MinsLfie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */; };
+		EB053C081F3C0C3900C63DAA /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EB053BFE1F3C0C3900C63DAA /* demo_fontclass.html */; };
+		EB053C091F3C0C3900C63DAA /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EB053BFF1F3C0C3900C63DAA /* demo_symbol.html */; };
+		EB053C0A1F3C0C3900C63DAA /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EB053C001F3C0C3900C63DAA /* demo_unicode.html */; };
+		EB053C0B1F3C0C3900C63DAA /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EB053C011F3C0C3900C63DAA /* demo.css */; };
+		EB053C0C1F3C0C3900C63DAA /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EB053C021F3C0C3900C63DAA /* iconfont.css */; };
+		EB053C0D1F3C0C3900C63DAA /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EB053C031F3C0C3900C63DAA /* iconfont.eot */; };
+		EB053C0E1F3C0C3900C63DAA /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EB053C041F3C0C3900C63DAA /* iconfont.js */; };
+		EB053C0F1F3C0C3900C63DAA /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EB053C051F3C0C3900C63DAA /* iconfont.svg */; };
+		EB053C101F3C0C3900C63DAA /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB053C061F3C0C3900C63DAA /* iconfont.ttf */; };
+		EB053C111F3C0C3900C63DAA /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EB053C071F3C0C3900C63DAA /* iconfont.woff */; };
 		EB06A3FB1F37FBD7000BB108 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3F81F37FBD7000BB108 /* AlertCell.m */; };
 		EB06A3FC1F37FBD7000BB108 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3FA1F37FBD7000BB108 /* AlertView.m */; };
 		EB06A3FF1F37FC26000BB108 /* SaveImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3FE1F37FC26000BB108 /* SaveImageAlertView.m */; };
@@ -66,16 +76,6 @@
 		EB84654D1F33398800AC2B54 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84654C1F33398800AC2B54 /* UIImage+Utils.m */; };
 		EB8465501F3339EC00AC2B54 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84654F1F3339EC00AC2B54 /* UIImage+Resize.m */; };
 		EBA3D86A1F394C33001EA23F /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8691F394C33001EA23F /* CommunityDetailController.m */; };
-		EBA3D8751F394E31001EA23F /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86B1F394E31001EA23F /* demo_fontclass.html */; };
-		EBA3D8761F394E31001EA23F /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86C1F394E31001EA23F /* demo_symbol.html */; };
-		EBA3D8771F394E31001EA23F /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86D1F394E31001EA23F /* demo_unicode.html */; };
-		EBA3D8781F394E31001EA23F /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86E1F394E31001EA23F /* demo.css */; };
-		EBA3D8791F394E31001EA23F /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D86F1F394E31001EA23F /* iconfont.css */; };
-		EBA3D87A1F394E31001EA23F /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8701F394E31001EA23F /* iconfont.eot */; };
-		EBA3D87B1F394E31001EA23F /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8711F394E31001EA23F /* iconfont.js */; };
-		EBA3D87C1F394E31001EA23F /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8721F394E31001EA23F /* iconfont.svg */; };
-		EBA3D87D1F394E31001EA23F /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8731F394E31001EA23F /* iconfont.ttf */; };
-		EBA3D87E1F394E31001EA23F /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EBA3D8741F394E31001EA23F /* iconfont.woff */; };
 		EBA3D8811F395121001EA23F /* CommunityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8801F395121001EA23F /* CommunityDetailCell.m */; };
 		EBA3D8871F39A283001EA23F /* DynamicCommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8861F39A283001EA23F /* DynamicCommentObject.m */; };
 		EBA3D88A1F39A479001EA23F /* CommunityCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3D8891F39A479001EA23F /* CommunityCommentCell.m */; };
@@ -153,6 +153,16 @@
 		48C9A0111F2C80100082795F /* PhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosView.m; sourceTree = "<group>"; };
 		4FDBA1C89F8FAD7C14DC49C3 /* Pods-MinsLfie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.release.xcconfig"; sourceTree = "<group>"; };
 		51F7A87AB0BA3261A00C40F5 /* Pods-MinsLfie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.debug.xcconfig"; sourceTree = "<group>"; };
+		EB053BFE1F3C0C3900C63DAA /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
+		EB053BFF1F3C0C3900C63DAA /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
+		EB053C001F3C0C3900C63DAA /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		EB053C011F3C0C3900C63DAA /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		EB053C021F3C0C3900C63DAA /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		EB053C031F3C0C3900C63DAA /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		EB053C041F3C0C3900C63DAA /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		EB053C051F3C0C3900C63DAA /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		EB053C061F3C0C3900C63DAA /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		EB053C071F3C0C3900C63DAA /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EB06A3F71F37FBD7000BB108 /* AlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCell.h; sourceTree = "<group>"; };
 		EB06A3F81F37FBD7000BB108 /* AlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCell.m; sourceTree = "<group>"; };
 		EB06A3F91F37FBD7000BB108 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
@@ -265,16 +275,6 @@
 		EB84654F1F3339EC00AC2B54 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		EBA3D8681F394C33001EA23F /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
 		EBA3D8691F394C33001EA23F /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
-		EBA3D86B1F394E31001EA23F /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
-		EBA3D86C1F394E31001EA23F /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
-		EBA3D86D1F394E31001EA23F /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
-		EBA3D86E1F394E31001EA23F /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		EBA3D86F1F394E31001EA23F /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		EBA3D8701F394E31001EA23F /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
-		EBA3D8711F394E31001EA23F /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		EBA3D8721F394E31001EA23F /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
-		EBA3D8731F394E31001EA23F /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		EBA3D8741F394E31001EA23F /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EBA3D87F1F395121001EA23F /* CommunityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailCell.h; sourceTree = "<group>"; };
 		EBA3D8801F395121001EA23F /* CommunityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailCell.m; sourceTree = "<group>"; };
 		EBA3D8851F39A283001EA23F /* DynamicCommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCommentObject.h; sourceTree = "<group>"; };
@@ -845,16 +845,16 @@
 		EBB437351F2B1CA8006BB009 /* iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				EBA3D86B1F394E31001EA23F /* demo_fontclass.html */,
-				EBA3D86C1F394E31001EA23F /* demo_symbol.html */,
-				EBA3D86D1F394E31001EA23F /* demo_unicode.html */,
-				EBA3D86E1F394E31001EA23F /* demo.css */,
-				EBA3D86F1F394E31001EA23F /* iconfont.css */,
-				EBA3D8701F394E31001EA23F /* iconfont.eot */,
-				EBA3D8711F394E31001EA23F /* iconfont.js */,
-				EBA3D8721F394E31001EA23F /* iconfont.svg */,
-				EBA3D8731F394E31001EA23F /* iconfont.ttf */,
-				EBA3D8741F394E31001EA23F /* iconfont.woff */,
+				EB053BFE1F3C0C3900C63DAA /* demo_fontclass.html */,
+				EB053BFF1F3C0C3900C63DAA /* demo_symbol.html */,
+				EB053C001F3C0C3900C63DAA /* demo_unicode.html */,
+				EB053C011F3C0C3900C63DAA /* demo.css */,
+				EB053C021F3C0C3900C63DAA /* iconfont.css */,
+				EB053C031F3C0C3900C63DAA /* iconfont.eot */,
+				EB053C041F3C0C3900C63DAA /* iconfont.js */,
+				EB053C051F3C0C3900C63DAA /* iconfont.svg */,
+				EB053C061F3C0C3900C63DAA /* iconfont.ttf */,
+				EB053C071F3C0C3900C63DAA /* iconfont.woff */,
 			);
 			path = iconfont;
 			sourceTree = "<group>";
@@ -1143,21 +1143,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA3D87A1F394E31001EA23F /* iconfont.eot in Resources */,
-				EBA3D8771F394E31001EA23F /* demo_unicode.html in Resources */,
-				EBA3D8751F394E31001EA23F /* demo_fontclass.html in Resources */,
-				EBA3D87D1F394E31001EA23F /* iconfont.ttf in Resources */,
-				EBA3D87B1F394E31001EA23F /* iconfont.js in Resources */,
-				EBA3D87E1F394E31001EA23F /* iconfont.woff in Resources */,
+				EB053C0D1F3C0C3900C63DAA /* iconfont.eot in Resources */,
+				EB053C0A1F3C0C3900C63DAA /* demo_unicode.html in Resources */,
+				EB053C081F3C0C3900C63DAA /* demo_fontclass.html in Resources */,
+				EB053C101F3C0C3900C63DAA /* iconfont.ttf in Resources */,
+				EB053C0E1F3C0C3900C63DAA /* iconfont.js in Resources */,
+				EB053C111F3C0C3900C63DAA /* iconfont.woff in Resources */,
 				EBB437101F2B12CF006BB009 /* LaunchScreen.storyboard in Resources */,
 				EBB4370D1F2B12CF006BB009 /* Assets.xcassets in Resources */,
 				EBB4370B1F2B12CF006BB009 /* Main.storyboard in Resources */,
 				EBC07F631F3091B60037A69A /* MJRefresh.bundle in Resources */,
-				EBA3D8761F394E31001EA23F /* demo_symbol.html in Resources */,
+				EB053C091F3C0C3900C63DAA /* demo_symbol.html in Resources */,
 				EB8465141F32DB5500AC2B54 /* MBProgressHUD.bundle in Resources */,
-				EBA3D87C1F394E31001EA23F /* iconfont.svg in Resources */,
-				EBA3D8791F394E31001EA23F /* iconfont.css in Resources */,
-				EBA3D8781F394E31001EA23F /* demo.css in Resources */,
+				EB053C0F1F3C0C3900C63DAA /* iconfont.svg in Resources */,
+				EB053C0C1F3C0C3900C63DAA /* iconfont.css in Resources */,
+				EB053C0B1F3C0C3900C63DAA /* demo.css in Resources */,
 				EB46087C1F31C89600855420 /* music.bundle in Resources */,
 				EBC07EE21F305B1D0037A69A /* TZImagePickerController.bundle in Resources */,
 				EB46087B1F31C89600855420 /* images.bundle in Resources */,
