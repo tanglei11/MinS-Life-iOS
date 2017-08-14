@@ -18,7 +18,7 @@
 #import "CommunityWriteController.h"
 #import "LoginController.h"
 
-@interface MainTabBarController () <UITabBarControllerDelegate,MSTabBarDelegate>
+@interface MainTabBarController () <UITabBarControllerDelegate,MSTabBarDelegate,UIAlertViewDelegate>
 
 @end
 
@@ -133,19 +133,18 @@
             }
         }];
     }else{
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            UIAlertController *loginAlertController = [UIAlertController alertControllerWithTitle:@"你还未登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-            }];
-            UIAlertAction *loginAction = [UIAlertAction actionWithTitle:@"现在登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                LoginController *loginController = [[LoginController alloc] init];
-                [self presentViewController:loginController animated:YES completion:nil];
-            }];
-            [loginAlertController addAction:cancelAction];
-            [loginAlertController addAction:loginAction];
-            [self presentViewController:loginAlertController animated:YES completion:nil];
-        });
+        UIAlertView *loginAlertView = [[UIAlertView alloc] initWithTitle:@"你还未登录" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"现在登录", nil];
+        [loginAlertView show];
+    }
+}
+
+#pragma mark - alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"%ld",buttonIndex);
+    if (buttonIndex == 1) {
+        LoginController *loginController = [[LoginController alloc] init];
+        [self presentViewController:loginController animated:YES completion:nil];
     }
 }
 

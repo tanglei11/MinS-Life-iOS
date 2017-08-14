@@ -386,8 +386,9 @@
 
 - (void)goClick
 {
-    MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
-    self.view.window.rootViewController = mainTabBarController;
+//    MainTabBarController *mainTabBarController = [[MainTabBarController alloc] init];
+//    self.view.window.rootViewController = mainTabBarController;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

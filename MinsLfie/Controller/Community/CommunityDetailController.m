@@ -10,7 +10,7 @@
 #import "CommunityDetailCell.h"
 #import "CommunityCommentCell.h"
 
-@interface CommunityDetailController () <UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UITextFieldDelegate,UIActionSheetDelegate>
+@interface CommunityDetailController () <UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UITextFieldDelegate,UIActionSheetDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,assign) CGFloat communityDetailCellHeight;
 @property (nonatomic,weak) UIView *bottomView;
@@ -25,6 +25,7 @@
 @property (nonatomic,assign) BOOL isReply;
 @property (nonatomic,strong) DynamicCommentObject *currentSelectCommentObject;
 @property (nonatomic,weak) UIButton *likeButton;
+//@property (nonatomic,assign) BOOL isLike;
 
 @end
 
@@ -44,6 +45,8 @@
     self.page = 0;
     
     [self getCommentData];
+    
+    [self getLikeStatus];
     
     [self initNav];
     
@@ -76,6 +79,25 @@
             }
             [self.tableView reloadData];
 //            self.headerLable.text = [NSString stringWithFormat:@"所有%ld评论",self.commentArray.count];
+        }
+    }];
+}
+
+- (void)getLikeStatus
+{
+    NSDictionary *params = @{@"relationId":self.dynamicsObject.objectId,@"userId":[AVUser currentUser].objectId ? [AVUser currentUser].objectId : @"",@"likeType":@"dynamic"};
+    [AVCloud callFunctionInBackground:@"getLikeStatus" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+        if (error != nil) {
+            [MBProgressHUD showError:@"获取点赞状态失败"];
+        }else{
+            NSLog(@"-=-=-=-=%@",object);
+            if ([object[@"likeStatus"] intValue] == 1) {
+                self.likeButton.selected = YES;
+//                self.isLike = YES;
+            }else{
+                self.likeButton.selected = NO;
+//                self.isLike = NO;
+            }
         }
     }];
 }
@@ -138,17 +160,62 @@
 
 - (void)likeClick
 {
-    
+    AVUser *user = [AVUser currentUser];
+    if (user != nil) {
+        if (self.likeButton.selected) {
+            self.likeButton.selected = NO;
+            //请求接口
+            NSDictionary *params = @{@"relationId":self.dynamicsObject.objectId,@"userId":user.objectId,@"likeType":@"dynamic"};
+            [AVCloud callFunctionInBackground:@"cancelLike" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                if (error != nil) {
+                    [MBProgressHUD showError:@"取消点赞失败"];
+                }else{
+                    
+                }
+            }];
+        }else{
+            self.likeButton.selected = YES;
+            //请求接口
+            NSDictionary *params = @{@"relationId":self.dynamicsObject.objectId,@"userId":user.objectId,@"likeType":@"dynamic"};
+            [AVCloud callFunctionInBackground:@"saveLike" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                if (error != nil) {
+                    [MBProgressHUD showError:@"点赞失败"];
+                }else{
+                
+                    }
+            }];
+        }
+    }else{
+        [self showLoginGuideView];
+    }
 }
 
 - (void)deleteDynamic
 {
-    
+    UIAlertView *deleteAlertView = [[UIAlertView alloc] initWithTitle:@"确定要删除该动态？" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [deleteAlertView show];
 }
 
 - (void)hideKeyboard
 {
     [self.view endEditing:YES];
+}
+
+#pragma mark - alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        NSDictionary *params = @{@"dynamicId":self.dynamicsObject.objectId};
+        [MBProgressHUD showMessage:@"删除中..."];
+        [AVCloud callFunctionInBackground:@"deleteDynamic" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+            [MBProgressHUD hideHUD];
+            if (error != nil) {
+                [MBProgressHUD showError:@"删除失败,请重试"];
+            }else{
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }];
+    }
 }
 
 #pragma mark - UIGestureRecognizer delegate
