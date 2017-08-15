@@ -39,7 +39,13 @@
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToMarket) name:@"goToMarket" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToDynamic) name:@"goToDynamic" object:nil];
+}
+
+- (void)goToMarket
+{
+    [self setSelectedIndex:1];
 }
 
 - (void)goToDynamic

@@ -11,16 +11,6 @@
 		48C9A00F1F2C774B0082795F /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A00E1F2C774B0082795F /* CommunityCell.m */; };
 		48C9A0121F2C80100082795F /* PhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C9A0111F2C80100082795F /* PhotosView.m */; };
 		68F2D72DFF88CB7EE247BCE2 /* libPods-MinsLfie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */; };
-		EB053C081F3C0C3900C63DAA /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EB053BFE1F3C0C3900C63DAA /* demo_fontclass.html */; };
-		EB053C091F3C0C3900C63DAA /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EB053BFF1F3C0C3900C63DAA /* demo_symbol.html */; };
-		EB053C0A1F3C0C3900C63DAA /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EB053C001F3C0C3900C63DAA /* demo_unicode.html */; };
-		EB053C0B1F3C0C3900C63DAA /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EB053C011F3C0C3900C63DAA /* demo.css */; };
-		EB053C0C1F3C0C3900C63DAA /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EB053C021F3C0C3900C63DAA /* iconfont.css */; };
-		EB053C0D1F3C0C3900C63DAA /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EB053C031F3C0C3900C63DAA /* iconfont.eot */; };
-		EB053C0E1F3C0C3900C63DAA /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EB053C041F3C0C3900C63DAA /* iconfont.js */; };
-		EB053C0F1F3C0C3900C63DAA /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EB053C051F3C0C3900C63DAA /* iconfont.svg */; };
-		EB053C101F3C0C3900C63DAA /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB053C061F3C0C3900C63DAA /* iconfont.ttf */; };
-		EB053C111F3C0C3900C63DAA /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EB053C071F3C0C3900C63DAA /* iconfont.woff */; };
 		EB06A3FB1F37FBD7000BB108 /* AlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3F81F37FBD7000BB108 /* AlertCell.m */; };
 		EB06A3FC1F37FBD7000BB108 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3FA1F37FBD7000BB108 /* AlertView.m */; };
 		EB06A3FF1F37FC26000BB108 /* SaveImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06A3FE1F37FC26000BB108 /* SaveImageAlertView.m */; };
@@ -142,6 +132,25 @@
 		EBC07F661F3091B60037A69A /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC07F4F1F3091B60037A69A /* UIScrollView+MJExtension.m */; };
 		EBC07F671F3091B60037A69A /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC07F511F3091B60037A69A /* UIScrollView+MJRefresh.m */; };
 		EBC07F681F3091B60037A69A /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC07F531F3091B60037A69A /* UIView+MJExtension.m */; };
+		EBCDE3C51F42897D00073E21 /* CommunityMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE3C41F42897D00073E21 /* CommunityMapController.m */; };
+		EBCDE3DC1F42A4E200073E21 /* ToolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE3DB1F42A4E200073E21 /* ToolButton.m */; };
+		EBCDE3FB1F42AAC400073E21 /* demo_fontclass.html in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F11F42AAC400073E21 /* demo_fontclass.html */; };
+		EBCDE3FC1F42AAC400073E21 /* demo_symbol.html in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F21F42AAC400073E21 /* demo_symbol.html */; };
+		EBCDE3FD1F42AAC400073E21 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F31F42AAC400073E21 /* demo_unicode.html */; };
+		EBCDE3FE1F42AAC400073E21 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F41F42AAC400073E21 /* demo.css */; };
+		EBCDE3FF1F42AAC400073E21 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F51F42AAC400073E21 /* iconfont.css */; };
+		EBCDE4001F42AAC400073E21 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F61F42AAC400073E21 /* iconfont.eot */; };
+		EBCDE4011F42AAC400073E21 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F71F42AAC400073E21 /* iconfont.js */; };
+		EBCDE4021F42AAC400073E21 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F81F42AAC400073E21 /* iconfont.svg */; };
+		EBCDE4031F42AAC400073E21 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3F91F42AAC400073E21 /* iconfont.ttf */; };
+		EBCDE4041F42AAC400073E21 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = EBCDE3FA1F42AAC400073E21 /* iconfont.woff */; };
+		EBCDE4101F42CC6100073E21 /* AppleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE4071F42CC6100073E21 /* AppleMapsManager.m */; };
+		EBCDE4111F42CC6100073E21 /* BaiduMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE4091F42CC6100073E21 /* BaiduMapsManager.m */; };
+		EBCDE4121F42CC6100073E21 /* GaoDeMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE40B1F42CC6100073E21 /* GaoDeMapsManager.m */; };
+		EBCDE4131F42CC6100073E21 /* GoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE40D1F42CC6100073E21 /* GoogleMapsManager.m */; };
+		EBCDE4141F42CC6100073E21 /* MapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE40F1F42CC6100073E21 /* MapsManager.m */; };
+		EBCDE4181F42E8A300073E21 /* MarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE4171F42E8A300073E21 /* MarketCell.m */; };
+		EBCDE41C1F42ED1B00073E21 /* MarketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE41B1F42ED1B00073E21 /* MarketObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,16 +162,6 @@
 		48C9A0111F2C80100082795F /* PhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosView.m; sourceTree = "<group>"; };
 		4FDBA1C89F8FAD7C14DC49C3 /* Pods-MinsLfie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.release.xcconfig"; sourceTree = "<group>"; };
 		51F7A87AB0BA3261A00C40F5 /* Pods-MinsLfie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinsLfie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinsLfie/Pods-MinsLfie.debug.xcconfig"; sourceTree = "<group>"; };
-		EB053BFE1F3C0C3900C63DAA /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
-		EB053BFF1F3C0C3900C63DAA /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
-		EB053C001F3C0C3900C63DAA /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
-		EB053C011F3C0C3900C63DAA /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		EB053C021F3C0C3900C63DAA /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		EB053C031F3C0C3900C63DAA /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
-		EB053C041F3C0C3900C63DAA /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		EB053C051F3C0C3900C63DAA /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
-		EB053C061F3C0C3900C63DAA /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		EB053C071F3C0C3900C63DAA /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
 		EB06A3F71F37FBD7000BB108 /* AlertCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCell.h; sourceTree = "<group>"; };
 		EB06A3F81F37FBD7000BB108 /* AlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCell.m; sourceTree = "<group>"; };
 		EB06A3F91F37FBD7000BB108 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
@@ -406,6 +405,34 @@
 		EBC07F511F3091B60037A69A /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		EBC07F521F3091B60037A69A /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		EBC07F531F3091B60037A69A /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		EBCDE3C31F42897D00073E21 /* CommunityMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityMapController.h; sourceTree = "<group>"; };
+		EBCDE3C41F42897D00073E21 /* CommunityMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityMapController.m; sourceTree = "<group>"; };
+		EBCDE3DA1F42A4E200073E21 /* ToolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolButton.h; sourceTree = "<group>"; };
+		EBCDE3DB1F42A4E200073E21 /* ToolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolButton.m; sourceTree = "<group>"; };
+		EBCDE3F11F42AAC400073E21 /* demo_fontclass.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_fontclass.html; sourceTree = "<group>"; };
+		EBCDE3F21F42AAC400073E21 /* demo_symbol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_symbol.html; sourceTree = "<group>"; };
+		EBCDE3F31F42AAC400073E21 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		EBCDE3F41F42AAC400073E21 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		EBCDE3F51F42AAC400073E21 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		EBCDE3F61F42AAC400073E21 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		EBCDE3F71F42AAC400073E21 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		EBCDE3F81F42AAC400073E21 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		EBCDE3F91F42AAC400073E21 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		EBCDE3FA1F42AAC400073E21 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		EBCDE4061F42CC6100073E21 /* AppleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapsManager.h; sourceTree = "<group>"; };
+		EBCDE4071F42CC6100073E21 /* AppleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapsManager.m; sourceTree = "<group>"; };
+		EBCDE4081F42CC6100073E21 /* BaiduMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapsManager.h; sourceTree = "<group>"; };
+		EBCDE4091F42CC6100073E21 /* BaiduMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapsManager.m; sourceTree = "<group>"; };
+		EBCDE40A1F42CC6100073E21 /* GaoDeMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoDeMapsManager.h; sourceTree = "<group>"; };
+		EBCDE40B1F42CC6100073E21 /* GaoDeMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoDeMapsManager.m; sourceTree = "<group>"; };
+		EBCDE40C1F42CC6100073E21 /* GoogleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsManager.h; sourceTree = "<group>"; };
+		EBCDE40D1F42CC6100073E21 /* GoogleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsManager.m; sourceTree = "<group>"; };
+		EBCDE40E1F42CC6100073E21 /* MapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsManager.h; sourceTree = "<group>"; };
+		EBCDE40F1F42CC6100073E21 /* MapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsManager.m; sourceTree = "<group>"; };
+		EBCDE4161F42E8A300073E21 /* MarketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketCell.h; sourceTree = "<group>"; };
+		EBCDE4171F42E8A300073E21 /* MarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketCell.m; sourceTree = "<group>"; };
+		EBCDE41A1F42ED1B00073E21 /* MarketObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketObject.h; sourceTree = "<group>"; };
+		EBCDE41B1F42ED1B00073E21 /* MarketObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketObject.m; sourceTree = "<group>"; };
 		FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MinsLfie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -434,6 +461,8 @@
 				EBC07F0A1F3076780037A69A /* NearByAddressCell.m */,
 				EBA3D8881F39A479001EA23F /* CommunityCommentCell.h */,
 				EBA3D8891F39A479001EA23F /* CommunityCommentCell.m */,
+				EBCDE3DA1F42A4E200073E21 /* ToolButton.h */,
+				EBCDE3DB1F42A4E200073E21 /* ToolButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -467,6 +496,7 @@
 			children = (
 				EB0BFB7F1F2F0E3900B89D08 /* BaseObject.h */,
 				EB0BFB801F2F0E3900B89D08 /* BaseObject.m */,
+				EBCDE4191F42ECF900073E21 /* Market */,
 				EB0BFB7E1F2F0E0500B89D08 /* Home */,
 				EB4F81111F3454B800AB63AB /* Community */,
 			);
@@ -802,6 +832,7 @@
 		EBB437241F2B1814006BB009 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EBCDE4051F42CC6100073E21 /* Maps */,
 				EBC07F201F308F100037A69A /* WGS84TOGCJ02.h */,
 				EBC07F211F308F100037A69A /* WGS84TOGCJ02.m */,
 				EB0BFB851F2F13CD00B89D08 /* Animation */,
@@ -845,16 +876,16 @@
 		EBB437351F2B1CA8006BB009 /* iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				EB053BFE1F3C0C3900C63DAA /* demo_fontclass.html */,
-				EB053BFF1F3C0C3900C63DAA /* demo_symbol.html */,
-				EB053C001F3C0C3900C63DAA /* demo_unicode.html */,
-				EB053C011F3C0C3900C63DAA /* demo.css */,
-				EB053C021F3C0C3900C63DAA /* iconfont.css */,
-				EB053C031F3C0C3900C63DAA /* iconfont.eot */,
-				EB053C041F3C0C3900C63DAA /* iconfont.js */,
-				EB053C051F3C0C3900C63DAA /* iconfont.svg */,
-				EB053C061F3C0C3900C63DAA /* iconfont.ttf */,
-				EB053C071F3C0C3900C63DAA /* iconfont.woff */,
+				EBCDE3F11F42AAC400073E21 /* demo_fontclass.html */,
+				EBCDE3F21F42AAC400073E21 /* demo_symbol.html */,
+				EBCDE3F31F42AAC400073E21 /* demo_unicode.html */,
+				EBCDE3F41F42AAC400073E21 /* demo.css */,
+				EBCDE3F51F42AAC400073E21 /* iconfont.css */,
+				EBCDE3F61F42AAC400073E21 /* iconfont.eot */,
+				EBCDE3F71F42AAC400073E21 /* iconfont.js */,
+				EBCDE3F81F42AAC400073E21 /* iconfont.svg */,
+				EBCDE3F91F42AAC400073E21 /* iconfont.ttf */,
+				EBCDE3FA1F42AAC400073E21 /* iconfont.woff */,
 			);
 			path = iconfont;
 			sourceTree = "<group>";
@@ -876,6 +907,7 @@
 		EBB437631F2B1FF6006BB009 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				EBCDE4151F42E87800073E21 /* View */,
 				EBB437691F2B203A006BB009 /* MarketPageController.h */,
 				EBB4376A1F2B203A006BB009 /* MarketPageController.m */,
 			);
@@ -894,6 +926,8 @@
 				EBC07E711F3024440037A69A /* CommunityWriteController.m */,
 				EBC07EFD1F3073B60037A69A /* CommunityAddressSelectController.h */,
 				EBC07EFE1F3073B60037A69A /* CommunityAddressSelectController.m */,
+				EBCDE3C31F42897D00073E21 /* CommunityMapController.h */,
+				EBCDE3C41F42897D00073E21 /* CommunityMapController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1081,6 +1115,41 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		EBCDE4051F42CC6100073E21 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				EBCDE4061F42CC6100073E21 /* AppleMapsManager.h */,
+				EBCDE4071F42CC6100073E21 /* AppleMapsManager.m */,
+				EBCDE4081F42CC6100073E21 /* BaiduMapsManager.h */,
+				EBCDE4091F42CC6100073E21 /* BaiduMapsManager.m */,
+				EBCDE40A1F42CC6100073E21 /* GaoDeMapsManager.h */,
+				EBCDE40B1F42CC6100073E21 /* GaoDeMapsManager.m */,
+				EBCDE40C1F42CC6100073E21 /* GoogleMapsManager.h */,
+				EBCDE40D1F42CC6100073E21 /* GoogleMapsManager.m */,
+				EBCDE40E1F42CC6100073E21 /* MapsManager.h */,
+				EBCDE40F1F42CC6100073E21 /* MapsManager.m */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		EBCDE4151F42E87800073E21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBCDE4161F42E8A300073E21 /* MarketCell.h */,
+				EBCDE4171F42E8A300073E21 /* MarketCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBCDE4191F42ECF900073E21 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				EBCDE41A1F42ED1B00073E21 /* MarketObject.h */,
+				EBCDE41B1F42ED1B00073E21 /* MarketObject.m */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1143,21 +1212,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB053C0D1F3C0C3900C63DAA /* iconfont.eot in Resources */,
-				EB053C0A1F3C0C3900C63DAA /* demo_unicode.html in Resources */,
-				EB053C081F3C0C3900C63DAA /* demo_fontclass.html in Resources */,
-				EB053C101F3C0C3900C63DAA /* iconfont.ttf in Resources */,
-				EB053C0E1F3C0C3900C63DAA /* iconfont.js in Resources */,
-				EB053C111F3C0C3900C63DAA /* iconfont.woff in Resources */,
+				EBCDE4001F42AAC400073E21 /* iconfont.eot in Resources */,
+				EBCDE3FD1F42AAC400073E21 /* demo_unicode.html in Resources */,
+				EBCDE3FB1F42AAC400073E21 /* demo_fontclass.html in Resources */,
+				EBCDE4031F42AAC400073E21 /* iconfont.ttf in Resources */,
+				EBCDE4011F42AAC400073E21 /* iconfont.js in Resources */,
+				EBCDE4041F42AAC400073E21 /* iconfont.woff in Resources */,
 				EBB437101F2B12CF006BB009 /* LaunchScreen.storyboard in Resources */,
 				EBB4370D1F2B12CF006BB009 /* Assets.xcassets in Resources */,
 				EBB4370B1F2B12CF006BB009 /* Main.storyboard in Resources */,
 				EBC07F631F3091B60037A69A /* MJRefresh.bundle in Resources */,
-				EB053C091F3C0C3900C63DAA /* demo_symbol.html in Resources */,
+				EBCDE3FC1F42AAC400073E21 /* demo_symbol.html in Resources */,
 				EB8465141F32DB5500AC2B54 /* MBProgressHUD.bundle in Resources */,
-				EB053C0F1F3C0C3900C63DAA /* iconfont.svg in Resources */,
-				EB053C0C1F3C0C3900C63DAA /* iconfont.css in Resources */,
-				EB053C0B1F3C0C3900C63DAA /* demo.css in Resources */,
+				EBCDE4021F42AAC400073E21 /* iconfont.svg in Resources */,
+				EBCDE3FF1F42AAC400073E21 /* iconfont.css in Resources */,
+				EBCDE3FE1F42AAC400073E21 /* demo.css in Resources */,
 				EB46087C1F31C89600855420 /* music.bundle in Resources */,
 				EBC07EE21F305B1D0037A69A /* TZImagePickerController.bundle in Resources */,
 				EB46087B1F31C89600855420 /* images.bundle in Resources */,
@@ -1243,7 +1312,10 @@
 				EBC07F5A1F3091B60037A69A /* MJRefreshAutoNormalFooter.m in Sources */,
 				EBB437FD1F2B459D006BB009 /* LoginController.m in Sources */,
 				EB79B56E1F2EC491006EA026 /* UIScrollView+Magic.m in Sources */,
+				EBCDE4121F42CC6100073E21 /* GaoDeMapsManager.m in Sources */,
 				EB4F81171F34552F00AB63AB /* DynamicsUserObject.m in Sources */,
+				EBCDE41C1F42ED1B00073E21 /* MarketObject.m in Sources */,
+				EBCDE4101F42CC6100073E21 /* AppleMapsManager.m in Sources */,
 				EB46087A1F31C89600855420 /* BHBPopView.m in Sources */,
 				EBB437081F2B12CF006BB009 /* ViewController.m in Sources */,
 				EBC07F051F30763B0037A69A /* UIImage+Color.m in Sources */,
@@ -1251,6 +1323,7 @@
 				EBC07EFF1F3073B60037A69A /* CommunityAddressSelectController.m in Sources */,
 				EB84653D1F331BCC00AC2B54 /* ProfileInfoNormalCell.m in Sources */,
 				EB4F81141F34551700AB63AB /* DynamicsObject.m in Sources */,
+				EBCDE3C51F42897D00073E21 /* CommunityMapController.m in Sources */,
 				EBC07F5E1F3091B60037A69A /* MJRefreshBackStateFooter.m in Sources */,
 				EB46087D1F31C89600855420 /* UIButton+BHBSetImage.m in Sources */,
 				EBC07F571F3091B60037A69A /* MJRefreshFooter.m in Sources */,
@@ -1267,6 +1340,7 @@
 				EBA3D86A1F394C33001EA23F /* CommunityDetailController.m in Sources */,
 				EB06A3FB1F37FBD7000BB108 /* AlertCell.m in Sources */,
 				EB8465311F3313FA00AC2B54 /* ProfileInfoController.m in Sources */,
+				EBCDE4181F42E8A300073E21 /* MarketCell.m in Sources */,
 				EBC07EA11F302F320037A69A /* ACEExpandableTextCell.m in Sources */,
 				EBC07F681F3091B60037A69A /* UIView+MJExtension.m in Sources */,
 				EB8465131F32DB5500AC2B54 /* MBProgressHUD+MJ.m in Sources */,
@@ -1275,6 +1349,7 @@
 				EB8465401F331D5500AC2B54 /* ProfileInfoSexCell.m in Sources */,
 				EB79B56F1F2EC491006EA026 /* UIViewController+Magic.m in Sources */,
 				EBB4376B1F2B203A006BB009 /* MarketPageController.m in Sources */,
+				EBCDE4131F42CC6100073E21 /* GoogleMapsManager.m in Sources */,
 				EB8465431F33261D00AC2B54 /* ProfileInfoNickCell.m in Sources */,
 				EBB437A61F2B2C8D006BB009 /* ProfileInfoCell.m in Sources */,
 				EBC07F0B1F3076780037A69A /* NearByAddressCell.m in Sources */,
@@ -1309,7 +1384,9 @@
 				EB4608801F31C89600855420 /* UIView+BHBAnimation.m in Sources */,
 				EB79B5591F2EC375006EA026 /* NearByController.m in Sources */,
 				EB4608751F31C89600855420 /* BHBCenterView.m in Sources */,
+				EBCDE3DC1F42A4E200073E21 /* ToolButton.m in Sources */,
 				EBC07F641F3091B60037A69A /* MJRefreshConst.m in Sources */,
+				EBCDE4111F42CC6100073E21 /* BaiduMapsManager.m in Sources */,
 				EB8465161F32DB5500AC2B54 /* MBProgressHUD.m in Sources */,
 				EBC07F5C1F3091B60037A69A /* MJRefreshBackGifFooter.m in Sources */,
 				EB79B5761F2EC74F006EA026 /* UIView+NextResponder.m in Sources */,
@@ -1318,6 +1395,7 @@
 				EBB437271F2B1844006BB009 /* ToolClass.m in Sources */,
 				EB79B5561F2EC354006EA026 /* HomeController.m in Sources */,
 				EBC07EA21F302F320037A69A /* SZTextView.m in Sources */,
+				EBCDE4141F42CC6100073E21 /* MapsManager.m in Sources */,
 				EB79B5701F2EC491006EA026 /* VTContentView.m in Sources */,
 				EB4608761F31C89600855420 /* BHBCustomBtn.m in Sources */,
 				EBB4377A1F2B25D0006BB009 /* UIView+Frame.m in Sources */,

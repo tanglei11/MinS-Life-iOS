@@ -14,6 +14,7 @@
 //控制器
 #import "CommunityWriteController.h"
 #import "CommunityDetailController.h"
+#import "CommunityMapController.h"
 
 @interface CommunityPageController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -210,6 +211,12 @@
             }else{
                 [self showLoginGuideView];
             }
+        };
+        communityCell.communityMapBlock = ^(DynamicsObject *dynamicsObject) {
+            CommunityMapController *communityMapController = [[CommunityMapController alloc] init];
+            communityMapController.dynamicsObject = dynamicsObject;
+            communityMapController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:communityMapController animated:YES];
         };
         self.communityCellHeight = communityCell.cellHeight;
         return communityCell;

@@ -65,11 +65,13 @@
 // 从我的位置导航
 #define ICON_GUIDE_TO_HERE  [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe773;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:@"#FFFFFF"]];
 
-#define BLANK_PICTURE_SIZE_44 [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe648;"]  inFont:ICONFONT size:44 color:[UIColor colorFromHex:@"#D2D2D2"]];
+#define BLANK_PICTURE_SIZE_66  [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe648;"]  inFont:ICONFONT size:66 color:[UIColor colorFromHex:@"#D2D2D2"]]
+
+#define BLANK_PICTURE_SIZE_44 [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe648;"]  inFont:ICONFONT size:44 color:[UIColor colorFromHex:@"#D2D2D2"]]
 
 #define BLACK_RETURN [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe679;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:MAIN_COLOR]];
 // 返回按钮
-#define WHITE_RETURN [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe679;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:MAIN_COLOR]]
+#define WHITE_RETURN [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe679;"]  inFont:ICONFONT size:22 color:[UIColor whiteColor]]
 // 返回  X
 #define BACK  [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe6dc;"]  inFont:ICONFONT size:22 color:[UIColor colorFromHex:MAIN_COLOR]]
 

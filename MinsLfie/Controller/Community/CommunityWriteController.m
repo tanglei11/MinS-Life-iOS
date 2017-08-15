@@ -212,6 +212,12 @@
 
 - (void)post
 {
+    if (self.type == CommunityWriteControllerTypeMarket) {
+        if ([self.titleField.text isEqualToString:@""]) {
+            [MBProgressHUD showError:@"标题不能为空！"];
+            return;
+        }
+    }
     if (self.selectedPhotos.count == 0) return;
     //获取图片名字
     NSMutableArray *nameArray = [NSMutableArray array];
@@ -244,7 +250,7 @@
                 }
                 imgList = (NSMutableString *)[imgList substringToIndex:[imgList length]-1];
                 if (self.type == CommunityWriteControllerTypeMarket) {
-                    
+                    [self getMarketParamsAndSendPostWithImgList:imgList];
                 }else{
                     [self getDynamicParamsAndSendPostWithImgList:imgList];
                 }
@@ -252,6 +258,20 @@
         }];
     }
     
+}
+
+- (void)getMarketParamsAndSendPostWithImgList:(NSString *)imgList
+{
+    NSDictionary *params = @{@"title":self.titleField.text,@"content":self.textViewStr,@"imgs":imgList,@"price":self.priceFiled.text ? self.priceFiled.text : @"",@"addressName":self.poiInfo ? self.poiInfo.name : @"",@"address":self.poiInfo ? self.poiInfo.address : @"",@"latitude":self.poiInfo ? [NSString stringWithFormat:@"%f",self.poiInfo.location.latitude] : @"",@"longitude":self.poiInfo ? [NSString stringWithFormat:@"%f",self.poiInfo.location.longitude] : @"",@"userId":[AVUser currentUser].objectId};
+    [AVCloud callFunctionInBackground:@"saveMarket" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+        if (error != nil) {
+            [MBProgressHUD showError:@"发布失败" toView:self.view];
+        }else{
+            [MBProgressHUD showSuccess:@"发布成功" toView:self.view];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"goToMarket" object:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
 }
 
 - (void)getDynamicParamsAndSendPostWithImgList:(NSString *)imgList
@@ -588,7 +608,7 @@
     CGRect keyBoardRect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     self.bottomView.frame = CGRectMake(0, Screen_Height - 34 - keyBoardRect.size.height, Screen_Width, 34);
     NSLog(@"%f---------%f",self.priceCellY,keyBoardRect.origin.y);
-    if (self.priceCellY - keyBoardRect.origin.y > 0) {
+    if (self.priceCellY - keyBoardRect.origin.y + 34 > 0) {
         if (self.textViewCellHeight > 75.0f) {
             [self.tableView setContentOffset:CGPointMake(0, self.priceCellY - keyBoardRect.origin.y + 50 + 10 + (self.textViewCellHeight - 75.0f)) animated:YES];
         }else{

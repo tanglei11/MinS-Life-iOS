@@ -1,21 +1,22 @@
 //
-//  CommunityCell.m
+//  marketCell.m
 //  MinsLfie
 //
-//  Created by Peanut丶 on 2017/7/29.
+//  Created by wodada on 2017/8/15.
 //  Copyright © 2017年 汤磊. All rights reserved.
 //
 
-#import "CommunityCell.h"
-#import "PhotosView.h"
+#import "MarketCell.h"
 
-@interface CommunityCell ()
+@interface MarketCell ()
 
 @property (nonatomic,weak) UIImageView *headerView;
 @property (nonatomic,weak) UILabel *nickLabel;
 @property (nonatomic,weak) UILabel *timeLabel;
 @property (nonatomic,weak) UIButton *collectButton;
-@property (nonatomic,weak) PhotosView *photosView;
+@property (nonatomic,weak) UIImageView *coverView;
+@property (nonatomic,weak) UILabel *priceLabel;
+@property (nonatomic,weak) UILabel *titleLabel;
 @property (nonatomic,weak) UILabel *contentLabel;
 @property (nonatomic,weak) UIView *addressView;
 @property (nonatomic,weak) UIImageView *addressImage;
@@ -25,13 +26,13 @@
 
 @end
 
-@implementation CommunityCell
+@implementation MarketCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         //头像
-        UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 40, 40)];
+        UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 18, 40, 40)];
         headerView.layer.masksToBounds = YES;
         headerView.layer.cornerRadius = 20;
         headerView.image = [UIImage imageNamed:@"pro_head"];
@@ -64,14 +65,26 @@
         [collectButton addTarget:self action:@selector(collectClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:collectButton];
         self.collectButton = collectButton;
-        //图片集
-//        NSArray *photos = @[@"photo_1",@"photo_2",@"photo_3"];
-//        CGSize photosSize = [PhotosView SizeWithCount:(int)photos.count];
-        PhotosView *photosView = [[PhotosView alloc] init];
-//        WithFrame:CGRectMake(22, CGRectGetMaxY(headerView.frame) + 18, photosSize.width, photosSize.height)];
-//        photosView.photos = photos;
-        [self.contentView addSubview:photosView];
-        self.photosView = photosView;
+        //封面图
+        UIImageView *coverView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(headerView.frame) + 18, Screen_Width, 187)];
+        coverView.clipsToBounds = YES;
+        coverView.image = BLANK_PICTURE_SIZE_66;
+        coverView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+        coverView.contentMode = UIViewContentModeScaleAspectFill;
+        [self.contentView addSubview:coverView];
+        self.coverView = coverView;
+        //价格
+        UILabel *priceLabel = [[UILabel alloc] init];
+        priceLabel.textColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+        priceLabel.font = [UIFont systemFontOfSize:16];
+        [self.contentView addSubview:priceLabel];
+        self.priceLabel = priceLabel;
+        //标题
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.font = [UIFont systemFontOfSize:16];
+        titleLabel.textColor = [UIColor colorFromHex:@"#333333"];
+        [self.contentView addSubview:titleLabel];
+        self.titleLabel = titleLabel;
         //内容
         UILabel *contentLabel = [[UILabel alloc] init];
         contentLabel.numberOfLines = 0;
@@ -116,73 +129,59 @@
     return self;
 }
 
-- (void)addressMap
+- (void)setMarketObject:(MarketObject *)marketObject
 {
-    self.communityMapBlock(_dynamicsObject);
-}
-
-- (void)collectClick
-{
-    if ([AVUser currentUser] != nil) {
-        if ([_dynamicsObject.isCollect intValue] == 1) {
-            self.collectButton.selected = NO;
-            self.collectButton.backgroundColor = [UIColor whiteColor];
-        }else{
-            self.collectButton.selected = YES;
-            self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
-        }
-    }
-    self.communityCollectBlock(_dynamicsObject);
-}
-
-- (void)setDynamicsObject:(DynamicsObject *)dynamicsObject
-{
-    _dynamicsObject = dynamicsObject;
-    if ([dynamicsObject.dynamicsUser.profileUrl isEqualToString:@""]) {
+    _marketObject = marketObject;
+    if ([marketObject.dynamicsUser.profileUrl isEqualToString:@""]) {
         self.headerView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]];
     }else{
-        [ToolClass setupImageViewByAVFileWithThumbnailWidth:40 thumbnailHeight:40 url:dynamicsObject.dynamicsUser.profileUrl imageView:self.headerView placeholder:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]]];
+        [ToolClass setupImageViewByAVFileWithThumbnailWidth:40 thumbnailHeight:40 url:marketObject.dynamicsUser.profileUrl imageView:self.headerView placeholder:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:40 color:[UIColor colorFromHex:MAIN_COLOR]]];
     }
-    self.nickLabel.text = [dynamicsObject.dynamicsUser.nickname isEqualToString:@""] ? dynamicsObject.dynamicsUser.username : dynamicsObject.dynamicsUser.nickname;
-    self.timeLabel.text = [NSString stringWithAccurateTimeChangeToBlurryTime:dynamicsObject.createdAt dateFormat:nil];
+    self.nickLabel.text = [marketObject.dynamicsUser.nickname isEqualToString:@""] ? marketObject.dynamicsUser.username : marketObject.dynamicsUser.nickname;
+    self.timeLabel.text = [NSString stringWithAccurateTimeChangeToBlurryTime:marketObject.createdAt dateFormat:nil];
     
-    if ([dynamicsObject.isCollect intValue] == 1) {
+    if ([marketObject.isCollect intValue] == 1) {
         self.collectButton.selected = YES;
         self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
     }else{
         self.collectButton.selected = NO;
         self.collectButton.backgroundColor = [UIColor whiteColor];
     }
-    
-    NSMutableArray *imgs = [[dynamicsObject.imgs componentsSeparatedByString:@","] mutableCopy];
+    NSMutableArray *imgs = [[marketObject.imgs componentsSeparatedByString:@","] mutableCopy];
     NSArray * photos = [NSArray array];
-    if (imgs.count > 3) {
-        photos = [imgs subarrayWithRange:NSMakeRange(0, 3)];
+    if (imgs.count > 1) {
+        photos = [imgs subarrayWithRange:NSMakeRange(0, 1)];
     }else{
         photos = [imgs copy];
     }
-    self.photosView.photos = photos;
-    CGSize photosSize = [PhotosView SizeWithCount:(int)photos.count];
-    self.photosView.frame = CGRectMake(22, CGRectGetMaxY(self.headerView.frame) + 18, photosSize.width, photosSize.height);
+    [ToolClass setupImageViewByAVFileWithThumbnailWidth:self.coverView.width thumbnailHeight:self.coverView.height url:photos[0] imageView:self.coverView placeholder:BLANK_PICTURE_SIZE_66];
     
-    self.contentLabel.attributedText = [ToolClass createTextWithString:dynamicsObject.content fontSize:14 lineSpacing:6 isFontThin:YES];
-    CGRect rect = [ToolClass caculateText:self.contentLabel.attributedText maxSize:CGSizeMake(Screen_Width - 2 * 22, MAXFLOAT)];
-    self.contentLabel.frame = CGRectMake(22, CGRectGetMaxY(self.photosView.frame) + 15, Screen_Width - 2 * 22, rect.size.height);
+    NSString *price = [NSString stringWithFormat:@"价格：%@ 元",marketObject.price];
+    CGSize priceSize = [price sizeWithFont:[UIFont systemFontOfSize:16]];
+    self.priceLabel.text = price;
+    self.priceLabel.frame = CGRectMake(Screen_Width - 20 - priceSize.width, CGRectGetMaxY(self.coverView.frame) + 15, priceSize.width, 16);
     
-    self.commentLabel.text = [NSString stringWithFormat:@"%d 评论",[dynamicsObject.commentCount intValue]];
+    self.titleLabel.text = marketObject.title;
+    self.titleLabel.frame = CGRectMake(20, self.priceLabel.y, self.priceLabel.x - 20 * 2, 16);
+    
+    self.contentLabel.attributedText = [ToolClass createTextWithString:marketObject.content fontSize:14 lineSpacing:6 isFontThin:YES];
+    CGRect rect = [ToolClass caculateText:self.contentLabel.attributedText maxSize:CGSizeMake(Screen_Width - 2 * 20, MAXFLOAT)];
+    self.contentLabel.frame = CGRectMake(20, CGRectGetMaxY(self.titleLabel.frame) + 15, Screen_Width - 2 * 20, rect.size.height);
+    
+    self.commentLabel.text = [NSString stringWithFormat:@"%d 评论",[marketObject.commentCount intValue]];
     CGSize commentSize = [self.commentLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
-    self.commentLabel.frame = CGRectMake(Screen_Width - 22 - commentSize.width, CGRectGetMaxY(self.contentLabel.frame) + 22, commentSize.width, 14);
+    self.commentLabel.frame = CGRectMake(Screen_Width - 22 - commentSize.width, CGRectGetMaxY(self.contentLabel.frame) + 40, commentSize.width, 14);
     
-    self.likeLabel.text = [NSString stringWithFormat:@"%d 赞",[dynamicsObject.likeCount intValue]];
+    self.likeLabel.text = [NSString stringWithFormat:@"%d 赞",[marketObject.likeCount intValue]];
     CGSize likeSize = [self.likeLabel.text sizeWithFont:[UIFont systemFontOfSize:14]];
     self.likeLabel.frame = CGRectMake(self.commentLabel.x - 12 - likeSize.width, self.commentLabel.y, likeSize.width, 14);
     
-    if ([dynamicsObject.addressName isEqualToString:@""]) {
+    if ([marketObject.addressName isEqualToString:@""]) {
         self.addressView.hidden = YES;
     }else{
         self.addressView.hidden = NO;
-        self.addressLabel.text = dynamicsObject.addressName;
-        CGSize addressSize = [dynamicsObject.addressName sizeWithFont:[UIFont systemFontOfSize:14]];
+        self.addressLabel.text = marketObject.addressName;
+        CGSize addressSize = [marketObject.addressName sizeWithFont:[UIFont systemFontOfSize:14]];
         CGFloat addressViewW = addressSize.width + 18 + 20;
         CGFloat addressLabelW = addressSize.width;
         if (addressViewW > (self.likeLabel.x - 20 - 22)) {
@@ -194,7 +193,8 @@
         self.addressImage.frame = CGRectMake(5, (self.addressView.height - 18) / 2, 18, 18);
         self.addressLabel.frame = CGRectMake(CGRectGetMaxX(self.addressImage.frame) + 5, (self.addressView.height - 14) / 2, addressLabelW, 14);
     }
-    self.cellHeight = CGRectGetMaxY(self.likeLabel.frame) + 30;
+    self.cellHeight = CGRectGetMaxY(self.likeLabel.frame) + 20;
+    
 }
 
 - (void)awakeFromNib {
