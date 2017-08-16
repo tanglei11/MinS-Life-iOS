@@ -9,10 +9,12 @@
 #import "BaseNavigationController.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import "DynamicsObject.h"
+#import "MarketObject.h"
 
 @interface CommunityMapController : BaseNavigationController
 
-@property (nonatomic ,strong) BMKMapView *BMKMapView;
-@property (nonatomic ,strong) DynamicsObject *dynamicsObject;
+@property (nonatomic,strong) BMKMapView *BMKMapView;
+@property (nonatomic,strong) DynamicsObject *dynamicsObject;
+@property (nonatomic,strong) MarketObject *marketObject;
 
 @end

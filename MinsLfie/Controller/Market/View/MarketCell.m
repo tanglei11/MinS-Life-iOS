@@ -129,6 +129,25 @@
     return self;
 }
 
+- (void)addressMap
+{
+    self.marketMapBlock(_marketObject);
+}
+
+- (void)collectClick
+{
+    if ([AVUser currentUser] != nil) {
+        if ([_marketObject.isCollect intValue] == 1) {
+            self.collectButton.selected = NO;
+            self.collectButton.backgroundColor = [UIColor whiteColor];
+        }else{
+            self.collectButton.selected = YES;
+            self.collectButton.backgroundColor = [UIColor colorFromHex:NORMAL_BG_COLOR];
+        }
+    }
+    self.marketCollectBlock(_marketObject);
+}
+
 - (void)setMarketObject:(MarketObject *)marketObject
 {
     _marketObject = marketObject;

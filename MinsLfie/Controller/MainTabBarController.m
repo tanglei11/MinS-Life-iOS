@@ -46,6 +46,7 @@
 - (void)goToMarket
 {
     [self setSelectedIndex:1];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshMarketData" object:nil];
 }
 
 - (void)goToDynamic

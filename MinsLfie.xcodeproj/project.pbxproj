@@ -151,6 +151,7 @@
 		EBCDE4141F42CC6100073E21 /* MapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE40F1F42CC6100073E21 /* MapsManager.m */; };
 		EBCDE4181F42E8A300073E21 /* MarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE4171F42E8A300073E21 /* MarketCell.m */; };
 		EBCDE41C1F42ED1B00073E21 /* MarketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCDE41B1F42ED1B00073E21 /* MarketObject.m */; };
+		EBD4606A1F4423C8004958AF /* MarketDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD460691F4423C8004958AF /* MarketDetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -433,6 +434,8 @@
 		EBCDE4171F42E8A300073E21 /* MarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketCell.m; sourceTree = "<group>"; };
 		EBCDE41A1F42ED1B00073E21 /* MarketObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketObject.h; sourceTree = "<group>"; };
 		EBCDE41B1F42ED1B00073E21 /* MarketObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketObject.m; sourceTree = "<group>"; };
+		EBD460681F4423C8004958AF /* MarketDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketDetailController.h; sourceTree = "<group>"; };
+		EBD460691F4423C8004958AF /* MarketDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketDetailController.m; sourceTree = "<group>"; };
 		FBF6E3846CA2F319CC0EEF32 /* libPods-MinsLfie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MinsLfie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -910,6 +913,8 @@
 				EBCDE4151F42E87800073E21 /* View */,
 				EBB437691F2B203A006BB009 /* MarketPageController.h */,
 				EBB4376A1F2B203A006BB009 /* MarketPageController.m */,
+				EBD460681F4423C8004958AF /* MarketDetailController.h */,
+				EBD460691F4423C8004958AF /* MarketDetailController.m */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -1392,6 +1397,7 @@
 				EB79B5761F2EC74F006EA026 /* UIView+NextResponder.m in Sources */,
 				EBC07EE31F305B1D0037A69A /* TZImagePickerController.m in Sources */,
 				EB8465501F3339EC00AC2B54 /* UIImage+Resize.m in Sources */,
+				EBD4606A1F4423C8004958AF /* MarketDetailController.m in Sources */,
 				EBB437271F2B1844006BB009 /* ToolClass.m in Sources */,
 				EB79B5561F2EC354006EA026 /* HomeController.m in Sources */,
 				EBC07EA21F302F320037A69A /* SZTextView.m in Sources */,

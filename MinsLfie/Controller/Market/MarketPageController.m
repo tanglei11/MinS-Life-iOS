@@ -9,6 +9,11 @@
 #import "MarketPageController.h"
 #import "CommunityBannerCell.h"
 #import "MarketCell.h"
+#import "MJRefresh.h"
+
+//控制器
+#import "CommunityMapController.h"
+#import "MarketDetailController.h"
 
 @interface MarketPageController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -45,6 +50,8 @@
     [self initTableView];
     
     [self setBottomShadow];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshMarketData" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,14 +59,29 @@
     [super viewWillAppear:animated];
     
     if (self.isFirstEnter || self.isPush) {
-        self.page = 0;
-        [self.marketArray removeAllObjects];
-        [self getMarketData];
+        [self newData];
         self.isFirstEnter = NO;
         self.isPush = NO;
     }
-    
-    
+}
+
+- (void)refreshData
+{
+    self.isNeedScroll = YES;
+    [self newData];
+}
+
+- (void)newData
+{
+    self.page = 0;
+    [self.marketArray removeAllObjects];
+    [self getMarketData];
+}
+
+- (void)moreData
+{
+    self.page ++;
+    [self getMarketData];
 }
 
 - (void)getMarketData
@@ -80,18 +102,18 @@
                 [self.marketArray addObject:marketObject];
             }
             [self.tableView reloadData];
-//            if (self.isNeedScroll) {
-//                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-//                self.isNeedScroll = NO;
-//            }
-//            [self.tableView.mj_header endRefreshing];
-//            [self.tableView.mj_header endRefreshing];
-//            if ([object count] != 20) {
-//                self.tableView.mj_footer.hidden = YES;
-//            }
-//            else {
-//                self.tableView.mj_footer.hidden = NO;
-//            }
+            if (self.isNeedScroll) {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+                self.isNeedScroll = NO;
+            }
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_header endRefreshing];
+            if ([object count] != 20) {
+                self.tableView.mj_footer.hidden = YES;
+            }
+            else {
+                self.tableView.mj_footer.hidden = NO;
+            }
         }
     }];
 }
@@ -110,6 +132,13 @@
     tableView.showsVerticalScrollIndicator = NO;
     tableView.dataSource = self;
     tableView.delegate = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(newData)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    tableView.mj_header = header;
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreData)];
+    [footer setTitle:@"" forState:MJRefreshStateIdle];
+    tableView.mj_footer = footer;
     [self.view addSubview:tableView];
     self.tableView = tableView;
 }
@@ -153,14 +182,60 @@
         self.communityBannerCellHeight = marketBannerCell.cellHeight;
         return marketBannerCell;
     }else{
-        marketCell.marketObject = self.marketArray[indexPath.section - 1];
+        MarketObject *marketObject = self.marketArray[indexPath.section - 1];
+        marketCell.marketObject = marketObject;
         marketCell.selectionStyle = UITableViewCellSelectionStyleNone;
         self.marketCellHeight = marketCell.cellHeight;
+        marketCell.marketCollectBlock = ^(MarketObject *marketObject) {
+            if ([AVUser currentUser] != nil) {
+                if ([marketObject.isCollect intValue] == 1) {
+                    marketObject.isCollect = @"0";
+                    NSDictionary *params = @{@"dynamicId":marketObject.objectId};
+                    [AVCloud callFunctionInBackground:@"deleteCollect" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                        if (error != nil) {
+                            [MBProgressHUD showError:@"取消收藏失败"];
+                        }else{
+                            
+                        }
+                    }];
+                }else{
+                    marketObject.isCollect = @"1";
+                    NSDictionary *params = @{@"dynamicId":marketObject.objectId,@"collectUserId":[AVUser currentUser].objectId,@"collectType":@"market"};
+                    [AVCloud callFunctionInBackground:@"saveCollect" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                        if (error != nil) {
+                            [MBProgressHUD showError:@"收藏失败"];
+                        }else{
+                            
+                        }
+                    }];
+                }
+            }else{
+                [self showLoginGuideView];
+            }
+        };
+        marketCell.marketMapBlock = ^(MarketObject *marketObject) {
+            CommunityMapController *communityMapController = [[CommunityMapController alloc] init];
+            communityMapController.marketObject = marketObject;
+            communityMapController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:communityMapController animated:YES];
+        };
         return marketCell;
     }
 }
 
 #pragma mark - tableView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        
+    }else{
+        MarketDetailController *marketDetailController = [[MarketDetailController alloc] init];
+        marketDetailController.marketObject = self.marketArray[indexPath.section - 1];
+        marketDetailController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:marketDetailController animated:YES];
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {

@@ -29,17 +29,17 @@
         _BMKMapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height - 49)];
         _BMKMapView.delegate = self;
         //给map添加Annotation
-        CLLocationCoordinate2D coordinate2D = CLLocationCoordinate2DMake([self.dynamicsObject.latitude floatValue], [self.dynamicsObject.longitude floatValue]);
+        CLLocationCoordinate2D coordinate2D = CLLocationCoordinate2DMake(self.dynamicsObject ? [self.dynamicsObject.latitude floatValue] : [self.marketObject.latitude floatValue], self.dynamicsObject ? [self.dynamicsObject.longitude floatValue] : [self.marketObject.longitude floatValue]);
         if ([WGS84TOGCJ02 isLocationOutOfChina:coordinate2D]) {
             coordinate2D = [WGS84TOGCJ02 wgs84ToBd09:coordinate2D];
         }else{
             coordinate2D = [WGS84TOGCJ02 gcj02ToBd09:coordinate2D];
         }
-        NSLog(@"latitude = %f longitude = %f",[self.dynamicsObject.latitude floatValue],[self.dynamicsObject.longitude floatValue]);
+//        NSLog(@"latitude = %f longitude = %f",[self.dynamicsObject.latitude floatValue],[self.dynamicsObject.longitude floatValue]);
         BMKCoordinateSpan span = {0.0067, 0.0067};
         BMKCoordinateRegion region = {coordinate2D,span};
         [_BMKMapView setRegion:region];
-        DSNAnnotation *annotation = [[DSNAnnotation alloc] initWithCoordinate2D:coordinate2D title:self.dynamicsObject.addressName subTitle:self.dynamicsObject.address];
+        DSNAnnotation *annotation = [[DSNAnnotation alloc] initWithCoordinate2D:coordinate2D title:self.dynamicsObject ? self.dynamicsObject.addressName : self.marketObject.addressName subTitle:self.dynamicsObject ? self.dynamicsObject.address : self.marketObject.address];
         // 地图大头针类 必须遵守MKAnnotation协议
         [_BMKMapView addAnnotation:annotation];
         [_BMKMapView selectAnnotation:annotation animated:NO];
@@ -121,7 +121,7 @@
         {
             [_locService stopUserLocationService];
             self.BMKMapView.showsUserLocation = NO;
-            CLLocationCoordinate2D coordinate2D = CLLocationCoordinate2DMake([self.dynamicsObject.latitude floatValue], [self.dynamicsObject.longitude floatValue]);
+            CLLocationCoordinate2D coordinate2D = CLLocationCoordinate2DMake(self.dynamicsObject ? [self.dynamicsObject.latitude floatValue] : [self.marketObject.latitude floatValue], self.dynamicsObject ? [self.dynamicsObject.longitude floatValue] : [self.marketObject.longitude floatValue]);
             if ([WGS84TOGCJ02 isLocationOutOfChina:coordinate2D]) {
                 coordinate2D = [WGS84TOGCJ02 wgs84ToBd09:coordinate2D];
             }else{
@@ -135,11 +135,11 @@
             case 2:
         {
             if ([MapsManager isBaiduMapsInstalled]) {
-                [[MapsManager getBaiduMapsManager] openMapsWithDirectionForDestinationAddress:self.dynamicsObject.addressName];
+                [[MapsManager getBaiduMapsManager] openMapsWithDirectionForDestinationAddress:self.dynamicsObject ? self.dynamicsObject.addressName : self.marketObject.addressName];
             }else if ([MapsManager isGoogleMapsInstalled]){
-                [[MapsManager getGoogleMapsManager] openMapsWithDirectionForDestinationAddress:self.dynamicsObject.addressName];
+                [[MapsManager getGoogleMapsManager] openMapsWithDirectionForDestinationAddress:self.dynamicsObject ? self.dynamicsObject.addressName : self.marketObject.addressName];
             }else{
-                [[MapsManager getAppleMapsManager]openMapsWithDirectionForDestinationAddress:self.dynamicsObject.addressName];
+                [[MapsManager getAppleMapsManager]openMapsWithDirectionForDestinationAddress:self.dynamicsObject ? self.dynamicsObject.addressName : self.marketObject.addressName];
             }
         }
             break;
