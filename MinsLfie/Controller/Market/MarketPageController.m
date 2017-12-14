@@ -232,6 +232,7 @@
     if (indexPath.section == 0) {
         
     }else{
+        self.isPush = YES;
         MarketDetailController *marketDetailController = [[MarketDetailController alloc] init];
         marketDetailController.marketObject = self.marketArray[indexPath.section - 1];
         marketDetailController.hidesBottomBarWhenPushed = YES;

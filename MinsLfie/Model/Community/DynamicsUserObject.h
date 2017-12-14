@@ -14,5 +14,6 @@
 @property (nonatomic,copy) NSString *objectId;
 @property (nonatomic,copy) NSString *profileUrl;
 @property (nonatomic,copy) NSString *username;
+@property (nonatomic,copy) NSString *mobilePhoneNumber;
 
 @end

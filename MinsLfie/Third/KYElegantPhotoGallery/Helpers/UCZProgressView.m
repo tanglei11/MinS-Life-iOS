@@ -87,7 +87,7 @@
     [self.backgroundLayer removeFromSuperlayer];
     [self.textLabel removeFromSuperview];
     [backgroundView.layer addSublayer:self.backgroundLayer];
-    [backgroundView addSubview:self.textLabel];
+    [backgroundView.layer addSublayer:self.textLabel.layer];
     
     [self addSubview:backgroundView];
     
@@ -200,7 +200,7 @@
         [self.backgroundLayer removeFromSuperlayer];
         [self.textLabel removeFromSuperview];
         [self.backgroundView.layer addSublayer:self.backgroundLayer];
-        [self.backgroundView addSubview:self.textLabel];
+        [self.backgroundView.layer addSublayer:self.textLabel.layer];
     }
 }
 

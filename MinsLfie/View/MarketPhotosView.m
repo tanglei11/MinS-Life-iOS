@@ -1,29 +1,28 @@
 //
-//  POIPhotosView.m
-//  CityGuide
+//  MarketPhotosView.m
+//  MinsLfie
 //
-//  Created by Chris on 16/7/19.
-//  Copyright © 2016年 汤磊. All rights reserved.
+//  Created by Peanut丶 on 2017/12/14.
+//  Copyright © 2017年 汤磊. All rights reserved.
 //
 
-#import "PhotosView.h"
+#import "MarketPhotosView.h"
 #import "KYPhotoGallery.h"
 
-#define PhotoW  105
-#define PhotoH  140
-#define PhotoMargin (Screen_Width - 3 * PhotoW - 2 * 22) / 2
+#define PhotoMargin 15
+#define PhotoW  (Screen_Width - 2 * 20 - 2 * PhotoMargin) / 3
+#define PhotoH  (Screen_Width - 2 * 20 - 2 * PhotoMargin) / 3
 #define PhotoMaxCol 3
 
-
-
-@interface PhotosView ()
+@interface MarketPhotosView ()
 
 @property (nonatomic,strong) NSMutableArray *photoViewArray;
 @property (nonatomic,strong) KYPhotoGallery *photoGallery;
 
 @end
 
-@implementation PhotosView
+@implementation MarketPhotosView
+
 //懒加载
 - (NSMutableArray *)photoViewArray
 {
@@ -52,7 +51,6 @@
         photoView.clipsToBounds = YES;
         photoView.userInteractionEnabled = YES;
         photoView.contentMode = UIViewContentModeScaleAspectFill;
-        photoView.layer.cornerRadius = 4;
         [self addSubview:photoView];
         [self.photoViewArray addObject:photoView];
     }

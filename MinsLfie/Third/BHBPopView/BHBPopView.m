@@ -36,18 +36,23 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        AVUser *user = [AVUser currentUser];
+        AVFile *file = (AVFile *)[user objectForKey:@"profile"];
+        NSString *profileUrl = (NSString *)[user objectForKey:@"profileUrl"];
+        NSString *name = (NSString *)[user objectForKey:@"nickname"] ? (NSString *)[user objectForKey:@"nickname"] : user.username;
+        
         UIImageView * iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:iv];
         self.background = iv;
         UIImageView * logo = [[UIImageView alloc] initWithFrame:CGRectMake((self.width - 80) / 2, self.height * 0.15, 80, 80)];
         logo.layer.masksToBounds = YES;
         logo.layer.cornerRadius = 40;
-        logo.image = [UIImage imageNamed:@"pro_head"];
+        [logo sd_setImageWithURL:[NSURL URLWithString:file.url ? file.url : (profileUrl ? profileUrl : @"")]];
         [self addSubview:logo];
         self.logo = logo;
         
         UILabel *nickLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(logo.frame) + 12, self.width, 18)];
-        nickLabel.text = @"Peanut丶";
+        nickLabel.text = name;
         nickLabel.textColor = [UIColor colorFromHex:@"#939393"];
         nickLabel.font = [UIFont systemFontOfSize:18];
         nickLabel.textAlignment = NSTextAlignmentCenter;
