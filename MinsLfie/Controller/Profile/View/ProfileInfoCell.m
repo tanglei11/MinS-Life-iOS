@@ -23,8 +23,7 @@
         //头像
         UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (PRO_INFO_CELL_HEIGHT - 55) / 2, 55, 55)];
         headerView.layer.masksToBounds = YES;
-        headerView.layer.cornerRadius = headerView.height / 2;
-        headerView.image = [UIImage imageNamed:@"pro_head"];
+        headerView.layer.cornerRadius = 27.5;
         [self.contentView addSubview:headerView];
         self.headerView = headerView;
         //昵称
@@ -35,6 +34,22 @@
         self.nickNameLabel = nickNameLabel;
     }
     return self;
+}
+
+- (void)setHeaderUrl:(NSString *)headerUrl
+{
+    _headerUrl = headerUrl;
+    if (headerUrl && (![headerUrl isEqualToString:@""])) {
+        [ToolClass setupImageViewByAVFileWithThumbnailWidth:55 thumbnailHeight:55 url:headerUrl imageView:self.headerView placeholder:[ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:55 color:[UIColor colorFromHex:MAIN_COLOR]]];
+    }else{
+        self.headerView.image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:@"&#xe666;"] inFont:ICONFONT size:55 color:[UIColor colorFromHex:MAIN_COLOR]];
+    }
+}
+
+- (void)setName:(NSString *)name
+{
+    _name = name;
+    self.nickNameLabel.text = name;
 }
 
 - (void)awakeFromNib {

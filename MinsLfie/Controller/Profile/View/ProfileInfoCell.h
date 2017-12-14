@@ -12,4 +12,7 @@
 
 @interface ProfileInfoCell : UITableViewCell
 
+@property (nonatomic,strong) NSString *headerUrl;
+@property (nonatomic,strong) NSString *name;
+
 @end

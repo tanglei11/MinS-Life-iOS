@@ -12,8 +12,12 @@
 
 //控制器
 #import "LoginController.h"
+#import "SetPageController.h"
+#import "ProfileInfoController.h"
 
 @interface ProfilePageController () <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,weak) UITableView *tableView;
 
 @end
 
@@ -29,6 +33,17 @@
     [self setBottomShadow];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    AVUser *user = [AVUser currentUser];
+    if (user != nil) {
+        [user refresh];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 - (void)initNav
 {
     [self setupCustomNavigationBarDefault];
@@ -42,7 +57,11 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.estimatedRowHeight = 0;
+    tableView.estimatedSectionHeaderHeight = 0;
+    tableView.estimatedSectionFooterHeight = 0;
     [self.view addSubview:tableView];
+    self.tableView = tableView;
 }
 
 #pragma mark - tableView dataSource
@@ -78,6 +97,12 @@
     }
     
     if (indexPath.section == 0) {
+        AVUser *user = [AVUser currentUser];
+        NSString *name = (NSString *)[user objectForKey:@"nickname"] ? (NSString *)[user objectForKey:@"nickname"] : user.username;
+        AVFile *file = (AVFile *)[user objectForKey:@"profile"];
+        NSString *profileUrl = (NSString *)[user objectForKey:@"profileUrl"];
+        proInfoCell.headerUrl = file.url ? file.url : (profileUrl ? profileUrl : @"");
+        proInfoCell.name = name ? name : @"登录/注册";;
         proInfoCell.selectionStyle = UITableViewCellSelectionStyleNone;
         proInfoCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return proInfoCell;
@@ -116,19 +141,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            UIAlertController *loginAlertController = [UIAlertController alertControllerWithTitle:@"你还未登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-            }];
-            UIAlertAction *loginAction = [UIAlertAction actionWithTitle:@"现在登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                LoginController *loginController = [[LoginController alloc] init];
-                self.view.window.rootViewController = loginController;
-            }];
-            [loginAlertController addAction:cancelAction];
-            [loginAlertController addAction:loginAction];
-            [self presentViewController:loginAlertController animated:YES completion:nil];
-        });
+        if ([AVUser currentUser] != nil) {
+            ProfileInfoController *profileInfoController = [[ProfileInfoController alloc] init];
+            profileInfoController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:profileInfoController animated:YES];
+        }else{
+            [self showLoginGuideView];
+        }
+    }else if (indexPath.section == 2){
+        if (indexPath.row == 1) {
+            SetPageController *setPageController = [[SetPageController alloc] init];
+            setPageController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:setPageController animated:YES];
+        }
     }
 }
 
@@ -149,6 +174,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.00000000000000001f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

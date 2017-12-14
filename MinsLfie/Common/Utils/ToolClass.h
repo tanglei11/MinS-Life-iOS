@@ -26,4 +26,7 @@
 //计算有行间距文字的rect
 + (CGRect)caculateText:(NSAttributedString *)str maxSize:(CGSize)maxSize;
 
+//创建缩略图
++ (void)setupImageViewByAVFileWithThumbnailWidth:(int)thumbnailWidth thumbnailHeight:(int)thumbnailHeight url:(NSString *)url imageView:(UIImageView *)imageView placeholder:(UIImage *)placeholder;
+
 @end

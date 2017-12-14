@@ -8,8 +8,9 @@
 //
 
 #import "BaseNavigationController.h"
+#import "LoginController.h"
 
-@interface BaseNavigationController ()
+@interface BaseNavigationController () <UIAlertViewDelegate>
 
 @end
 
@@ -153,7 +154,7 @@
     backButton.frame = CGRectMake(0, 0, btnWidth, btnHeight);
     UIImage *back = BACK;
     [backButton setImage:back forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(customBackButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton addTarget:self action:@selector(customCloseButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.customNavigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     return (UIBarButtonItem *)backButton;
 }
@@ -161,6 +162,64 @@
 - (void)customBackButtonTapped:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)customCloseButtonTapped:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -设置ImageView
+- (void)setupImageViewByAVFileWithThumbnailWidth:(int)thumbnailWidth thumbnailHeight:(int)thumbnailHeight url:(NSString *)url imageView:(UIImageView *)imageView placeholder:(UIImage *)placeholder
+{
+    //    if (IS_DEVICE_5_5_INCH) {
+    //        thumbnailWidth *= 3;
+    //        thumbnailHeight *= 3;
+    //    }
+    //    else {
+    //        thumbnailWidth *= 2;
+    //        thumbnailHeight *= 2;
+    //    }
+    thumbnailWidth *= 3;
+    thumbnailHeight *= 3;
+    AVFile *avFile = [AVFile fileWithURL:url];
+    [avFile getThumbnail:YES width:thumbnailWidth height:thumbnailHeight withBlock:^(UIImage *image, NSError *error) {
+        if (error) {
+            imageView.contentMode = UIViewContentModeCenter;
+            imageView.image = placeholder;
+            imageView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+        }
+        else {
+            imageView.contentMode = UIViewContentModeScaleAspectFill;
+            imageView.image = image;
+        }
+    }];
+    if (url== nil || [url isEqualToString:@""]) {
+        imageView.image = placeholder;
+        imageView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
+    }
+}
+
+- (void)showLoginGuideView
+{
+    UIAlertView *loginAlertView = [[UIAlertView alloc] initWithTitle:@"你还未登录" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"现在登录", nil];
+    [loginAlertView show];
+}
+
+- (void)backToLoginPage
+{
+    LoginController *loginController = [[LoginController alloc] init];
+    [self presentViewController:loginController animated:YES completion:nil];
+}
+
+#pragma mark - alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"%ld",buttonIndex);
+    if (buttonIndex == 1) {
+        LoginController *loginController = [[LoginController alloc] init];
+        [self presentViewController:loginController animated:YES completion:nil];
+    }
 }
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 汤磊. All rights reserved.
 //
 
-#import "BaseNavigationController.h"
+#import "VTMagicController.h"
 
-@interface HomePageController : BaseNavigationController
+@interface HomePageController : VTMagicController
 
 @end

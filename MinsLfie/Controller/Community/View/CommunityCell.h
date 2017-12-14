@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DynamicsObject.h"
 
+typedef void(^CommunityCollectBlock)(DynamicsObject *dynamicsObject);
+typedef void(^CommunityMapBlock)(DynamicsObject *dynamicsObject);
 @interface CommunityCell : UITableViewCell
 
-@property (nonatomic,strong) NSString *content;
+@property (nonatomic,strong) DynamicsObject *dynamicsObject;
 @property (nonatomic,assign) CGFloat cellHeight;
+@property (nonatomic,copy) CommunityCollectBlock communityCollectBlock;
+@property (nonatomic,copy) CommunityMapBlock communityMapBlock;
 
 @end

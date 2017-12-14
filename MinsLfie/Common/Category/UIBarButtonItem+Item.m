@@ -59,10 +59,10 @@
 
 + (UIBarButtonItem *)itemWithTarget:(id)target Action:(SEL)action imageName:(NSString *)imageName imageColor:(UIColor *)imageColor
 {
-    IconButton *btn = [[IconButton alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+    UIImage *image = [ToolClass imageWithIcon:[NSString changeISO88591StringToUnicodeString:imageName] inFont:ICONFONT size:18 color:imageColor];
+    [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    btn.text = imageName;
-    btn.textColor = imageColor;
     return [[UIBarButtonItem alloc]initWithCustomView:btn];
 }
 @end
