@@ -8,6 +8,7 @@
 
 #import "MarketDetailCell.h"
 #import "MarketPhotosView.h"
+#import "KYPhotoGallery.h"
 
 @interface MarketDetailCell ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic,weak) MarketPhotosView *photosView;
 @property (nonatomic,weak) UILabel *priceLabel;
 @property (nonatomic,weak) UILabel *contentLabel;
+@property (nonatomic,strong) KYPhotoGallery *photoGallery;
 
 @end
 
@@ -58,6 +60,9 @@
         [self.contentView addSubview:callButton];
         //封面图
         UIImageView *coverView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(headerView.frame) + 18, Screen_Width, 187)];
+        coverView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(coverClick)];
+        [coverView addGestureRecognizer:tap];
         coverView.clipsToBounds = YES;
         coverView.image = BLANK_PICTURE_SIZE_66;
         coverView.backgroundColor = [UIColor colorFromHex:WHITE_GREY];
@@ -81,6 +86,16 @@
         self.contentLabel = contentLabel;
     }
     return self;
+}
+
+- (void)coverClick
+{
+    NSMutableArray *imgs = [[_marketObject.imgs componentsSeparatedByString:@","] mutableCopy];
+    _photoGallery = [[KYPhotoGallery alloc]initWithTappedImageView:self.coverView andImageUrls:imgs andInitialIndex:1];
+    _photoGallery.imageViewArray = [[NSMutableArray alloc] initWithArray:@[self.coverView]];
+    [_photoGallery finishAsynDownload:^{
+        [[self viewController] presentViewController:_photoGallery animated:NO completion:nil];
+    }];
 }
 
 - (void)callClick

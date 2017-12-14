@@ -121,7 +121,7 @@
 - (void)initNav
 {
     [self setupCustomNavigationBarDefault];
-    self.customNavigationItem.title = @"跳蚤";
+    self.customNavigationItem.title = @"跳蚤市场";
 }
 
 - (void)initTableView
